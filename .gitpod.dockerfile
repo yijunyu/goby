@@ -1,2 +1,2 @@
 FROM gitpod/workspace-full
-RUN apt-get install protobuf
+RUN apt-get install protobuf-compiler
