@@ -6,224 +6,370 @@ package edu.cornell.med.icb.goby.alignments;
 public final class Alignments {
   private Alignments() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface AlignmentCollectionOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // repeated .goby.AlignmentEntry alignment_entries = 1;
+
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface AlignmentCollectionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.AlignmentCollection)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry> 
         getAlignmentEntriesList();
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry getAlignmentEntries(int index);
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     int getAlignmentEntriesCount();
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder> 
         getAlignmentEntriesOrBuilderList();
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder getAlignmentEntriesOrBuilder(
         int index);
   }
-  public static final class AlignmentCollection extends
-      com.google.protobuf.GeneratedMessage
-      implements AlignmentCollectionOrBuilder {
+  /**
+   * <pre>
+   *This message is written to 'basename'.entries as a very large chunked collection.
+   * </pre>
+   *
+   * Protobuf type {@code goby.AlignmentCollection}
+   */
+  public  static final class AlignmentCollection extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.AlignmentCollection)
+      AlignmentCollectionOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AlignmentCollection.newBuilder() to construct.
-    private AlignmentCollection(Builder builder) {
+    private AlignmentCollection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AlignmentCollection(boolean noInit) {}
-    
-    private static final AlignmentCollection defaultInstance;
-    public static AlignmentCollection getDefaultInstance() {
-      return defaultInstance;
+    private AlignmentCollection() {
+      alignmentEntries_ = java.util.Collections.emptyList();
     }
-    
-    public AlignmentCollection getDefaultInstanceForType() {
-      return defaultInstance;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AlignmentCollection();
     }
-    
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlignmentCollection(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                alignmentEntries_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              alignmentEntries_.add(
+                  input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          alignmentEntries_ = java.util.Collections.unmodifiableList(alignmentEntries_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_fieldAccessorTable;
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.Builder.class);
     }
-    
-    // repeated .goby.AlignmentEntry alignment_entries = 1;
+
     public static final int ALIGNMENT_ENTRIES_FIELD_NUMBER = 1;
     private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry> alignmentEntries_;
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry> getAlignmentEntriesList() {
       return alignmentEntries_;
     }
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder> 
         getAlignmentEntriesOrBuilderList() {
       return alignmentEntries_;
     }
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     public int getAlignmentEntriesCount() {
       return alignmentEntries_.size();
     }
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry getAlignmentEntries(int index) {
       return alignmentEntries_.get(index);
     }
+    /**
+     * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder getAlignmentEntriesOrBuilder(
         int index) {
       return alignmentEntries_.get(index);
     }
-    
-    private void initFields() {
-      alignmentEntries_ = java.util.Collections.emptyList();
-    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       for (int i = 0; i < alignmentEntries_.size(); i++) {
         output.writeMessage(1, alignmentEntries_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       for (int i = 0; i < alignmentEntries_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, alignmentEntries_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection other = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection) obj;
+
+      if (!getAlignmentEntriesList()
+          .equals(other.getAlignmentEntriesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAlignmentEntriesCount() > 0) {
+        hash = (37 * hash) + ALIGNMENT_ENTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getAlignmentEntriesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * <pre>
+     *This message is written to 'basename'.entries as a very large chunked collection.
+     * </pre>
+     *
+     * Protobuf type {@code goby.AlignmentCollection}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollectionOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.AlignmentCollection)
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollectionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getAlignmentEntriesFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (alignmentEntriesBuilder_ == null) {
@@ -234,20 +380,19 @@ public final class Alignments {
         }
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentCollection_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection build() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection result = buildPartial();
         if (!result.isInitialized()) {
@@ -255,22 +400,13 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection result = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection(this);
         int from_bitField0_ = bitField0_;
         if (alignmentEntriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             alignmentEntries_ = java.util.Collections.unmodifiableList(alignmentEntries_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -281,7 +417,40 @@ public final class Alignments {
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection)other);
@@ -290,7 +459,7 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.getDefaultInstance()) return this;
         if (alignmentEntriesBuilder_ == null) {
@@ -312,69 +481,58 @@ public final class Alignments {
               alignmentEntries_ = other.alignmentEntries_;
               bitField0_ = (bitField0_ & ~0x00000001);
               alignmentEntriesBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAlignmentEntriesFieldBuilder() : null;
             } else {
               alignmentEntriesBuilder_.addAllMessages(other.alignmentEntries_);
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addAlignmentEntries(subBuilder.buildPartial());
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // repeated .goby.AlignmentEntry alignment_entries = 1;
+
       private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry> alignmentEntries_ =
         java.util.Collections.emptyList();
       private void ensureAlignmentEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           alignmentEntries_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry>(alignmentEntries_);
           bitField0_ |= 0x00000001;
          }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder> alignmentEntriesBuilder_;
-      
+
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry> getAlignmentEntriesList() {
         if (alignmentEntriesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(alignmentEntries_);
@@ -382,6 +540,9 @@ public final class Alignments {
           return alignmentEntriesBuilder_.getMessageList();
         }
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public int getAlignmentEntriesCount() {
         if (alignmentEntriesBuilder_ == null) {
           return alignmentEntries_.size();
@@ -389,6 +550,9 @@ public final class Alignments {
           return alignmentEntriesBuilder_.getCount();
         }
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry getAlignmentEntries(int index) {
         if (alignmentEntriesBuilder_ == null) {
           return alignmentEntries_.get(index);
@@ -396,6 +560,9 @@ public final class Alignments {
           return alignmentEntriesBuilder_.getMessage(index);
         }
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder setAlignmentEntries(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry value) {
         if (alignmentEntriesBuilder_ == null) {
@@ -410,6 +577,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder setAlignmentEntries(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder builderForValue) {
         if (alignmentEntriesBuilder_ == null) {
@@ -421,6 +591,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder addAlignmentEntries(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry value) {
         if (alignmentEntriesBuilder_ == null) {
           if (value == null) {
@@ -434,6 +607,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder addAlignmentEntries(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry value) {
         if (alignmentEntriesBuilder_ == null) {
@@ -448,6 +624,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder addAlignmentEntries(
           edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder builderForValue) {
         if (alignmentEntriesBuilder_ == null) {
@@ -459,6 +638,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder addAlignmentEntries(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder builderForValue) {
         if (alignmentEntriesBuilder_ == null) {
@@ -470,17 +652,24 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder addAllAlignmentEntries(
           java.lang.Iterable<? extends edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry> values) {
         if (alignmentEntriesBuilder_ == null) {
           ensureAlignmentEntriesIsMutable();
-          super.addAll(values, alignmentEntries_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, alignmentEntries_);
           onChanged();
         } else {
           alignmentEntriesBuilder_.addAllMessages(values);
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder clearAlignmentEntries() {
         if (alignmentEntriesBuilder_ == null) {
           alignmentEntries_ = java.util.Collections.emptyList();
@@ -491,6 +680,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public Builder removeAlignmentEntries(int index) {
         if (alignmentEntriesBuilder_ == null) {
           ensureAlignmentEntriesIsMutable();
@@ -501,10 +693,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder getAlignmentEntriesBuilder(
           int index) {
         return getAlignmentEntriesFieldBuilder().getBuilder(index);
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder getAlignmentEntriesOrBuilder(
           int index) {
         if (alignmentEntriesBuilder_ == null) {
@@ -512,6 +710,9 @@ public final class Alignments {
           return alignmentEntriesBuilder_.getMessageOrBuilder(index);
         }
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder> 
            getAlignmentEntriesOrBuilderList() {
         if (alignmentEntriesBuilder_ != null) {
@@ -520,703 +721,977 @@ public final class Alignments {
           return java.util.Collections.unmodifiableList(alignmentEntries_);
         }
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder addAlignmentEntriesBuilder() {
         return getAlignmentEntriesFieldBuilder().addBuilder(
             edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.getDefaultInstance());
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder addAlignmentEntriesBuilder(
           int index) {
         return getAlignmentEntriesFieldBuilder().addBuilder(
             index, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.getDefaultInstance());
       }
+      /**
+       * <code>repeated .goby.AlignmentEntry alignment_entries = 1;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder> 
            getAlignmentEntriesBuilderList() {
         return getAlignmentEntriesFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder> 
           getAlignmentEntriesFieldBuilder() {
         if (alignmentEntriesBuilder_ == null) {
-          alignmentEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          alignmentEntriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder>(
                   alignmentEntries_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           alignmentEntries_ = null;
         }
         return alignmentEntriesBuilder_;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.AlignmentCollection)
     }
-    
-    static {
-      defaultInstance = new AlignmentCollection(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.AlignmentCollection)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AlignmentCollection>
+        PARSER = new com.google.protobuf.AbstractParser<AlignmentCollection>() {
+      @java.lang.Override
+      public AlignmentCollection parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlignmentCollection(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlignmentCollection> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlignmentCollection> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface AlignmentEntryOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional uint32 multiplicity = 7;
+
+  public interface AlignmentEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.AlignmentEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+     *query redundancy had not been removed by read factorization.
+     * </pre>
+     *
+     * <code>optional uint32 multiplicity = 7;</code>
+     */
     boolean hasMultiplicity();
+    /**
+     * <pre>
+     * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+     *query redundancy had not been removed by read factorization.
+     * </pre>
+     *
+     * <code>optional uint32 multiplicity = 7;</code>
+     */
     int getMultiplicity();
-    
-    // optional uint32 query_index = 1;
+
+    /**
+     * <pre>
+     * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+     *alignment runs are made with the same set of query sequences, equality of query index means that the query
+     *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index = 1;</code>
+     */
     boolean hasQueryIndex();
+    /**
+     * <pre>
+     * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+     *alignment runs are made with the same set of query sequences, equality of query index means that the query
+     *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index = 1;</code>
+     */
     int getQueryIndex();
-    
-    // optional uint32 target_index = 2;
+
+    /**
+     * <pre>
+     * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+     *alignment runs are made with the same set of target sequences, equality of target index means that the target
+     *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 2;</code>
+     */
     boolean hasTargetIndex();
+    /**
+     * <pre>
+     * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+     *alignment runs are made with the same set of target sequences, equality of target index means that the target
+     *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 2;</code>
+     */
     int getTargetIndex();
-    
-    // optional uint32 position = 3;
+
+    /**
+     * <pre>
+     *The position on the target of the start of the alignment between the query and the target.
+     *In the following example, position is 3 because the third base of the query 'C' was aligned with
+     *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+     *alignment can start at a mismatch if it was so constructed by the aligner.
+     *0123456789
+     *AAAAGTCAAA  target
+     *ctCGTC     query
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
     boolean hasPosition();
+    /**
+     * <pre>
+     *The position on the target of the start of the alignment between the query and the target.
+     *In the following example, position is 3 because the third base of the query 'C' was aligned with
+     *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+     *alignment can start at a mismatch if it was so constructed by the aligner.
+     *0123456789
+     *AAAAGTCAAA  target
+     *ctCGTC     query
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
     int getPosition();
-    
-    // optional bool matching_reverse_strand = 6;
+
+    /**
+     * <pre>
+     *True when the query matches the target on the reverse strand
+     * </pre>
+     *
+     * <code>optional bool matching_reverse_strand = 6;</code>
+     */
     boolean hasMatchingReverseStrand();
+    /**
+     * <pre>
+     *True when the query matches the target on the reverse strand
+     * </pre>
+     *
+     * <code>optional bool matching_reverse_strand = 6;</code>
+     */
     boolean getMatchingReverseStrand();
-    
-    // optional uint32 query_position = 5;
+
+    /**
+     * <pre>
+     *The position on the query where the alignment starts. This value is different from zero
+     *when some bases/residues of the query could not be aligned with the target.
+     *TODO: Rename this to left_trim. Add a right_trim property.
+     * </pre>
+     *
+     * <code>optional uint32 query_position = 5;</code>
+     */
     boolean hasQueryPosition();
+    /**
+     * <pre>
+     *The position on the query where the alignment starts. This value is different from zero
+     *when some bases/residues of the query could not be aligned with the target.
+     *TODO: Rename this to left_trim. Add a right_trim property.
+     * </pre>
+     *
+     * <code>optional uint32 query_position = 5;</code>
+     */
     int getQueryPosition();
-    
-    // optional float score = 4;
+
+    /**
+     * <pre>
+     *The score of the alignment, where larger scores indicate better matches between the query and the target.
+     *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+     *-(#mismatches(query,target)).
+     * </pre>
+     *
+     * <code>optional float score = 4;</code>
+     */
     boolean hasScore();
+    /**
+     * <pre>
+     *The score of the alignment, where larger scores indicate better matches between the query and the target.
+     *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+     *-(#mismatches(query,target)).
+     * </pre>
+     *
+     * <code>optional float score = 4;</code>
+     */
     float getScore();
-    
-    // optional uint32 number_of_mismatches = 8;
+
+    /**
+     * <pre>
+     *Number of bases/residues that differ in the alignment between query and target sequences.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_mismatches = 8;</code>
+     */
     boolean hasNumberOfMismatches();
+    /**
+     * <pre>
+     *Number of bases/residues that differ in the alignment between query and target sequences.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_mismatches = 8;</code>
+     */
     int getNumberOfMismatches();
-    
-    // optional uint32 number_of_indels = 9;
+
+    /**
+     * <pre>
+     *Cumulative number of insertions and/or deletions present in the alignment.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_indels = 9;</code>
+     */
     boolean hasNumberOfIndels();
+    /**
+     * <pre>
+     *Cumulative number of insertions and/or deletions present in the alignment.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_indels = 9;</code>
+     */
     int getNumberOfIndels();
-    
-    // optional uint32 query_aligned_length = 11;
+
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+     *less or equal to query_length.
+     * </pre>
+     *
+     * <code>optional uint32 query_aligned_length = 11;</code>
+     */
     boolean hasQueryAlignedLength();
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+     *less or equal to query_length.
+     * </pre>
+     *
+     * <code>optional uint32 query_aligned_length = 11;</code>
+     */
     int getQueryAlignedLength();
-    
-    // optional uint32 target_aligned_length = 12;
+
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the target.
+     * </pre>
+     *
+     * <code>optional uint32 target_aligned_length = 12;</code>
+     */
     boolean hasTargetAlignedLength();
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the target.
+     * </pre>
+     *
+     * <code>optional uint32 target_aligned_length = 12;</code>
+     */
     int getTargetAlignedLength();
-    
-    // repeated .goby.SequenceVariation sequence_variations = 13;
+
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
     java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> 
         getSequenceVariationsList();
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getSequenceVariations(int index);
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
     int getSequenceVariationsCount();
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
     java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder> 
         getSequenceVariationsOrBuilderList();
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder getSequenceVariationsOrBuilder(
         int index);
-    
-    // optional uint32 query_length = 10;
+
+    /**
+     * <pre>
+     *Length of the query sequence.
+     * </pre>
+     *
+     * <code>optional uint32 query_length = 10;</code>
+     */
     boolean hasQueryLength();
+    /**
+     * <pre>
+     *Length of the query sequence.
+     * </pre>
+     *
+     * <code>optional uint32 query_length = 10;</code>
+     */
     int getQueryLength();
-    
-    // optional int32 mapping_quality = 14;
+
+    /**
+     * <pre>
+     *Mapping Quality (phred-scaled posterior probability that the mapping
+     *position of this read is incorrect). Please note that different aligners
+     *may estimate mapping quality with different approaches, resulting in aligner
+     *specific differences in the distribution of mapping quality. It is recommended
+     *to condition mapping quality on the aligner that produced the specific alignment
+     *being processed. See aligner name and version in the header.
+     *Note that the following description is preliminary. A clear specification is
+     *needed:
+     *The mapping quality should be proportional to the
+     *log of the probability that the given mapping is the "correct" one.
+     *So if there are five equally good mappings of a read to the genome,
+     *the probability of each would be 0.2, and the mapping quality would be
+     *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+     *say a 1e-4 of it being wrong, then the mapping quality would be
+     *-10*log10(1e-4) = 40.
+     * </pre>
+     *
+     * <code>optional int32 mapping_quality = 14;</code>
+     */
     boolean hasMappingQuality();
+    /**
+     * <pre>
+     *Mapping Quality (phred-scaled posterior probability that the mapping
+     *position of this read is incorrect). Please note that different aligners
+     *may estimate mapping quality with different approaches, resulting in aligner
+     *specific differences in the distribution of mapping quality. It is recommended
+     *to condition mapping quality on the aligner that produced the specific alignment
+     *being processed. See aligner name and version in the header.
+     *Note that the following description is preliminary. A clear specification is
+     *needed:
+     *The mapping quality should be proportional to the
+     *log of the probability that the given mapping is the "correct" one.
+     *So if there are five equally good mappings of a read to the genome,
+     *the probability of each would be 0.2, and the mapping quality would be
+     *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+     *say a 1e-4 of it being wrong, then the mapping quality would be
+     *-10*log10(1e-4) = 40.
+     * </pre>
+     *
+     * <code>optional int32 mapping_quality = 14;</code>
+     */
     int getMappingQuality();
-    
-    // optional uint32 pair_flags = 15;
+
+    /**
+     * <pre>
+     *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+     *000000001    paired
+     *000000010    properly paired
+     *000000100    read unmapped
+     *000001000    mate unmapped
+     *000010000    read reverse strand
+     *000100000    mate reverse strand
+     *001000000    first in pair
+     *010000000    second in pair
+     *100000000    not primary alignment
+     * </pre>
+     *
+     * <code>optional uint32 pair_flags = 15;</code>
+     */
     boolean hasPairFlags();
+    /**
+     * <pre>
+     *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+     *000000001    paired
+     *000000010    properly paired
+     *000000100    read unmapped
+     *000001000    mate unmapped
+     *000010000    read reverse strand
+     *000100000    mate reverse strand
+     *001000000    first in pair
+     *010000000    second in pair
+     *100000000    not primary alignment
+     * </pre>
+     *
+     * <code>optional uint32 pair_flags = 15;</code>
+     */
     int getPairFlags();
-    
-    // optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;
+
+    /**
+     * <pre>
+     *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+     */
     boolean hasPairAlignmentLink();
+    /**
+     * <pre>
+     *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getPairAlignmentLink();
+    /**
+     * <pre>
+     *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getPairAlignmentLinkOrBuilder();
-    
-    // optional uint32 fragment_index = 17;
+
+    /**
+     * <pre>
+     * Index of the read fragment from which this alignment was obtained. 
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 17;</code>
+     */
     boolean hasFragmentIndex();
+    /**
+     * <pre>
+     * Index of the read fragment from which this alignment was obtained. 
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 17;</code>
+     */
     int getFragmentIndex();
-    
-    // optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;
+
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+     */
     boolean hasSplicedForwardAlignmentLink();
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedForwardAlignmentLink();
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedForwardAlignmentLinkOrBuilder();
-    
-    // optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;
+
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+     */
     boolean hasSplicedBackwardAlignmentLink();
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedBackwardAlignmentLink();
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedBackwardAlignmentLinkOrBuilder();
-    
-    // optional uint32 spliced_flags = 19;
+
+    /**
+     * <pre>
+     *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+     *matching part of the read, and flag describes the spliced_alignment_link with these
+     *binary flags:
+     *000000001    normal
+     *000000010    novel
+     * </pre>
+     *
+     * <code>optional uint32 spliced_flags = 19;</code>
+     */
     boolean hasSplicedFlags();
+    /**
+     * <pre>
+     *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+     *matching part of the read, and flag describes the spliced_alignment_link with these
+     *binary flags:
+     *000000001    normal
+     *000000010    novel
+     * </pre>
+     *
+     * <code>optional uint32 spliced_flags = 19;</code>
+     */
     int getSplicedFlags();
-    
-    // optional sint32 insert_size = 20;
+
+    /**
+     * <pre>
+     * The size of the insert used when making the sequence library. This is the total size of the DNA
+     *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+     *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+     *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+     * </pre>
+     *
+     * <code>optional sint32 insert_size = 20;</code>
+     */
     boolean hasInsertSize();
+    /**
+     * <pre>
+     * The size of the insert used when making the sequence library. This is the total size of the DNA
+     *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+     *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+     *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+     * </pre>
+     *
+     * <code>optional sint32 insert_size = 20;</code>
+     */
     int getInsertSize();
-    
-    // optional uint32 sample_index = 21;
+
+    /**
+     * <pre>
+     *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+     *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+     *contained each entry.
+     * </pre>
+     *
+     * <code>optional uint32 sample_index = 21;</code>
+     */
     boolean hasSampleIndex();
+    /**
+     * <pre>
+     *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+     *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+     *contained each entry.
+     * </pre>
+     *
+     * <code>optional uint32 sample_index = 21;</code>
+     */
     int getSampleIndex();
-    
-    // optional uint32 query_index_occurrences = 25;
+
+    /**
+     * <pre>
+     *The total number of times the query index associated with this entry occurs across the entire alignment file.
+     *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+     *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+     *query_index_occurrences is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index_occurrences = 25;</code>
+     */
     boolean hasQueryIndexOccurrences();
+    /**
+     * <pre>
+     *The total number of times the query index associated with this entry occurs across the entire alignment file.
+     *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+     *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+     *query_index_occurrences is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index_occurrences = 25;</code>
+     */
     int getQueryIndexOccurrences();
-    
-    // optional uint32 ambiguity = 27;
+
+    /**
+     * <pre>
+     *The total number of times the read matches the reference across the entire alignment file. This differs from
+     *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+     *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+     *entries to more smaller thresholds). When each entry has a value for this field, the header field
+     *ambiguity_stored_in_entries is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 ambiguity = 27;</code>
+     */
     boolean hasAmbiguity();
+    /**
+     * <pre>
+     *The total number of times the read matches the reference across the entire alignment file. This differs from
+     *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+     *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+     *entries to more smaller thresholds). When each entry has a value for this field, the header field
+     *ambiguity_stored_in_entries is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 ambiguity = 27;</code>
+     */
     int getAmbiguity();
-    
-    // repeated string bam_attributes = 50;
-    java.util.List<String> getBamAttributesList();
+
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    java.util.List<java.lang.String>
+        getBamAttributesList();
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
     int getBamAttributesCount();
-    String getBamAttributes(int index);
-    
-    // optional bytes read_quality_scores = 55;
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    java.lang.String getBamAttributes(int index);
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    com.google.protobuf.ByteString
+        getBamAttributesBytes(int index);
+
+    /**
+     * <pre>
+     *Quality scores for all bases of the read.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>optional bytes read_quality_scores = 55;</code>
+     */
     boolean hasReadQualityScores();
+    /**
+     * <pre>
+     *Quality scores for all bases of the read.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>optional bytes read_quality_scores = 55;</code>
+     */
     com.google.protobuf.ByteString getReadQualityScores();
-    
-    // optional uint32 read_origin_index = 26;
+
+    /**
+     * <pre>
+     *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+     *makes it possible to track the origin of the read (especially useful after several alignments
+     *have been merged/concatenated).
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional uint32 read_origin_index = 26;</code>
+     */
     boolean hasReadOriginIndex();
+    /**
+     * <pre>
+     *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+     *makes it possible to track the origin of the read (especially useful after several alignments
+     *have been merged/concatenated).
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional uint32 read_origin_index = 26;</code>
+     */
     int getReadOriginIndex();
-    
-    // optional string softClippedBasesLeft = 30;
+
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+     *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesLeft = 30;</code>
+     */
     boolean hasSoftClippedBasesLeft();
-    String getSoftClippedBasesLeft();
-    
-    // optional string softClippedBasesRight = 31;
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+     *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesLeft = 30;</code>
+     */
+    java.lang.String getSoftClippedBasesLeft();
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+     *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesLeft = 30;</code>
+     */
+    com.google.protobuf.ByteString
+        getSoftClippedBasesLeftBytes();
+
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. The number of bases in softClippedBasesRight is exactly equal
+     *to  queryLength - queryAlignedLength - queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesRight = 31;</code>
+     */
     boolean hasSoftClippedBasesRight();
-    String getSoftClippedBasesRight();
-    
-    // optional bytes softClippedQualityLeft = 32;
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. The number of bases in softClippedBasesRight is exactly equal
+     *to  queryLength - queryAlignedLength - queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesRight = 31;</code>
+     */
+    java.lang.String getSoftClippedBasesRight();
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. The number of bases in softClippedBasesRight is exactly equal
+     *to  queryLength - queryAlignedLength - queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesRight = 31;</code>
+     */
+    com.google.protobuf.ByteString
+        getSoftClippedBasesRightBytes();
+
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityLeft = 32;</code>
+     */
     boolean hasSoftClippedQualityLeft();
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityLeft = 32;</code>
+     */
     com.google.protobuf.ByteString getSoftClippedQualityLeft();
-    
-    // optional bytes softClippedQualityRight = 33;
+
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityRight = 33;</code>
+     */
     boolean hasSoftClippedQualityRight();
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityRight = 33;</code>
+     */
     com.google.protobuf.ByteString getSoftClippedQualityRight();
-    
-    // optional string placedUnmappedSequence = 40;
+
+    /**
+     * <pre>
+     *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+     *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+     *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+     *from the reads file.
+     * </pre>
+     *
+     * <code>optional string placedUnmappedSequence = 40;</code>
+     */
     boolean hasPlacedUnmappedSequence();
-    String getPlacedUnmappedSequence();
-    
-    // optional bytes placedUnmappedQuality = 41;
+    /**
+     * <pre>
+     *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+     *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+     *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+     *from the reads file.
+     * </pre>
+     *
+     * <code>optional string placedUnmappedSequence = 40;</code>
+     */
+    java.lang.String getPlacedUnmappedSequence();
+    /**
+     * <pre>
+     *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+     *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+     *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+     *from the reads file.
+     * </pre>
+     *
+     * <code>optional string placedUnmappedSequence = 40;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlacedUnmappedSequenceBytes();
+
+    /**
+     * <pre>
+     *Quality scores for a read placed near this entry.  Phred units.
+     * </pre>
+     *
+     * <code>optional bytes placedUnmappedQuality = 41;</code>
+     */
     boolean hasPlacedUnmappedQuality();
+    /**
+     * <pre>
+     *Quality scores for a read placed near this entry.  Phred units.
+     * </pre>
+     *
+     * <code>optional bytes placedUnmappedQuality = 41;</code>
+     */
     com.google.protobuf.ByteString getPlacedUnmappedQuality();
-    
-    // optional string readName = 42;
+
+    /**
+     * <pre>
+     *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+     * </pre>
+     *
+     * <code>optional string readName = 42;</code>
+     */
     boolean hasReadName();
-    String getReadName();
+    /**
+     * <pre>
+     *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+     * </pre>
+     *
+     * <code>optional string readName = 42;</code>
+     */
+    java.lang.String getReadName();
+    /**
+     * <pre>
+     *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+     * </pre>
+     *
+     * <code>optional string readName = 42;</code>
+     */
+    com.google.protobuf.ByteString
+        getReadNameBytes();
   }
-  public static final class AlignmentEntry extends
-      com.google.protobuf.GeneratedMessage
-      implements AlignmentEntryOrBuilder {
+  /**
+   * Protobuf type {@code goby.AlignmentEntry}
+   */
+  public  static final class AlignmentEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.AlignmentEntry)
+      AlignmentEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AlignmentEntry.newBuilder() to construct.
-    private AlignmentEntry(Builder builder) {
+    private AlignmentEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AlignmentEntry(boolean noInit) {}
-    
-    private static final AlignmentEntry defaultInstance;
-    public static AlignmentEntry getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public AlignmentEntry getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional uint32 multiplicity = 7;
-    public static final int MULTIPLICITY_FIELD_NUMBER = 7;
-    private int multiplicity_;
-    public boolean hasMultiplicity() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getMultiplicity() {
-      return multiplicity_;
-    }
-    
-    // optional uint32 query_index = 1;
-    public static final int QUERY_INDEX_FIELD_NUMBER = 1;
-    private int queryIndex_;
-    public boolean hasQueryIndex() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public int getQueryIndex() {
-      return queryIndex_;
-    }
-    
-    // optional uint32 target_index = 2;
-    public static final int TARGET_INDEX_FIELD_NUMBER = 2;
-    private int targetIndex_;
-    public boolean hasTargetIndex() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getTargetIndex() {
-      return targetIndex_;
-    }
-    
-    // optional uint32 position = 3;
-    public static final int POSITION_FIELD_NUMBER = 3;
-    private int position_;
-    public boolean hasPosition() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public int getPosition() {
-      return position_;
-    }
-    
-    // optional bool matching_reverse_strand = 6;
-    public static final int MATCHING_REVERSE_STRAND_FIELD_NUMBER = 6;
-    private boolean matchingReverseStrand_;
-    public boolean hasMatchingReverseStrand() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public boolean getMatchingReverseStrand() {
-      return matchingReverseStrand_;
-    }
-    
-    // optional uint32 query_position = 5;
-    public static final int QUERY_POSITION_FIELD_NUMBER = 5;
-    private int queryPosition_;
-    public boolean hasQueryPosition() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public int getQueryPosition() {
-      return queryPosition_;
-    }
-    
-    // optional float score = 4;
-    public static final int SCORE_FIELD_NUMBER = 4;
-    private float score_;
-    public boolean hasScore() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    public float getScore() {
-      return score_;
-    }
-    
-    // optional uint32 number_of_mismatches = 8;
-    public static final int NUMBER_OF_MISMATCHES_FIELD_NUMBER = 8;
-    private int numberOfMismatches_;
-    public boolean hasNumberOfMismatches() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    public int getNumberOfMismatches() {
-      return numberOfMismatches_;
-    }
-    
-    // optional uint32 number_of_indels = 9;
-    public static final int NUMBER_OF_INDELS_FIELD_NUMBER = 9;
-    private int numberOfIndels_;
-    public boolean hasNumberOfIndels() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    public int getNumberOfIndels() {
-      return numberOfIndels_;
-    }
-    
-    // optional uint32 query_aligned_length = 11;
-    public static final int QUERY_ALIGNED_LENGTH_FIELD_NUMBER = 11;
-    private int queryAlignedLength_;
-    public boolean hasQueryAlignedLength() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    public int getQueryAlignedLength() {
-      return queryAlignedLength_;
-    }
-    
-    // optional uint32 target_aligned_length = 12;
-    public static final int TARGET_ALIGNED_LENGTH_FIELD_NUMBER = 12;
-    private int targetAlignedLength_;
-    public boolean hasTargetAlignedLength() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
-    }
-    public int getTargetAlignedLength() {
-      return targetAlignedLength_;
-    }
-    
-    // repeated .goby.SequenceVariation sequence_variations = 13;
-    public static final int SEQUENCE_VARIATIONS_FIELD_NUMBER = 13;
-    private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> sequenceVariations_;
-    public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> getSequenceVariationsList() {
-      return sequenceVariations_;
-    }
-    public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder> 
-        getSequenceVariationsOrBuilderList() {
-      return sequenceVariations_;
-    }
-    public int getSequenceVariationsCount() {
-      return sequenceVariations_.size();
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getSequenceVariations(int index) {
-      return sequenceVariations_.get(index);
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder getSequenceVariationsOrBuilder(
-        int index) {
-      return sequenceVariations_.get(index);
-    }
-    
-    // optional uint32 query_length = 10;
-    public static final int QUERY_LENGTH_FIELD_NUMBER = 10;
-    private int queryLength_;
-    public boolean hasQueryLength() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
-    }
-    public int getQueryLength() {
-      return queryLength_;
-    }
-    
-    // optional int32 mapping_quality = 14;
-    public static final int MAPPING_QUALITY_FIELD_NUMBER = 14;
-    private int mappingQuality_;
-    public boolean hasMappingQuality() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
-    }
-    public int getMappingQuality() {
-      return mappingQuality_;
-    }
-    
-    // optional uint32 pair_flags = 15;
-    public static final int PAIR_FLAGS_FIELD_NUMBER = 15;
-    private int pairFlags_;
-    public boolean hasPairFlags() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
-    }
-    public int getPairFlags() {
-      return pairFlags_;
-    }
-    
-    // optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;
-    public static final int PAIR_ALIGNMENT_LINK_FIELD_NUMBER = 16;
-    private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry pairAlignmentLink_;
-    public boolean hasPairAlignmentLink() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getPairAlignmentLink() {
-      return pairAlignmentLink_;
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getPairAlignmentLinkOrBuilder() {
-      return pairAlignmentLink_;
-    }
-    
-    // optional uint32 fragment_index = 17;
-    public static final int FRAGMENT_INDEX_FIELD_NUMBER = 17;
-    private int fragmentIndex_;
-    public boolean hasFragmentIndex() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
-    }
-    public int getFragmentIndex() {
-      return fragmentIndex_;
-    }
-    
-    // optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;
-    public static final int SPLICED_FORWARD_ALIGNMENT_LINK_FIELD_NUMBER = 18;
-    private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedForwardAlignmentLink_;
-    public boolean hasSplicedForwardAlignmentLink() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedForwardAlignmentLink() {
-      return splicedForwardAlignmentLink_;
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedForwardAlignmentLinkOrBuilder() {
-      return splicedForwardAlignmentLink_;
-    }
-    
-    // optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;
-    public static final int SPLICED_BACKWARD_ALIGNMENT_LINK_FIELD_NUMBER = 22;
-    private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedBackwardAlignmentLink_;
-    public boolean hasSplicedBackwardAlignmentLink() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedBackwardAlignmentLink() {
-      return splicedBackwardAlignmentLink_;
-    }
-    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedBackwardAlignmentLinkOrBuilder() {
-      return splicedBackwardAlignmentLink_;
-    }
-    
-    // optional uint32 spliced_flags = 19;
-    public static final int SPLICED_FLAGS_FIELD_NUMBER = 19;
-    private int splicedFlags_;
-    public boolean hasSplicedFlags() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
-    }
-    public int getSplicedFlags() {
-      return splicedFlags_;
-    }
-    
-    // optional sint32 insert_size = 20;
-    public static final int INSERT_SIZE_FIELD_NUMBER = 20;
-    private int insertSize_;
-    public boolean hasInsertSize() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
-    }
-    public int getInsertSize() {
-      return insertSize_;
-    }
-    
-    // optional uint32 sample_index = 21;
-    public static final int SAMPLE_INDEX_FIELD_NUMBER = 21;
-    private int sampleIndex_;
-    public boolean hasSampleIndex() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
-    }
-    public int getSampleIndex() {
-      return sampleIndex_;
-    }
-    
-    // optional uint32 query_index_occurrences = 25;
-    public static final int QUERY_INDEX_OCCURRENCES_FIELD_NUMBER = 25;
-    private int queryIndexOccurrences_;
-    public boolean hasQueryIndexOccurrences() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
-    }
-    public int getQueryIndexOccurrences() {
-      return queryIndexOccurrences_;
-    }
-    
-    // optional uint32 ambiguity = 27;
-    public static final int AMBIGUITY_FIELD_NUMBER = 27;
-    private int ambiguity_;
-    public boolean hasAmbiguity() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
-    }
-    public int getAmbiguity() {
-      return ambiguity_;
-    }
-    
-    // repeated string bam_attributes = 50;
-    public static final int BAM_ATTRIBUTES_FIELD_NUMBER = 50;
-    private com.google.protobuf.LazyStringList bamAttributes_;
-    public java.util.List<String>
-        getBamAttributesList() {
-      return bamAttributes_;
-    }
-    public int getBamAttributesCount() {
-      return bamAttributes_.size();
-    }
-    public String getBamAttributes(int index) {
-      return bamAttributes_.get(index);
-    }
-    
-    // optional bytes read_quality_scores = 55;
-    public static final int READ_QUALITY_SCORES_FIELD_NUMBER = 55;
-    private com.google.protobuf.ByteString readQualityScores_;
-    public boolean hasReadQualityScores() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
-    }
-    public com.google.protobuf.ByteString getReadQualityScores() {
-      return readQualityScores_;
-    }
-    
-    // optional uint32 read_origin_index = 26;
-    public static final int READ_ORIGIN_INDEX_FIELD_NUMBER = 26;
-    private int readOriginIndex_;
-    public boolean hasReadOriginIndex() {
-      return ((bitField0_ & 0x01000000) == 0x01000000);
-    }
-    public int getReadOriginIndex() {
-      return readOriginIndex_;
-    }
-    
-    // optional string softClippedBasesLeft = 30;
-    public static final int SOFTCLIPPEDBASESLEFT_FIELD_NUMBER = 30;
-    private java.lang.Object softClippedBasesLeft_;
-    public boolean hasSoftClippedBasesLeft() {
-      return ((bitField0_ & 0x02000000) == 0x02000000);
-    }
-    public String getSoftClippedBasesLeft() {
-      java.lang.Object ref = softClippedBasesLeft_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          softClippedBasesLeft_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getSoftClippedBasesLeftBytes() {
-      java.lang.Object ref = softClippedBasesLeft_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        softClippedBasesLeft_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string softClippedBasesRight = 31;
-    public static final int SOFTCLIPPEDBASESRIGHT_FIELD_NUMBER = 31;
-    private java.lang.Object softClippedBasesRight_;
-    public boolean hasSoftClippedBasesRight() {
-      return ((bitField0_ & 0x04000000) == 0x04000000);
-    }
-    public String getSoftClippedBasesRight() {
-      java.lang.Object ref = softClippedBasesRight_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          softClippedBasesRight_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getSoftClippedBasesRightBytes() {
-      java.lang.Object ref = softClippedBasesRight_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        softClippedBasesRight_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional bytes softClippedQualityLeft = 32;
-    public static final int SOFTCLIPPEDQUALITYLEFT_FIELD_NUMBER = 32;
-    private com.google.protobuf.ByteString softClippedQualityLeft_;
-    public boolean hasSoftClippedQualityLeft() {
-      return ((bitField0_ & 0x08000000) == 0x08000000);
-    }
-    public com.google.protobuf.ByteString getSoftClippedQualityLeft() {
-      return softClippedQualityLeft_;
-    }
-    
-    // optional bytes softClippedQualityRight = 33;
-    public static final int SOFTCLIPPEDQUALITYRIGHT_FIELD_NUMBER = 33;
-    private com.google.protobuf.ByteString softClippedQualityRight_;
-    public boolean hasSoftClippedQualityRight() {
-      return ((bitField0_ & 0x10000000) == 0x10000000);
-    }
-    public com.google.protobuf.ByteString getSoftClippedQualityRight() {
-      return softClippedQualityRight_;
-    }
-    
-    // optional string placedUnmappedSequence = 40;
-    public static final int PLACEDUNMAPPEDSEQUENCE_FIELD_NUMBER = 40;
-    private java.lang.Object placedUnmappedSequence_;
-    public boolean hasPlacedUnmappedSequence() {
-      return ((bitField0_ & 0x20000000) == 0x20000000);
-    }
-    public String getPlacedUnmappedSequence() {
-      java.lang.Object ref = placedUnmappedSequence_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          placedUnmappedSequence_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getPlacedUnmappedSequenceBytes() {
-      java.lang.Object ref = placedUnmappedSequence_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        placedUnmappedSequence_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional bytes placedUnmappedQuality = 41;
-    public static final int PLACEDUNMAPPEDQUALITY_FIELD_NUMBER = 41;
-    private com.google.protobuf.ByteString placedUnmappedQuality_;
-    public boolean hasPlacedUnmappedQuality() {
-      return ((bitField0_ & 0x40000000) == 0x40000000);
-    }
-    public com.google.protobuf.ByteString getPlacedUnmappedQuality() {
-      return placedUnmappedQuality_;
-    }
-    
-    // optional string readName = 42;
-    public static final int READNAME_FIELD_NUMBER = 42;
-    private java.lang.Object readName_;
-    public boolean hasReadName() {
-      return ((bitField0_ & 0x80000000) == 0x80000000);
-    }
-    public String getReadName() {
-      java.lang.Object ref = readName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          readName_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getReadNameBytes() {
-      java.lang.Object ref = readName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        readName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    private void initFields() {
-      multiplicity_ = 0;
-      queryIndex_ = 0;
-      targetIndex_ = 0;
-      position_ = 0;
-      matchingReverseStrand_ = false;
-      queryPosition_ = 0;
-      score_ = 0F;
-      numberOfMismatches_ = 0;
-      numberOfIndels_ = 0;
-      queryAlignedLength_ = 0;
-      targetAlignedLength_ = 0;
+    private AlignmentEntry() {
       sequenceVariations_ = java.util.Collections.emptyList();
-      queryLength_ = 0;
-      mappingQuality_ = 0;
-      pairFlags_ = 0;
-      pairAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      fragmentIndex_ = 0;
-      splicedForwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      splicedBackwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      splicedFlags_ = 0;
-      insertSize_ = 0;
-      sampleIndex_ = 0;
-      queryIndexOccurrences_ = 0;
-      ambiguity_ = 0;
       bamAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       readQualityScores_ = com.google.protobuf.ByteString.EMPTY;
-      readOriginIndex_ = 0;
       softClippedBasesLeft_ = "";
       softClippedBasesRight_ = "";
       softClippedQualityLeft_ = com.google.protobuf.ByteString.EMPTY;
@@ -1225,174 +1700,1623 @@ public final class Alignments {
       placedUnmappedQuality_ = com.google.protobuf.ByteString.EMPTY;
       readName_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AlignmentEntry();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlignmentEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000002;
+              queryIndex_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000004;
+              targetIndex_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000008;
+              position_ = input.readUInt32();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000040;
+              score_ = input.readFloat();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000020;
+              queryPosition_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000010;
+              matchingReverseStrand_ = input.readBool();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000001;
+              multiplicity_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000080;
+              numberOfMismatches_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+              bitField0_ |= 0x00000100;
+              numberOfIndels_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000800;
+              queryLength_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000200;
+              queryAlignedLength_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              bitField0_ |= 0x00000400;
+              targetAlignedLength_ = input.readUInt32();
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+                sequenceVariations_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              sequenceVariations_.add(
+                  input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.PARSER, extensionRegistry));
+              break;
+            }
+            case 112: {
+              bitField0_ |= 0x00001000;
+              mappingQuality_ = input.readInt32();
+              break;
+            }
+            case 120: {
+              bitField0_ |= 0x00002000;
+              pairFlags_ = input.readUInt32();
+              break;
+            }
+            case 130: {
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder subBuilder = null;
+              if (((bitField0_ & 0x00004000) != 0)) {
+                subBuilder = pairAlignmentLink_.toBuilder();
+              }
+              pairAlignmentLink_ = input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pairAlignmentLink_);
+                pairAlignmentLink_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00004000;
+              break;
+            }
+            case 136: {
+              bitField0_ |= 0x00008000;
+              fragmentIndex_ = input.readUInt32();
+              break;
+            }
+            case 146: {
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder subBuilder = null;
+              if (((bitField0_ & 0x00010000) != 0)) {
+                subBuilder = splicedForwardAlignmentLink_.toBuilder();
+              }
+              splicedForwardAlignmentLink_ = input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(splicedForwardAlignmentLink_);
+                splicedForwardAlignmentLink_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00010000;
+              break;
+            }
+            case 152: {
+              bitField0_ |= 0x00040000;
+              splicedFlags_ = input.readUInt32();
+              break;
+            }
+            case 160: {
+              bitField0_ |= 0x00080000;
+              insertSize_ = input.readSInt32();
+              break;
+            }
+            case 168: {
+              bitField0_ |= 0x00100000;
+              sampleIndex_ = input.readUInt32();
+              break;
+            }
+            case 178: {
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder subBuilder = null;
+              if (((bitField0_ & 0x00020000) != 0)) {
+                subBuilder = splicedBackwardAlignmentLink_.toBuilder();
+              }
+              splicedBackwardAlignmentLink_ = input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(splicedBackwardAlignmentLink_);
+                splicedBackwardAlignmentLink_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00020000;
+              break;
+            }
+            case 200: {
+              bitField0_ |= 0x00200000;
+              queryIndexOccurrences_ = input.readUInt32();
+              break;
+            }
+            case 208: {
+              bitField0_ |= 0x01000000;
+              readOriginIndex_ = input.readUInt32();
+              break;
+            }
+            case 216: {
+              bitField0_ |= 0x00400000;
+              ambiguity_ = input.readUInt32();
+              break;
+            }
+            case 242: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x02000000;
+              softClippedBasesLeft_ = bs;
+              break;
+            }
+            case 250: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x04000000;
+              softClippedBasesRight_ = bs;
+              break;
+            }
+            case 258: {
+              bitField0_ |= 0x08000000;
+              softClippedQualityLeft_ = input.readBytes();
+              break;
+            }
+            case 266: {
+              bitField0_ |= 0x10000000;
+              softClippedQualityRight_ = input.readBytes();
+              break;
+            }
+            case 322: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x20000000;
+              placedUnmappedSequence_ = bs;
+              break;
+            }
+            case 330: {
+              bitField0_ |= 0x40000000;
+              placedUnmappedQuality_ = input.readBytes();
+              break;
+            }
+            case 338: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x80000000;
+              readName_ = bs;
+              break;
+            }
+            case 402: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x01000000) != 0)) {
+                bamAttributes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x01000000;
+              }
+              bamAttributes_.add(bs);
+              break;
+            }
+            case 442: {
+              bitField0_ |= 0x00800000;
+              readQualityScores_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000800) != 0)) {
+          sequenceVariations_ = java.util.Collections.unmodifiableList(sequenceVariations_);
+        }
+        if (((mutable_bitField0_ & 0x01000000) != 0)) {
+          bamAttributes_ = bamAttributes_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MULTIPLICITY_FIELD_NUMBER = 7;
+    private int multiplicity_;
+    /**
+     * <pre>
+     * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+     *query redundancy had not been removed by read factorization.
+     * </pre>
+     *
+     * <code>optional uint32 multiplicity = 7;</code>
+     */
+    public boolean hasMultiplicity() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+     *query redundancy had not been removed by read factorization.
+     * </pre>
+     *
+     * <code>optional uint32 multiplicity = 7;</code>
+     */
+    public int getMultiplicity() {
+      return multiplicity_;
+    }
+
+    public static final int QUERY_INDEX_FIELD_NUMBER = 1;
+    private int queryIndex_;
+    /**
+     * <pre>
+     * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+     *alignment runs are made with the same set of query sequences, equality of query index means that the query
+     *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index = 1;</code>
+     */
+    public boolean hasQueryIndex() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+     *alignment runs are made with the same set of query sequences, equality of query index means that the query
+     *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index = 1;</code>
+     */
+    public int getQueryIndex() {
+      return queryIndex_;
+    }
+
+    public static final int TARGET_INDEX_FIELD_NUMBER = 2;
+    private int targetIndex_;
+    /**
+     * <pre>
+     * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+     *alignment runs are made with the same set of target sequences, equality of target index means that the target
+     *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 2;</code>
+     */
+    public boolean hasTargetIndex() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+     *alignment runs are made with the same set of target sequences, equality of target index means that the target
+     *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 2;</code>
+     */
+    public int getTargetIndex() {
+      return targetIndex_;
+    }
+
+    public static final int POSITION_FIELD_NUMBER = 3;
+    private int position_;
+    /**
+     * <pre>
+     *The position on the target of the start of the alignment between the query and the target.
+     *In the following example, position is 3 because the third base of the query 'C' was aligned with
+     *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+     *alignment can start at a mismatch if it was so constructed by the aligner.
+     *0123456789
+     *AAAAGTCAAA  target
+     *ctCGTC     query
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
+    public boolean hasPosition() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     *The position on the target of the start of the alignment between the query and the target.
+     *In the following example, position is 3 because the third base of the query 'C' was aligned with
+     *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+     *alignment can start at a mismatch if it was so constructed by the aligner.
+     *0123456789
+     *AAAAGTCAAA  target
+     *ctCGTC     query
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
+    public int getPosition() {
+      return position_;
+    }
+
+    public static final int MATCHING_REVERSE_STRAND_FIELD_NUMBER = 6;
+    private boolean matchingReverseStrand_;
+    /**
+     * <pre>
+     *True when the query matches the target on the reverse strand
+     * </pre>
+     *
+     * <code>optional bool matching_reverse_strand = 6;</code>
+     */
+    public boolean hasMatchingReverseStrand() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     *True when the query matches the target on the reverse strand
+     * </pre>
+     *
+     * <code>optional bool matching_reverse_strand = 6;</code>
+     */
+    public boolean getMatchingReverseStrand() {
+      return matchingReverseStrand_;
+    }
+
+    public static final int QUERY_POSITION_FIELD_NUMBER = 5;
+    private int queryPosition_;
+    /**
+     * <pre>
+     *The position on the query where the alignment starts. This value is different from zero
+     *when some bases/residues of the query could not be aligned with the target.
+     *TODO: Rename this to left_trim. Add a right_trim property.
+     * </pre>
+     *
+     * <code>optional uint32 query_position = 5;</code>
+     */
+    public boolean hasQueryPosition() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     *The position on the query where the alignment starts. This value is different from zero
+     *when some bases/residues of the query could not be aligned with the target.
+     *TODO: Rename this to left_trim. Add a right_trim property.
+     * </pre>
+     *
+     * <code>optional uint32 query_position = 5;</code>
+     */
+    public int getQueryPosition() {
+      return queryPosition_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private float score_;
+    /**
+     * <pre>
+     *The score of the alignment, where larger scores indicate better matches between the query and the target.
+     *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+     *-(#mismatches(query,target)).
+     * </pre>
+     *
+     * <code>optional float score = 4;</code>
+     */
+    public boolean hasScore() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     *The score of the alignment, where larger scores indicate better matches between the query and the target.
+     *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+     *-(#mismatches(query,target)).
+     * </pre>
+     *
+     * <code>optional float score = 4;</code>
+     */
+    public float getScore() {
+      return score_;
+    }
+
+    public static final int NUMBER_OF_MISMATCHES_FIELD_NUMBER = 8;
+    private int numberOfMismatches_;
+    /**
+     * <pre>
+     *Number of bases/residues that differ in the alignment between query and target sequences.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_mismatches = 8;</code>
+     */
+    public boolean hasNumberOfMismatches() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     *Number of bases/residues that differ in the alignment between query and target sequences.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_mismatches = 8;</code>
+     */
+    public int getNumberOfMismatches() {
+      return numberOfMismatches_;
+    }
+
+    public static final int NUMBER_OF_INDELS_FIELD_NUMBER = 9;
+    private int numberOfIndels_;
+    /**
+     * <pre>
+     *Cumulative number of insertions and/or deletions present in the alignment.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_indels = 9;</code>
+     */
+    public boolean hasNumberOfIndels() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     *Cumulative number of insertions and/or deletions present in the alignment.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_indels = 9;</code>
+     */
+    public int getNumberOfIndels() {
+      return numberOfIndels_;
+    }
+
+    public static final int QUERY_ALIGNED_LENGTH_FIELD_NUMBER = 11;
+    private int queryAlignedLength_;
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+     *less or equal to query_length.
+     * </pre>
+     *
+     * <code>optional uint32 query_aligned_length = 11;</code>
+     */
+    public boolean hasQueryAlignedLength() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+     *less or equal to query_length.
+     * </pre>
+     *
+     * <code>optional uint32 query_aligned_length = 11;</code>
+     */
+    public int getQueryAlignedLength() {
+      return queryAlignedLength_;
+    }
+
+    public static final int TARGET_ALIGNED_LENGTH_FIELD_NUMBER = 12;
+    private int targetAlignedLength_;
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the target.
+     * </pre>
+     *
+     * <code>optional uint32 target_aligned_length = 12;</code>
+     */
+    public boolean hasTargetAlignedLength() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <pre>
+     *Number of bases that have been aligned for the target.
+     * </pre>
+     *
+     * <code>optional uint32 target_aligned_length = 12;</code>
+     */
+    public int getTargetAlignedLength() {
+      return targetAlignedLength_;
+    }
+
+    public static final int SEQUENCE_VARIATIONS_FIELD_NUMBER = 13;
+    private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> sequenceVariations_;
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
+    public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> getSequenceVariationsList() {
+      return sequenceVariations_;
+    }
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
+    public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder> 
+        getSequenceVariationsOrBuilderList() {
+      return sequenceVariations_;
+    }
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
+    public int getSequenceVariationsCount() {
+      return sequenceVariations_.size();
+    }
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getSequenceVariations(int index) {
+      return sequenceVariations_.get(index);
+    }
+    /**
+     * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder getSequenceVariationsOrBuilder(
+        int index) {
+      return sequenceVariations_.get(index);
+    }
+
+    public static final int QUERY_LENGTH_FIELD_NUMBER = 10;
+    private int queryLength_;
+    /**
+     * <pre>
+     *Length of the query sequence.
+     * </pre>
+     *
+     * <code>optional uint32 query_length = 10;</code>
+     */
+    public boolean hasQueryLength() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     *Length of the query sequence.
+     * </pre>
+     *
+     * <code>optional uint32 query_length = 10;</code>
+     */
+    public int getQueryLength() {
+      return queryLength_;
+    }
+
+    public static final int MAPPING_QUALITY_FIELD_NUMBER = 14;
+    private int mappingQuality_;
+    /**
+     * <pre>
+     *Mapping Quality (phred-scaled posterior probability that the mapping
+     *position of this read is incorrect). Please note that different aligners
+     *may estimate mapping quality with different approaches, resulting in aligner
+     *specific differences in the distribution of mapping quality. It is recommended
+     *to condition mapping quality on the aligner that produced the specific alignment
+     *being processed. See aligner name and version in the header.
+     *Note that the following description is preliminary. A clear specification is
+     *needed:
+     *The mapping quality should be proportional to the
+     *log of the probability that the given mapping is the "correct" one.
+     *So if there are five equally good mappings of a read to the genome,
+     *the probability of each would be 0.2, and the mapping quality would be
+     *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+     *say a 1e-4 of it being wrong, then the mapping quality would be
+     *-10*log10(1e-4) = 40.
+     * </pre>
+     *
+     * <code>optional int32 mapping_quality = 14;</code>
+     */
+    public boolean hasMappingQuality() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <pre>
+     *Mapping Quality (phred-scaled posterior probability that the mapping
+     *position of this read is incorrect). Please note that different aligners
+     *may estimate mapping quality with different approaches, resulting in aligner
+     *specific differences in the distribution of mapping quality. It is recommended
+     *to condition mapping quality on the aligner that produced the specific alignment
+     *being processed. See aligner name and version in the header.
+     *Note that the following description is preliminary. A clear specification is
+     *needed:
+     *The mapping quality should be proportional to the
+     *log of the probability that the given mapping is the "correct" one.
+     *So if there are five equally good mappings of a read to the genome,
+     *the probability of each would be 0.2, and the mapping quality would be
+     *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+     *say a 1e-4 of it being wrong, then the mapping quality would be
+     *-10*log10(1e-4) = 40.
+     * </pre>
+     *
+     * <code>optional int32 mapping_quality = 14;</code>
+     */
+    public int getMappingQuality() {
+      return mappingQuality_;
+    }
+
+    public static final int PAIR_FLAGS_FIELD_NUMBER = 15;
+    private int pairFlags_;
+    /**
+     * <pre>
+     *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+     *000000001    paired
+     *000000010    properly paired
+     *000000100    read unmapped
+     *000001000    mate unmapped
+     *000010000    read reverse strand
+     *000100000    mate reverse strand
+     *001000000    first in pair
+     *010000000    second in pair
+     *100000000    not primary alignment
+     * </pre>
+     *
+     * <code>optional uint32 pair_flags = 15;</code>
+     */
+    public boolean hasPairFlags() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <pre>
+     *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+     *000000001    paired
+     *000000010    properly paired
+     *000000100    read unmapped
+     *000001000    mate unmapped
+     *000010000    read reverse strand
+     *000100000    mate reverse strand
+     *001000000    first in pair
+     *010000000    second in pair
+     *100000000    not primary alignment
+     * </pre>
+     *
+     * <code>optional uint32 pair_flags = 15;</code>
+     */
+    public int getPairFlags() {
+      return pairFlags_;
+    }
+
+    public static final int PAIR_ALIGNMENT_LINK_FIELD_NUMBER = 16;
+    private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry pairAlignmentLink_;
+    /**
+     * <pre>
+     *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+     */
+    public boolean hasPairAlignmentLink() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <pre>
+     *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getPairAlignmentLink() {
+      return pairAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : pairAlignmentLink_;
+    }
+    /**
+     * <pre>
+     *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getPairAlignmentLinkOrBuilder() {
+      return pairAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : pairAlignmentLink_;
+    }
+
+    public static final int FRAGMENT_INDEX_FIELD_NUMBER = 17;
+    private int fragmentIndex_;
+    /**
+     * <pre>
+     * Index of the read fragment from which this alignment was obtained. 
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 17;</code>
+     */
+    public boolean hasFragmentIndex() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     * <pre>
+     * Index of the read fragment from which this alignment was obtained. 
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 17;</code>
+     */
+    public int getFragmentIndex() {
+      return fragmentIndex_;
+    }
+
+    public static final int SPLICED_FORWARD_ALIGNMENT_LINK_FIELD_NUMBER = 18;
+    private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedForwardAlignmentLink_;
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+     */
+    public boolean hasSplicedForwardAlignmentLink() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedForwardAlignmentLink() {
+      return splicedForwardAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedForwardAlignmentLink_;
+    }
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedForwardAlignmentLinkOrBuilder() {
+      return splicedForwardAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedForwardAlignmentLink_;
+    }
+
+    public static final int SPLICED_BACKWARD_ALIGNMENT_LINK_FIELD_NUMBER = 22;
+    private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedBackwardAlignmentLink_;
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+     */
+    public boolean hasSplicedBackwardAlignmentLink() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedBackwardAlignmentLink() {
+      return splicedBackwardAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedBackwardAlignmentLink_;
+    }
+    /**
+     * <pre>
+     * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+     *alignment entries, one for each matching part of the read, and link these entries with
+     *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+     *AlignmentEntry in the chain of spliced alignments.
+     * </pre>
+     *
+     * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+     */
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedBackwardAlignmentLinkOrBuilder() {
+      return splicedBackwardAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedBackwardAlignmentLink_;
+    }
+
+    public static final int SPLICED_FLAGS_FIELD_NUMBER = 19;
+    private int splicedFlags_;
+    /**
+     * <pre>
+     *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+     *matching part of the read, and flag describes the spliced_alignment_link with these
+     *binary flags:
+     *000000001    normal
+     *000000010    novel
+     * </pre>
+     *
+     * <code>optional uint32 spliced_flags = 19;</code>
+     */
+    public boolean hasSplicedFlags() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     * <pre>
+     *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+     *matching part of the read, and flag describes the spliced_alignment_link with these
+     *binary flags:
+     *000000001    normal
+     *000000010    novel
+     * </pre>
+     *
+     * <code>optional uint32 spliced_flags = 19;</code>
+     */
+    public int getSplicedFlags() {
+      return splicedFlags_;
+    }
+
+    public static final int INSERT_SIZE_FIELD_NUMBER = 20;
+    private int insertSize_;
+    /**
+     * <pre>
+     * The size of the insert used when making the sequence library. This is the total size of the DNA
+     *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+     *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+     *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+     * </pre>
+     *
+     * <code>optional sint32 insert_size = 20;</code>
+     */
+    public boolean hasInsertSize() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     * <pre>
+     * The size of the insert used when making the sequence library. This is the total size of the DNA
+     *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+     *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+     *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+     * </pre>
+     *
+     * <code>optional sint32 insert_size = 20;</code>
+     */
+    public int getInsertSize() {
+      return insertSize_;
+    }
+
+    public static final int SAMPLE_INDEX_FIELD_NUMBER = 21;
+    private int sampleIndex_;
+    /**
+     * <pre>
+     *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+     *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+     *contained each entry.
+     * </pre>
+     *
+     * <code>optional uint32 sample_index = 21;</code>
+     */
+    public boolean hasSampleIndex() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     * <pre>
+     *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+     *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+     *contained each entry.
+     * </pre>
+     *
+     * <code>optional uint32 sample_index = 21;</code>
+     */
+    public int getSampleIndex() {
+      return sampleIndex_;
+    }
+
+    public static final int QUERY_INDEX_OCCURRENCES_FIELD_NUMBER = 25;
+    private int queryIndexOccurrences_;
+    /**
+     * <pre>
+     *The total number of times the query index associated with this entry occurs across the entire alignment file.
+     *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+     *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+     *query_index_occurrences is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index_occurrences = 25;</code>
+     */
+    public boolean hasQueryIndexOccurrences() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     * <pre>
+     *The total number of times the query index associated with this entry occurs across the entire alignment file.
+     *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+     *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+     *query_index_occurrences is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 query_index_occurrences = 25;</code>
+     */
+    public int getQueryIndexOccurrences() {
+      return queryIndexOccurrences_;
+    }
+
+    public static final int AMBIGUITY_FIELD_NUMBER = 27;
+    private int ambiguity_;
+    /**
+     * <pre>
+     *The total number of times the read matches the reference across the entire alignment file. This differs from
+     *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+     *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+     *entries to more smaller thresholds). When each entry has a value for this field, the header field
+     *ambiguity_stored_in_entries is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 ambiguity = 27;</code>
+     */
+    public boolean hasAmbiguity() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+    /**
+     * <pre>
+     *The total number of times the read matches the reference across the entire alignment file. This differs from
+     *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+     *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+     *entries to more smaller thresholds). When each entry has a value for this field, the header field
+     *ambiguity_stored_in_entries is true.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 ambiguity = 27;</code>
+     */
+    public int getAmbiguity() {
+      return ambiguity_;
+    }
+
+    public static final int BAM_ATTRIBUTES_FIELD_NUMBER = 50;
+    private com.google.protobuf.LazyStringList bamAttributes_;
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getBamAttributesList() {
+      return bamAttributes_;
+    }
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    public int getBamAttributesCount() {
+      return bamAttributes_.size();
+    }
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    public java.lang.String getBamAttributes(int index) {
+      return bamAttributes_.get(index);
+    }
+    /**
+     * <pre>
+     *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+     *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+     *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+     *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+     *the corresponding goby native fields.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>repeated string bam_attributes = 50;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBamAttributesBytes(int index) {
+      return bamAttributes_.getByteString(index);
+    }
+
+    public static final int READ_QUALITY_SCORES_FIELD_NUMBER = 55;
+    private com.google.protobuf.ByteString readQualityScores_;
+    /**
+     * <pre>
+     *Quality scores for all bases of the read.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>optional bytes read_quality_scores = 55;</code>
+     */
+    public boolean hasReadQualityScores() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     * <pre>
+     *Quality scores for all bases of the read.
+     *Since Goby 2.0.
+     * </pre>
+     *
+     * <code>optional bytes read_quality_scores = 55;</code>
+     */
+    public com.google.protobuf.ByteString getReadQualityScores() {
+      return readQualityScores_;
+    }
+
+    public static final int READ_ORIGIN_INDEX_FIELD_NUMBER = 26;
+    private int readOriginIndex_;
+    /**
+     * <pre>
+     *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+     *makes it possible to track the origin of the read (especially useful after several alignments
+     *have been merged/concatenated).
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional uint32 read_origin_index = 26;</code>
+     */
+    public boolean hasReadOriginIndex() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     * <pre>
+     *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+     *makes it possible to track the origin of the read (especially useful after several alignments
+     *have been merged/concatenated).
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional uint32 read_origin_index = 26;</code>
+     */
+    public int getReadOriginIndex() {
+      return readOriginIndex_;
+    }
+
+    public static final int SOFTCLIPPEDBASESLEFT_FIELD_NUMBER = 30;
+    private volatile java.lang.Object softClippedBasesLeft_;
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+     *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesLeft = 30;</code>
+     */
+    public boolean hasSoftClippedBasesLeft() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+     *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesLeft = 30;</code>
+     */
+    public java.lang.String getSoftClippedBasesLeft() {
+      java.lang.Object ref = softClippedBasesLeft_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          softClippedBasesLeft_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+     *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesLeft = 30;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSoftClippedBasesLeftBytes() {
+      java.lang.Object ref = softClippedBasesLeft_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        softClippedBasesLeft_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOFTCLIPPEDBASESRIGHT_FIELD_NUMBER = 31;
+    private volatile java.lang.Object softClippedBasesRight_;
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. The number of bases in softClippedBasesRight is exactly equal
+     *to  queryLength - queryAlignedLength - queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesRight = 31;</code>
+     */
+    public boolean hasSoftClippedBasesRight() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. The number of bases in softClippedBasesRight is exactly equal
+     *to  queryLength - queryAlignedLength - queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesRight = 31;</code>
+     */
+    public java.lang.String getSoftClippedBasesRight() {
+      java.lang.Object ref = softClippedBasesRight_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          softClippedBasesRight_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+     *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+     *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+     *the reference base. The number of bases in softClippedBasesRight is exactly equal
+     *to  queryLength - queryAlignedLength - queryPosition.
+     * </pre>
+     *
+     * <code>optional string softClippedBasesRight = 31;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSoftClippedBasesRightBytes() {
+      java.lang.Object ref = softClippedBasesRight_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        softClippedBasesRight_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOFTCLIPPEDQUALITYLEFT_FIELD_NUMBER = 32;
+    private com.google.protobuf.ByteString softClippedQualityLeft_;
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityLeft = 32;</code>
+     */
+    public boolean hasSoftClippedQualityLeft() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityLeft = 32;</code>
+     */
+    public com.google.protobuf.ByteString getSoftClippedQualityLeft() {
+      return softClippedQualityLeft_;
+    }
+
+    public static final int SOFTCLIPPEDQUALITYRIGHT_FIELD_NUMBER = 33;
+    private com.google.protobuf.ByteString softClippedQualityRight_;
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityRight = 33;</code>
+     */
+    public boolean hasSoftClippedQualityRight() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     * <pre>
+     *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+     * </pre>
+     *
+     * <code>optional bytes softClippedQualityRight = 33;</code>
+     */
+    public com.google.protobuf.ByteString getSoftClippedQualityRight() {
+      return softClippedQualityRight_;
+    }
+
+    public static final int PLACEDUNMAPPEDSEQUENCE_FIELD_NUMBER = 40;
+    private volatile java.lang.Object placedUnmappedSequence_;
+    /**
+     * <pre>
+     *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+     *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+     *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+     *from the reads file.
+     * </pre>
+     *
+     * <code>optional string placedUnmappedSequence = 40;</code>
+     */
+    public boolean hasPlacedUnmappedSequence() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     * <pre>
+     *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+     *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+     *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+     *from the reads file.
+     * </pre>
+     *
+     * <code>optional string placedUnmappedSequence = 40;</code>
+     */
+    public java.lang.String getPlacedUnmappedSequence() {
+      java.lang.Object ref = placedUnmappedSequence_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          placedUnmappedSequence_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+     *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+     *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+     *from the reads file.
+     * </pre>
+     *
+     * <code>optional string placedUnmappedSequence = 40;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlacedUnmappedSequenceBytes() {
+      java.lang.Object ref = placedUnmappedSequence_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        placedUnmappedSequence_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLACEDUNMAPPEDQUALITY_FIELD_NUMBER = 41;
+    private com.google.protobuf.ByteString placedUnmappedQuality_;
+    /**
+     * <pre>
+     *Quality scores for a read placed near this entry.  Phred units.
+     * </pre>
+     *
+     * <code>optional bytes placedUnmappedQuality = 41;</code>
+     */
+    public boolean hasPlacedUnmappedQuality() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+    /**
+     * <pre>
+     *Quality scores for a read placed near this entry.  Phred units.
+     * </pre>
+     *
+     * <code>optional bytes placedUnmappedQuality = 41;</code>
+     */
+    public com.google.protobuf.ByteString getPlacedUnmappedQuality() {
+      return placedUnmappedQuality_;
+    }
+
+    public static final int READNAME_FIELD_NUMBER = 42;
+    private volatile java.lang.Object readName_;
+    /**
+     * <pre>
+     *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+     * </pre>
+     *
+     * <code>optional string readName = 42;</code>
+     */
+    public boolean hasReadName() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+    /**
+     * <pre>
+     *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+     * </pre>
+     *
+     * <code>optional string readName = 42;</code>
+     */
+    public java.lang.String getReadName() {
+      java.lang.Object ref = readName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          readName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+     * </pre>
+     *
+     * <code>optional string readName = 42;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReadNameBytes() {
+      java.lang.Object ref = readName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        readName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeUInt32(1, queryIndex_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeUInt32(2, targetIndex_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeUInt32(3, position_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeFloat(4, score_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeUInt32(5, queryPosition_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeBool(6, matchingReverseStrand_);
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt32(7, multiplicity_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeUInt32(8, numberOfMismatches_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeUInt32(9, numberOfIndels_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeUInt32(10, queryLength_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         output.writeUInt32(11, queryAlignedLength_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeUInt32(12, targetAlignedLength_);
       }
       for (int i = 0; i < sequenceVariations_.size(); i++) {
         output.writeMessage(13, sequenceVariations_.get(i));
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         output.writeInt32(14, mappingQuality_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         output.writeUInt32(15, pairFlags_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeMessage(16, pairAlignmentLink_);
+      if (((bitField0_ & 0x00004000) != 0)) {
+        output.writeMessage(16, getPairAlignmentLink());
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         output.writeUInt32(17, fragmentIndex_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeMessage(18, splicedForwardAlignmentLink_);
+      if (((bitField0_ & 0x00010000) != 0)) {
+        output.writeMessage(18, getSplicedForwardAlignmentLink());
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         output.writeUInt32(19, splicedFlags_);
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         output.writeSInt32(20, insertSize_);
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00100000) != 0)) {
         output.writeUInt32(21, sampleIndex_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        output.writeMessage(22, splicedBackwardAlignmentLink_);
+      if (((bitField0_ & 0x00020000) != 0)) {
+        output.writeMessage(22, getSplicedBackwardAlignmentLink());
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00200000) != 0)) {
         output.writeUInt32(25, queryIndexOccurrences_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x01000000) != 0)) {
         output.writeUInt32(26, readOriginIndex_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00400000) != 0)) {
         output.writeUInt32(27, ambiguity_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
-        output.writeBytes(30, getSoftClippedBasesLeftBytes());
+      if (((bitField0_ & 0x02000000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 30, softClippedBasesLeft_);
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
-        output.writeBytes(31, getSoftClippedBasesRightBytes());
+      if (((bitField0_ & 0x04000000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 31, softClippedBasesRight_);
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField0_ & 0x08000000) != 0)) {
         output.writeBytes(32, softClippedQualityLeft_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x10000000) != 0)) {
         output.writeBytes(33, softClippedQualityRight_);
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
-        output.writeBytes(40, getPlacedUnmappedSequenceBytes());
+      if (((bitField0_ & 0x20000000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 40, placedUnmappedSequence_);
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField0_ & 0x40000000) != 0)) {
         output.writeBytes(41, placedUnmappedQuality_);
       }
-      if (((bitField0_ & 0x80000000) == 0x80000000)) {
-        output.writeBytes(42, getReadNameBytes());
+      if (((bitField0_ & 0x80000000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 42, readName_);
       }
       for (int i = 0; i < bamAttributes_.size(); i++) {
-        output.writeBytes(50, bamAttributes_.getByteString(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 50, bamAttributes_.getRaw(i));
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x00800000) != 0)) {
         output.writeBytes(55, readQualityScores_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, queryIndex_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, targetIndex_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, position_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, score_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, queryPosition_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, matchingReverseStrand_);
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, multiplicity_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, numberOfMismatches_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, numberOfIndels_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, queryLength_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, queryAlignedLength_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, targetAlignedLength_);
       }
@@ -1400,221 +3324,554 @@ public final class Alignments {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, sequenceVariations_.get(i));
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, mappingQuality_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, pairFlags_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, pairAlignmentLink_);
+          .computeMessageSize(16, getPairAlignmentLink());
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(17, fragmentIndex_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, splicedForwardAlignmentLink_);
+          .computeMessageSize(18, getSplicedForwardAlignmentLink());
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(19, splicedFlags_);
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeSInt32Size(20, insertSize_);
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(21, sampleIndex_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(22, splicedBackwardAlignmentLink_);
+          .computeMessageSize(22, getSplicedBackwardAlignmentLink());
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00200000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(25, queryIndexOccurrences_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x01000000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(26, readOriginIndex_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00400000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(27, ambiguity_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(30, getSoftClippedBasesLeftBytes());
+      if (((bitField0_ & 0x02000000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, softClippedBasesLeft_);
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(31, getSoftClippedBasesRightBytes());
+      if (((bitField0_ & 0x04000000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, softClippedBasesRight_);
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField0_ & 0x08000000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(32, softClippedQualityLeft_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x10000000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(33, softClippedQualityRight_);
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(40, getPlacedUnmappedSequenceBytes());
+      if (((bitField0_ & 0x20000000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40, placedUnmappedSequence_);
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField0_ & 0x40000000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(41, placedUnmappedQuality_);
       }
-      if (((bitField0_ & 0x80000000) == 0x80000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(42, getReadNameBytes());
+      if (((bitField0_ & 0x80000000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42, readName_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < bamAttributes_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(bamAttributes_.getByteString(i));
+          dataSize += computeStringSizeNoTag(bamAttributes_.getRaw(i));
         }
         size += dataSize;
         size += 2 * getBamAttributesList().size();
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x00800000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(55, readQualityScores_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry other = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry) obj;
+
+      if (hasMultiplicity() != other.hasMultiplicity()) return false;
+      if (hasMultiplicity()) {
+        if (getMultiplicity()
+            != other.getMultiplicity()) return false;
+      }
+      if (hasQueryIndex() != other.hasQueryIndex()) return false;
+      if (hasQueryIndex()) {
+        if (getQueryIndex()
+            != other.getQueryIndex()) return false;
+      }
+      if (hasTargetIndex() != other.hasTargetIndex()) return false;
+      if (hasTargetIndex()) {
+        if (getTargetIndex()
+            != other.getTargetIndex()) return false;
+      }
+      if (hasPosition() != other.hasPosition()) return false;
+      if (hasPosition()) {
+        if (getPosition()
+            != other.getPosition()) return false;
+      }
+      if (hasMatchingReverseStrand() != other.hasMatchingReverseStrand()) return false;
+      if (hasMatchingReverseStrand()) {
+        if (getMatchingReverseStrand()
+            != other.getMatchingReverseStrand()) return false;
+      }
+      if (hasQueryPosition() != other.hasQueryPosition()) return false;
+      if (hasQueryPosition()) {
+        if (getQueryPosition()
+            != other.getQueryPosition()) return false;
+      }
+      if (hasScore() != other.hasScore()) return false;
+      if (hasScore()) {
+        if (java.lang.Float.floatToIntBits(getScore())
+            != java.lang.Float.floatToIntBits(
+                other.getScore())) return false;
+      }
+      if (hasNumberOfMismatches() != other.hasNumberOfMismatches()) return false;
+      if (hasNumberOfMismatches()) {
+        if (getNumberOfMismatches()
+            != other.getNumberOfMismatches()) return false;
+      }
+      if (hasNumberOfIndels() != other.hasNumberOfIndels()) return false;
+      if (hasNumberOfIndels()) {
+        if (getNumberOfIndels()
+            != other.getNumberOfIndels()) return false;
+      }
+      if (hasQueryAlignedLength() != other.hasQueryAlignedLength()) return false;
+      if (hasQueryAlignedLength()) {
+        if (getQueryAlignedLength()
+            != other.getQueryAlignedLength()) return false;
+      }
+      if (hasTargetAlignedLength() != other.hasTargetAlignedLength()) return false;
+      if (hasTargetAlignedLength()) {
+        if (getTargetAlignedLength()
+            != other.getTargetAlignedLength()) return false;
+      }
+      if (!getSequenceVariationsList()
+          .equals(other.getSequenceVariationsList())) return false;
+      if (hasQueryLength() != other.hasQueryLength()) return false;
+      if (hasQueryLength()) {
+        if (getQueryLength()
+            != other.getQueryLength()) return false;
+      }
+      if (hasMappingQuality() != other.hasMappingQuality()) return false;
+      if (hasMappingQuality()) {
+        if (getMappingQuality()
+            != other.getMappingQuality()) return false;
+      }
+      if (hasPairFlags() != other.hasPairFlags()) return false;
+      if (hasPairFlags()) {
+        if (getPairFlags()
+            != other.getPairFlags()) return false;
+      }
+      if (hasPairAlignmentLink() != other.hasPairAlignmentLink()) return false;
+      if (hasPairAlignmentLink()) {
+        if (!getPairAlignmentLink()
+            .equals(other.getPairAlignmentLink())) return false;
+      }
+      if (hasFragmentIndex() != other.hasFragmentIndex()) return false;
+      if (hasFragmentIndex()) {
+        if (getFragmentIndex()
+            != other.getFragmentIndex()) return false;
+      }
+      if (hasSplicedForwardAlignmentLink() != other.hasSplicedForwardAlignmentLink()) return false;
+      if (hasSplicedForwardAlignmentLink()) {
+        if (!getSplicedForwardAlignmentLink()
+            .equals(other.getSplicedForwardAlignmentLink())) return false;
+      }
+      if (hasSplicedBackwardAlignmentLink() != other.hasSplicedBackwardAlignmentLink()) return false;
+      if (hasSplicedBackwardAlignmentLink()) {
+        if (!getSplicedBackwardAlignmentLink()
+            .equals(other.getSplicedBackwardAlignmentLink())) return false;
+      }
+      if (hasSplicedFlags() != other.hasSplicedFlags()) return false;
+      if (hasSplicedFlags()) {
+        if (getSplicedFlags()
+            != other.getSplicedFlags()) return false;
+      }
+      if (hasInsertSize() != other.hasInsertSize()) return false;
+      if (hasInsertSize()) {
+        if (getInsertSize()
+            != other.getInsertSize()) return false;
+      }
+      if (hasSampleIndex() != other.hasSampleIndex()) return false;
+      if (hasSampleIndex()) {
+        if (getSampleIndex()
+            != other.getSampleIndex()) return false;
+      }
+      if (hasQueryIndexOccurrences() != other.hasQueryIndexOccurrences()) return false;
+      if (hasQueryIndexOccurrences()) {
+        if (getQueryIndexOccurrences()
+            != other.getQueryIndexOccurrences()) return false;
+      }
+      if (hasAmbiguity() != other.hasAmbiguity()) return false;
+      if (hasAmbiguity()) {
+        if (getAmbiguity()
+            != other.getAmbiguity()) return false;
+      }
+      if (!getBamAttributesList()
+          .equals(other.getBamAttributesList())) return false;
+      if (hasReadQualityScores() != other.hasReadQualityScores()) return false;
+      if (hasReadQualityScores()) {
+        if (!getReadQualityScores()
+            .equals(other.getReadQualityScores())) return false;
+      }
+      if (hasReadOriginIndex() != other.hasReadOriginIndex()) return false;
+      if (hasReadOriginIndex()) {
+        if (getReadOriginIndex()
+            != other.getReadOriginIndex()) return false;
+      }
+      if (hasSoftClippedBasesLeft() != other.hasSoftClippedBasesLeft()) return false;
+      if (hasSoftClippedBasesLeft()) {
+        if (!getSoftClippedBasesLeft()
+            .equals(other.getSoftClippedBasesLeft())) return false;
+      }
+      if (hasSoftClippedBasesRight() != other.hasSoftClippedBasesRight()) return false;
+      if (hasSoftClippedBasesRight()) {
+        if (!getSoftClippedBasesRight()
+            .equals(other.getSoftClippedBasesRight())) return false;
+      }
+      if (hasSoftClippedQualityLeft() != other.hasSoftClippedQualityLeft()) return false;
+      if (hasSoftClippedQualityLeft()) {
+        if (!getSoftClippedQualityLeft()
+            .equals(other.getSoftClippedQualityLeft())) return false;
+      }
+      if (hasSoftClippedQualityRight() != other.hasSoftClippedQualityRight()) return false;
+      if (hasSoftClippedQualityRight()) {
+        if (!getSoftClippedQualityRight()
+            .equals(other.getSoftClippedQualityRight())) return false;
+      }
+      if (hasPlacedUnmappedSequence() != other.hasPlacedUnmappedSequence()) return false;
+      if (hasPlacedUnmappedSequence()) {
+        if (!getPlacedUnmappedSequence()
+            .equals(other.getPlacedUnmappedSequence())) return false;
+      }
+      if (hasPlacedUnmappedQuality() != other.hasPlacedUnmappedQuality()) return false;
+      if (hasPlacedUnmappedQuality()) {
+        if (!getPlacedUnmappedQuality()
+            .equals(other.getPlacedUnmappedQuality())) return false;
+      }
+      if (hasReadName() != other.hasReadName()) return false;
+      if (hasReadName()) {
+        if (!getReadName()
+            .equals(other.getReadName())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMultiplicity()) {
+        hash = (37 * hash) + MULTIPLICITY_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiplicity();
+      }
+      if (hasQueryIndex()) {
+        hash = (37 * hash) + QUERY_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryIndex();
+      }
+      if (hasTargetIndex()) {
+        hash = (37 * hash) + TARGET_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetIndex();
+      }
+      if (hasPosition()) {
+        hash = (37 * hash) + POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getPosition();
+      }
+      if (hasMatchingReverseStrand()) {
+        hash = (37 * hash) + MATCHING_REVERSE_STRAND_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getMatchingReverseStrand());
+      }
+      if (hasQueryPosition()) {
+        hash = (37 * hash) + QUERY_POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryPosition();
+      }
+      if (hasScore()) {
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(
+            getScore());
+      }
+      if (hasNumberOfMismatches()) {
+        hash = (37 * hash) + NUMBER_OF_MISMATCHES_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberOfMismatches();
+      }
+      if (hasNumberOfIndels()) {
+        hash = (37 * hash) + NUMBER_OF_INDELS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberOfIndels();
+      }
+      if (hasQueryAlignedLength()) {
+        hash = (37 * hash) + QUERY_ALIGNED_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryAlignedLength();
+      }
+      if (hasTargetAlignedLength()) {
+        hash = (37 * hash) + TARGET_ALIGNED_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetAlignedLength();
+      }
+      if (getSequenceVariationsCount() > 0) {
+        hash = (37 * hash) + SEQUENCE_VARIATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getSequenceVariationsList().hashCode();
+      }
+      if (hasQueryLength()) {
+        hash = (37 * hash) + QUERY_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryLength();
+      }
+      if (hasMappingQuality()) {
+        hash = (37 * hash) + MAPPING_QUALITY_FIELD_NUMBER;
+        hash = (53 * hash) + getMappingQuality();
+      }
+      if (hasPairFlags()) {
+        hash = (37 * hash) + PAIR_FLAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getPairFlags();
+      }
+      if (hasPairAlignmentLink()) {
+        hash = (37 * hash) + PAIR_ALIGNMENT_LINK_FIELD_NUMBER;
+        hash = (53 * hash) + getPairAlignmentLink().hashCode();
+      }
+      if (hasFragmentIndex()) {
+        hash = (37 * hash) + FRAGMENT_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getFragmentIndex();
+      }
+      if (hasSplicedForwardAlignmentLink()) {
+        hash = (37 * hash) + SPLICED_FORWARD_ALIGNMENT_LINK_FIELD_NUMBER;
+        hash = (53 * hash) + getSplicedForwardAlignmentLink().hashCode();
+      }
+      if (hasSplicedBackwardAlignmentLink()) {
+        hash = (37 * hash) + SPLICED_BACKWARD_ALIGNMENT_LINK_FIELD_NUMBER;
+        hash = (53 * hash) + getSplicedBackwardAlignmentLink().hashCode();
+      }
+      if (hasSplicedFlags()) {
+        hash = (37 * hash) + SPLICED_FLAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getSplicedFlags();
+      }
+      if (hasInsertSize()) {
+        hash = (37 * hash) + INSERT_SIZE_FIELD_NUMBER;
+        hash = (53 * hash) + getInsertSize();
+      }
+      if (hasSampleIndex()) {
+        hash = (37 * hash) + SAMPLE_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getSampleIndex();
+      }
+      if (hasQueryIndexOccurrences()) {
+        hash = (37 * hash) + QUERY_INDEX_OCCURRENCES_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryIndexOccurrences();
+      }
+      if (hasAmbiguity()) {
+        hash = (37 * hash) + AMBIGUITY_FIELD_NUMBER;
+        hash = (53 * hash) + getAmbiguity();
+      }
+      if (getBamAttributesCount() > 0) {
+        hash = (37 * hash) + BAM_ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getBamAttributesList().hashCode();
+      }
+      if (hasReadQualityScores()) {
+        hash = (37 * hash) + READ_QUALITY_SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + getReadQualityScores().hashCode();
+      }
+      if (hasReadOriginIndex()) {
+        hash = (37 * hash) + READ_ORIGIN_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getReadOriginIndex();
+      }
+      if (hasSoftClippedBasesLeft()) {
+        hash = (37 * hash) + SOFTCLIPPEDBASESLEFT_FIELD_NUMBER;
+        hash = (53 * hash) + getSoftClippedBasesLeft().hashCode();
+      }
+      if (hasSoftClippedBasesRight()) {
+        hash = (37 * hash) + SOFTCLIPPEDBASESRIGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getSoftClippedBasesRight().hashCode();
+      }
+      if (hasSoftClippedQualityLeft()) {
+        hash = (37 * hash) + SOFTCLIPPEDQUALITYLEFT_FIELD_NUMBER;
+        hash = (53 * hash) + getSoftClippedQualityLeft().hashCode();
+      }
+      if (hasSoftClippedQualityRight()) {
+        hash = (37 * hash) + SOFTCLIPPEDQUALITYRIGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getSoftClippedQualityRight().hashCode();
+      }
+      if (hasPlacedUnmappedSequence()) {
+        hash = (37 * hash) + PLACEDUNMAPPEDSEQUENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getPlacedUnmappedSequence().hashCode();
+      }
+      if (hasPlacedUnmappedQuality()) {
+        hash = (37 * hash) + PLACEDUNMAPPEDQUALITY_FIELD_NUMBER;
+        hash = (53 * hash) + getPlacedUnmappedQuality().hashCode();
+      }
+      if (hasReadName()) {
+        hash = (37 * hash) + READNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getReadName().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code goby.AlignmentEntry}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.AlignmentEntry)
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntryOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getSequenceVariationsFieldBuilder();
           getPairAlignmentLinkFieldBuilder();
           getSplicedForwardAlignmentLinkFieldBuilder();
           getSplicedBackwardAlignmentLinkFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         multiplicity_ = 0;
@@ -1652,7 +3909,7 @@ public final class Alignments {
         pairFlags_ = 0;
         bitField0_ = (bitField0_ & ~0x00004000);
         if (pairAlignmentLinkBuilder_ == null) {
-          pairAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+          pairAlignmentLink_ = null;
         } else {
           pairAlignmentLinkBuilder_.clear();
         }
@@ -1660,13 +3917,13 @@ public final class Alignments {
         fragmentIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00010000);
         if (splicedForwardAlignmentLinkBuilder_ == null) {
-          splicedForwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+          splicedForwardAlignmentLink_ = null;
         } else {
           splicedForwardAlignmentLinkBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00020000);
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
-          splicedBackwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+          splicedBackwardAlignmentLink_ = null;
         } else {
           splicedBackwardAlignmentLinkBuilder_.clear();
         }
@@ -1703,20 +3960,19 @@ public final class Alignments {
         bitField1_ = (bitField1_ & ~0x00000002);
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentEntry_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry build() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry result = buildPartial();
         if (!result.isInitialized()) {
@@ -1724,68 +3980,59 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry result = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry(this);
         int from_bitField0_ = bitField0_;
         int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.multiplicity_ = multiplicity_;
           to_bitField0_ |= 0x00000001;
         }
-        result.multiplicity_ = multiplicity_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.queryIndex_ = queryIndex_;
           to_bitField0_ |= 0x00000002;
         }
-        result.queryIndex_ = queryIndex_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.targetIndex_ = targetIndex_;
           to_bitField0_ |= 0x00000004;
         }
-        result.targetIndex_ = targetIndex_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.position_ = position_;
           to_bitField0_ |= 0x00000008;
         }
-        result.position_ = position_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.matchingReverseStrand_ = matchingReverseStrand_;
           to_bitField0_ |= 0x00000010;
         }
-        result.matchingReverseStrand_ = matchingReverseStrand_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.queryPosition_ = queryPosition_;
           to_bitField0_ |= 0x00000020;
         }
-        result.queryPosition_ = queryPosition_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.score_ = score_;
           to_bitField0_ |= 0x00000040;
         }
-        result.score_ = score_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.numberOfMismatches_ = numberOfMismatches_;
           to_bitField0_ |= 0x00000080;
         }
-        result.numberOfMismatches_ = numberOfMismatches_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.numberOfIndels_ = numberOfIndels_;
           to_bitField0_ |= 0x00000100;
         }
-        result.numberOfIndels_ = numberOfIndels_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.queryAlignedLength_ = queryAlignedLength_;
           to_bitField0_ |= 0x00000200;
         }
-        result.queryAlignedLength_ = queryAlignedLength_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.targetAlignedLength_ = targetAlignedLength_;
           to_bitField0_ |= 0x00000400;
         }
-        result.targetAlignedLength_ = targetAlignedLength_;
         if (sequenceVariationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          if (((bitField0_ & 0x00000800) != 0)) {
             sequenceVariations_ = java.util.Collections.unmodifiableList(sequenceVariations_);
             bitField0_ = (bitField0_ & ~0x00000800);
           }
@@ -1793,105 +4040,104 @@ public final class Alignments {
         } else {
           result.sequenceVariations_ = sequenceVariationsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.queryLength_ = queryLength_;
           to_bitField0_ |= 0x00000800;
         }
-        result.queryLength_ = queryLength_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.mappingQuality_ = mappingQuality_;
           to_bitField0_ |= 0x00001000;
         }
-        result.mappingQuality_ = mappingQuality_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.pairFlags_ = pairFlags_;
           to_bitField0_ |= 0x00002000;
         }
-        result.pairFlags_ = pairFlags_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          if (pairAlignmentLinkBuilder_ == null) {
+            result.pairAlignmentLink_ = pairAlignmentLink_;
+          } else {
+            result.pairAlignmentLink_ = pairAlignmentLinkBuilder_.build();
+          }
           to_bitField0_ |= 0x00004000;
         }
-        if (pairAlignmentLinkBuilder_ == null) {
-          result.pairAlignmentLink_ = pairAlignmentLink_;
-        } else {
-          result.pairAlignmentLink_ = pairAlignmentLinkBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.fragmentIndex_ = fragmentIndex_;
           to_bitField0_ |= 0x00008000;
         }
-        result.fragmentIndex_ = fragmentIndex_;
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          if (splicedForwardAlignmentLinkBuilder_ == null) {
+            result.splicedForwardAlignmentLink_ = splicedForwardAlignmentLink_;
+          } else {
+            result.splicedForwardAlignmentLink_ = splicedForwardAlignmentLinkBuilder_.build();
+          }
           to_bitField0_ |= 0x00010000;
         }
-        if (splicedForwardAlignmentLinkBuilder_ == null) {
-          result.splicedForwardAlignmentLink_ = splicedForwardAlignmentLink_;
-        } else {
-          result.splicedForwardAlignmentLink_ = splicedForwardAlignmentLinkBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          if (splicedBackwardAlignmentLinkBuilder_ == null) {
+            result.splicedBackwardAlignmentLink_ = splicedBackwardAlignmentLink_;
+          } else {
+            result.splicedBackwardAlignmentLink_ = splicedBackwardAlignmentLinkBuilder_.build();
+          }
           to_bitField0_ |= 0x00020000;
         }
-        if (splicedBackwardAlignmentLinkBuilder_ == null) {
-          result.splicedBackwardAlignmentLink_ = splicedBackwardAlignmentLink_;
-        } else {
-          result.splicedBackwardAlignmentLink_ = splicedBackwardAlignmentLinkBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.splicedFlags_ = splicedFlags_;
           to_bitField0_ |= 0x00040000;
         }
-        result.splicedFlags_ = splicedFlags_;
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.insertSize_ = insertSize_;
           to_bitField0_ |= 0x00080000;
         }
-        result.insertSize_ = insertSize_;
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.sampleIndex_ = sampleIndex_;
           to_bitField0_ |= 0x00100000;
         }
-        result.sampleIndex_ = sampleIndex_;
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+        if (((from_bitField0_ & 0x00400000) != 0)) {
+          result.queryIndexOccurrences_ = queryIndexOccurrences_;
           to_bitField0_ |= 0x00200000;
         }
-        result.queryIndexOccurrences_ = queryIndexOccurrences_;
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+        if (((from_bitField0_ & 0x00800000) != 0)) {
+          result.ambiguity_ = ambiguity_;
           to_bitField0_ |= 0x00400000;
         }
-        result.ambiguity_ = ambiguity_;
-        if (((bitField0_ & 0x01000000) == 0x01000000)) {
-          bamAttributes_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              bamAttributes_);
+        if (((bitField0_ & 0x01000000) != 0)) {
+          bamAttributes_ = bamAttributes_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x01000000);
         }
         result.bamAttributes_ = bamAttributes_;
-        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
+        if (((from_bitField0_ & 0x02000000) != 0)) {
           to_bitField0_ |= 0x00800000;
         }
         result.readQualityScores_ = readQualityScores_;
-        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
+        if (((from_bitField0_ & 0x04000000) != 0)) {
+          result.readOriginIndex_ = readOriginIndex_;
           to_bitField0_ |= 0x01000000;
         }
-        result.readOriginIndex_ = readOriginIndex_;
-        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+        if (((from_bitField0_ & 0x08000000) != 0)) {
           to_bitField0_ |= 0x02000000;
         }
         result.softClippedBasesLeft_ = softClippedBasesLeft_;
-        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
+        if (((from_bitField0_ & 0x10000000) != 0)) {
           to_bitField0_ |= 0x04000000;
         }
         result.softClippedBasesRight_ = softClippedBasesRight_;
-        if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
+        if (((from_bitField0_ & 0x20000000) != 0)) {
           to_bitField0_ |= 0x08000000;
         }
         result.softClippedQualityLeft_ = softClippedQualityLeft_;
-        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
+        if (((from_bitField0_ & 0x40000000) != 0)) {
           to_bitField0_ |= 0x10000000;
         }
         result.softClippedQualityRight_ = softClippedQualityRight_;
-        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
+        if (((from_bitField0_ & 0x80000000) != 0)) {
           to_bitField0_ |= 0x20000000;
         }
         result.placedUnmappedSequence_ = placedUnmappedSequence_;
-        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField1_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x40000000;
         }
         result.placedUnmappedQuality_ = placedUnmappedQuality_;
-        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField1_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x80000000;
         }
         result.readName_ = readName_;
@@ -1899,7 +4145,40 @@ public final class Alignments {
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry)other);
@@ -1908,7 +4187,7 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.getDefaultInstance()) return this;
         if (other.hasMultiplicity()) {
@@ -1963,7 +4242,7 @@ public final class Alignments {
               sequenceVariations_ = other.sequenceVariations_;
               bitField0_ = (bitField0_ & ~0x00000800);
               sequenceVariationsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSequenceVariationsFieldBuilder() : null;
             } else {
               sequenceVariationsBuilder_.addAllMessages(other.sequenceVariations_);
@@ -2023,10 +4302,14 @@ public final class Alignments {
           setReadOriginIndex(other.getReadOriginIndex());
         }
         if (other.hasSoftClippedBasesLeft()) {
-          setSoftClippedBasesLeft(other.getSoftClippedBasesLeft());
+          bitField0_ |= 0x08000000;
+          softClippedBasesLeft_ = other.softClippedBasesLeft_;
+          onChanged();
         }
         if (other.hasSoftClippedBasesRight()) {
-          setSoftClippedBasesRight(other.getSoftClippedBasesRight());
+          bitField0_ |= 0x10000000;
+          softClippedBasesRight_ = other.softClippedBasesRight_;
+          onChanged();
         }
         if (other.hasSoftClippedQualityLeft()) {
           setSoftClippedQualityLeft(other.getSoftClippedQualityLeft());
@@ -2035,479 +4318,668 @@ public final class Alignments {
           setSoftClippedQualityRight(other.getSoftClippedQualityRight());
         }
         if (other.hasPlacedUnmappedSequence()) {
-          setPlacedUnmappedSequence(other.getPlacedUnmappedSequence());
+          bitField0_ |= 0x80000000;
+          placedUnmappedSequence_ = other.placedUnmappedSequence_;
+          onChanged();
         }
         if (other.hasPlacedUnmappedQuality()) {
           setPlacedUnmappedQuality(other.getPlacedUnmappedQuality());
         }
         if (other.hasReadName()) {
-          setReadName(other.getReadName());
+          bitField1_ |= 0x00000002;
+          readName_ = other.readName_;
+          onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000002;
-              queryIndex_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000004;
-              targetIndex_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000008;
-              position_ = input.readUInt32();
-              break;
-            }
-            case 37: {
-              bitField0_ |= 0x00000040;
-              score_ = input.readFloat();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000020;
-              queryPosition_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000010;
-              matchingReverseStrand_ = input.readBool();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000001;
-              multiplicity_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              bitField0_ |= 0x00000080;
-              numberOfMismatches_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000100;
-              numberOfIndels_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00001000;
-              queryLength_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000200;
-              queryAlignedLength_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              bitField0_ |= 0x00000400;
-              targetAlignedLength_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addSequenceVariations(subBuilder.buildPartial());
-              break;
-            }
-            case 112: {
-              bitField0_ |= 0x00002000;
-              mappingQuality_ = input.readInt32();
-              break;
-            }
-            case 120: {
-              bitField0_ |= 0x00004000;
-              pairFlags_ = input.readUInt32();
-              break;
-            }
-            case 130: {
-              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder();
-              if (hasPairAlignmentLink()) {
-                subBuilder.mergeFrom(getPairAlignmentLink());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setPairAlignmentLink(subBuilder.buildPartial());
-              break;
-            }
-            case 136: {
-              bitField0_ |= 0x00010000;
-              fragmentIndex_ = input.readUInt32();
-              break;
-            }
-            case 146: {
-              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder();
-              if (hasSplicedForwardAlignmentLink()) {
-                subBuilder.mergeFrom(getSplicedForwardAlignmentLink());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSplicedForwardAlignmentLink(subBuilder.buildPartial());
-              break;
-            }
-            case 152: {
-              bitField0_ |= 0x00080000;
-              splicedFlags_ = input.readUInt32();
-              break;
-            }
-            case 160: {
-              bitField0_ |= 0x00100000;
-              insertSize_ = input.readSInt32();
-              break;
-            }
-            case 168: {
-              bitField0_ |= 0x00200000;
-              sampleIndex_ = input.readUInt32();
-              break;
-            }
-            case 178: {
-              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder();
-              if (hasSplicedBackwardAlignmentLink()) {
-                subBuilder.mergeFrom(getSplicedBackwardAlignmentLink());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSplicedBackwardAlignmentLink(subBuilder.buildPartial());
-              break;
-            }
-            case 200: {
-              bitField0_ |= 0x00400000;
-              queryIndexOccurrences_ = input.readUInt32();
-              break;
-            }
-            case 208: {
-              bitField0_ |= 0x04000000;
-              readOriginIndex_ = input.readUInt32();
-              break;
-            }
-            case 216: {
-              bitField0_ |= 0x00800000;
-              ambiguity_ = input.readUInt32();
-              break;
-            }
-            case 242: {
-              bitField0_ |= 0x08000000;
-              softClippedBasesLeft_ = input.readBytes();
-              break;
-            }
-            case 250: {
-              bitField0_ |= 0x10000000;
-              softClippedBasesRight_ = input.readBytes();
-              break;
-            }
-            case 258: {
-              bitField0_ |= 0x20000000;
-              softClippedQualityLeft_ = input.readBytes();
-              break;
-            }
-            case 266: {
-              bitField0_ |= 0x40000000;
-              softClippedQualityRight_ = input.readBytes();
-              break;
-            }
-            case 322: {
-              bitField0_ |= 0x80000000;
-              placedUnmappedSequence_ = input.readBytes();
-              break;
-            }
-            case 330: {
-              bitField1_ |= 0x00000001;
-              placedUnmappedQuality_ = input.readBytes();
-              break;
-            }
-            case 338: {
-              bitField1_ |= 0x00000002;
-              readName_ = input.readBytes();
-              break;
-            }
-            case 402: {
-              ensureBamAttributesIsMutable();
-              bamAttributes_.add(input.readBytes());
-              break;
-            }
-            case 442: {
-              bitField0_ |= 0x02000000;
-              readQualityScores_ = input.readBytes();
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
       private int bitField1_;
-      
-      // optional uint32 multiplicity = 7;
+
       private int multiplicity_ ;
+      /**
+       * <pre>
+       * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+       *query redundancy had not been removed by read factorization.
+       * </pre>
+       *
+       * <code>optional uint32 multiplicity = 7;</code>
+       */
       public boolean hasMultiplicity() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+       *query redundancy had not been removed by read factorization.
+       * </pre>
+       *
+       * <code>optional uint32 multiplicity = 7;</code>
+       */
       public int getMultiplicity() {
         return multiplicity_;
       }
+      /**
+       * <pre>
+       * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+       *query redundancy had not been removed by read factorization.
+       * </pre>
+       *
+       * <code>optional uint32 multiplicity = 7;</code>
+       */
       public Builder setMultiplicity(int value) {
         bitField0_ |= 0x00000001;
         multiplicity_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * Multiplicity of this entry. The number of times this  alignment entry would be repeated exactly the same if
+       *query redundancy had not been removed by read factorization.
+       * </pre>
+       *
+       * <code>optional uint32 multiplicity = 7;</code>
+       */
       public Builder clearMultiplicity() {
         bitField0_ = (bitField0_ & ~0x00000001);
         multiplicity_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 query_index = 1;
+
       private int queryIndex_ ;
+      /**
+       * <pre>
+       * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+       *alignment runs are made with the same set of query sequences, equality of query index means that the query
+       *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index = 1;</code>
+       */
       public boolean hasQueryIndex() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
+      /**
+       * <pre>
+       * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+       *alignment runs are made with the same set of query sequences, equality of query index means that the query
+       *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index = 1;</code>
+       */
       public int getQueryIndex() {
         return queryIndex_;
       }
+      /**
+       * <pre>
+       * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+       *alignment runs are made with the same set of query sequences, equality of query index means that the query
+       *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index = 1;</code>
+       */
       public Builder setQueryIndex(int value) {
         bitField0_ |= 0x00000002;
         queryIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * An integer that uniquely identifies the query (a short read) in a set of alignment runs. When several
+       *alignment runs are made with the same set of query sequences, equality of query index means that the query
+       *sequences were the same. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index = 1;</code>
+       */
       public Builder clearQueryIndex() {
         bitField0_ = (bitField0_ & ~0x00000002);
         queryIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 target_index = 2;
+
       private int targetIndex_ ;
+      /**
+       * <pre>
+       * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+       *alignment runs are made with the same set of target sequences, equality of target index means that the target
+       *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 2;</code>
+       */
       public boolean hasTargetIndex() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
+      /**
+       * <pre>
+       * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+       *alignment runs are made with the same set of target sequences, equality of target index means that the target
+       *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 2;</code>
+       */
       public int getTargetIndex() {
         return targetIndex_;
       }
+      /**
+       * <pre>
+       * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+       *alignment runs are made with the same set of target sequences, equality of target index means that the target
+       *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 2;</code>
+       */
       public Builder setTargetIndex(int value) {
         bitField0_ |= 0x00000004;
         targetIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * An integer that uniquely identifies the target (e.g., a chromosome) in a set of alignment runs. When several
+       *alignment runs are made with the same set of target sequences, equality of target index means that the target
+       *sequence was the same across the runs. (Comparing integers for equality is much faster than comparing strings.)
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 2;</code>
+       */
       public Builder clearTargetIndex() {
         bitField0_ = (bitField0_ & ~0x00000004);
         targetIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 position = 3;
+
       private int position_ ;
+      /**
+       * <pre>
+       *The position on the target of the start of the alignment between the query and the target.
+       *In the following example, position is 3 because the third base of the query 'C' was aligned with
+       *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+       *alignment can start at a mismatch if it was so constructed by the aligner.
+       *0123456789
+       *AAAAGTCAAA  target
+       *ctCGTC     query
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public boolean hasPosition() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
+      /**
+       * <pre>
+       *The position on the target of the start of the alignment between the query and the target.
+       *In the following example, position is 3 because the third base of the query 'C' was aligned with
+       *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+       *alignment can start at a mismatch if it was so constructed by the aligner.
+       *0123456789
+       *AAAAGTCAAA  target
+       *ctCGTC     query
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public int getPosition() {
         return position_;
       }
+      /**
+       * <pre>
+       *The position on the target of the start of the alignment between the query and the target.
+       *In the following example, position is 3 because the third base of the query 'C' was aligned with
+       *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+       *alignment can start at a mismatch if it was so constructed by the aligner.
+       *0123456789
+       *AAAAGTCAAA  target
+       *ctCGTC     query
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public Builder setPosition(int value) {
         bitField0_ |= 0x00000008;
         position_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The position on the target of the start of the alignment between the query and the target.
+       *In the following example, position is 3 because the third base of the query 'C' was aligned with
+       *position 3 of the reference (two read bases were soft clipped: "ct"). This example shows that the
+       *alignment can start at a mismatch if it was so constructed by the aligner.
+       *0123456789
+       *AAAAGTCAAA  target
+       *ctCGTC     query
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public Builder clearPosition() {
         bitField0_ = (bitField0_ & ~0x00000008);
         position_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional bool matching_reverse_strand = 6;
+
       private boolean matchingReverseStrand_ ;
+      /**
+       * <pre>
+       *True when the query matches the target on the reverse strand
+       * </pre>
+       *
+       * <code>optional bool matching_reverse_strand = 6;</code>
+       */
       public boolean hasMatchingReverseStrand() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
+      /**
+       * <pre>
+       *True when the query matches the target on the reverse strand
+       * </pre>
+       *
+       * <code>optional bool matching_reverse_strand = 6;</code>
+       */
       public boolean getMatchingReverseStrand() {
         return matchingReverseStrand_;
       }
+      /**
+       * <pre>
+       *True when the query matches the target on the reverse strand
+       * </pre>
+       *
+       * <code>optional bool matching_reverse_strand = 6;</code>
+       */
       public Builder setMatchingReverseStrand(boolean value) {
         bitField0_ |= 0x00000010;
         matchingReverseStrand_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *True when the query matches the target on the reverse strand
+       * </pre>
+       *
+       * <code>optional bool matching_reverse_strand = 6;</code>
+       */
       public Builder clearMatchingReverseStrand() {
         bitField0_ = (bitField0_ & ~0x00000010);
         matchingReverseStrand_ = false;
         onChanged();
         return this;
       }
-      
-      // optional uint32 query_position = 5;
+
       private int queryPosition_ ;
+      /**
+       * <pre>
+       *The position on the query where the alignment starts. This value is different from zero
+       *when some bases/residues of the query could not be aligned with the target.
+       *TODO: Rename this to left_trim. Add a right_trim property.
+       * </pre>
+       *
+       * <code>optional uint32 query_position = 5;</code>
+       */
       public boolean hasQueryPosition() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
+      /**
+       * <pre>
+       *The position on the query where the alignment starts. This value is different from zero
+       *when some bases/residues of the query could not be aligned with the target.
+       *TODO: Rename this to left_trim. Add a right_trim property.
+       * </pre>
+       *
+       * <code>optional uint32 query_position = 5;</code>
+       */
       public int getQueryPosition() {
         return queryPosition_;
       }
+      /**
+       * <pre>
+       *The position on the query where the alignment starts. This value is different from zero
+       *when some bases/residues of the query could not be aligned with the target.
+       *TODO: Rename this to left_trim. Add a right_trim property.
+       * </pre>
+       *
+       * <code>optional uint32 query_position = 5;</code>
+       */
       public Builder setQueryPosition(int value) {
         bitField0_ |= 0x00000020;
         queryPosition_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The position on the query where the alignment starts. This value is different from zero
+       *when some bases/residues of the query could not be aligned with the target.
+       *TODO: Rename this to left_trim. Add a right_trim property.
+       * </pre>
+       *
+       * <code>optional uint32 query_position = 5;</code>
+       */
       public Builder clearQueryPosition() {
         bitField0_ = (bitField0_ & ~0x00000020);
         queryPosition_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional float score = 4;
+
       private float score_ ;
+      /**
+       * <pre>
+       *The score of the alignment, where larger scores indicate better matches between the query and the target.
+       *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+       *-(#mismatches(query,target)).
+       * </pre>
+       *
+       * <code>optional float score = 4;</code>
+       */
       public boolean hasScore() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
+      /**
+       * <pre>
+       *The score of the alignment, where larger scores indicate better matches between the query and the target.
+       *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+       *-(#mismatches(query,target)).
+       * </pre>
+       *
+       * <code>optional float score = 4;</code>
+       */
       public float getScore() {
         return score_;
       }
+      /**
+       * <pre>
+       *The score of the alignment, where larger scores indicate better matches between the query and the target.
+       *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+       *-(#mismatches(query,target)).
+       * </pre>
+       *
+       * <code>optional float score = 4;</code>
+       */
       public Builder setScore(float value) {
         bitField0_ |= 0x00000040;
         score_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The score of the alignment, where larger scores indicate better matches between the query and the target.
+       *If an aligner outputs only the number of mismatches between query and target, the score is taken to be
+       *-(#mismatches(query,target)).
+       * </pre>
+       *
+       * <code>optional float score = 4;</code>
+       */
       public Builder clearScore() {
         bitField0_ = (bitField0_ & ~0x00000040);
         score_ = 0F;
         onChanged();
         return this;
       }
-      
-      // optional uint32 number_of_mismatches = 8;
+
       private int numberOfMismatches_ ;
+      /**
+       * <pre>
+       *Number of bases/residues that differ in the alignment between query and target sequences.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_mismatches = 8;</code>
+       */
       public boolean hasNumberOfMismatches() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000080) != 0);
       }
+      /**
+       * <pre>
+       *Number of bases/residues that differ in the alignment between query and target sequences.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_mismatches = 8;</code>
+       */
       public int getNumberOfMismatches() {
         return numberOfMismatches_;
       }
+      /**
+       * <pre>
+       *Number of bases/residues that differ in the alignment between query and target sequences.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_mismatches = 8;</code>
+       */
       public Builder setNumberOfMismatches(int value) {
         bitField0_ |= 0x00000080;
         numberOfMismatches_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Number of bases/residues that differ in the alignment between query and target sequences.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_mismatches = 8;</code>
+       */
       public Builder clearNumberOfMismatches() {
         bitField0_ = (bitField0_ & ~0x00000080);
         numberOfMismatches_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 number_of_indels = 9;
+
       private int numberOfIndels_ ;
+      /**
+       * <pre>
+       *Cumulative number of insertions and/or deletions present in the alignment.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_indels = 9;</code>
+       */
       public boolean hasNumberOfIndels() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
+      /**
+       * <pre>
+       *Cumulative number of insertions and/or deletions present in the alignment.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_indels = 9;</code>
+       */
       public int getNumberOfIndels() {
         return numberOfIndels_;
       }
+      /**
+       * <pre>
+       *Cumulative number of insertions and/or deletions present in the alignment.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_indels = 9;</code>
+       */
       public Builder setNumberOfIndels(int value) {
         bitField0_ |= 0x00000100;
         numberOfIndels_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Cumulative number of insertions and/or deletions present in the alignment.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_indels = 9;</code>
+       */
       public Builder clearNumberOfIndels() {
         bitField0_ = (bitField0_ & ~0x00000100);
         numberOfIndels_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 query_aligned_length = 11;
+
       private int queryAlignedLength_ ;
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+       *less or equal to query_length.
+       * </pre>
+       *
+       * <code>optional uint32 query_aligned_length = 11;</code>
+       */
       public boolean hasQueryAlignedLength() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000200) != 0);
       }
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+       *less or equal to query_length.
+       * </pre>
+       *
+       * <code>optional uint32 query_aligned_length = 11;</code>
+       */
       public int getQueryAlignedLength() {
         return queryAlignedLength_;
       }
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+       *less or equal to query_length.
+       * </pre>
+       *
+       * <code>optional uint32 query_aligned_length = 11;</code>
+       */
       public Builder setQueryAlignedLength(int value) {
         bitField0_ |= 0x00000200;
         queryAlignedLength_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the query. Please note that query_aligned_length must be
+       *less or equal to query_length.
+       * </pre>
+       *
+       * <code>optional uint32 query_aligned_length = 11;</code>
+       */
       public Builder clearQueryAlignedLength() {
         bitField0_ = (bitField0_ & ~0x00000200);
         queryAlignedLength_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 target_aligned_length = 12;
+
       private int targetAlignedLength_ ;
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the target.
+       * </pre>
+       *
+       * <code>optional uint32 target_aligned_length = 12;</code>
+       */
       public boolean hasTargetAlignedLength() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the target.
+       * </pre>
+       *
+       * <code>optional uint32 target_aligned_length = 12;</code>
+       */
       public int getTargetAlignedLength() {
         return targetAlignedLength_;
       }
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the target.
+       * </pre>
+       *
+       * <code>optional uint32 target_aligned_length = 12;</code>
+       */
       public Builder setTargetAlignedLength(int value) {
         bitField0_ |= 0x00000400;
         targetAlignedLength_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Number of bases that have been aligned for the target.
+       * </pre>
+       *
+       * <code>optional uint32 target_aligned_length = 12;</code>
+       */
       public Builder clearTargetAlignedLength() {
         bitField0_ = (bitField0_ & ~0x00000400);
         targetAlignedLength_ = 0;
         onChanged();
         return this;
       }
-      
-      // repeated .goby.SequenceVariation sequence_variations = 13;
+
       private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> sequenceVariations_ =
         java.util.Collections.emptyList();
       private void ensureSequenceVariationsIsMutable() {
-        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (!((bitField0_ & 0x00000800) != 0)) {
           sequenceVariations_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation>(sequenceVariations_);
           bitField0_ |= 0x00000800;
          }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder> sequenceVariationsBuilder_;
-      
+
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> getSequenceVariationsList() {
         if (sequenceVariationsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(sequenceVariations_);
@@ -2515,6 +4987,9 @@ public final class Alignments {
           return sequenceVariationsBuilder_.getMessageList();
         }
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public int getSequenceVariationsCount() {
         if (sequenceVariationsBuilder_ == null) {
           return sequenceVariations_.size();
@@ -2522,6 +4997,9 @@ public final class Alignments {
           return sequenceVariationsBuilder_.getCount();
         }
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getSequenceVariations(int index) {
         if (sequenceVariationsBuilder_ == null) {
           return sequenceVariations_.get(index);
@@ -2529,6 +5007,9 @@ public final class Alignments {
           return sequenceVariationsBuilder_.getMessage(index);
         }
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder setSequenceVariations(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation value) {
         if (sequenceVariationsBuilder_ == null) {
@@ -2543,6 +5024,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder setSequenceVariations(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder builderForValue) {
         if (sequenceVariationsBuilder_ == null) {
@@ -2554,6 +5038,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder addSequenceVariations(edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation value) {
         if (sequenceVariationsBuilder_ == null) {
           if (value == null) {
@@ -2567,6 +5054,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder addSequenceVariations(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation value) {
         if (sequenceVariationsBuilder_ == null) {
@@ -2581,6 +5071,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder addSequenceVariations(
           edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder builderForValue) {
         if (sequenceVariationsBuilder_ == null) {
@@ -2592,6 +5085,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder addSequenceVariations(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder builderForValue) {
         if (sequenceVariationsBuilder_ == null) {
@@ -2603,17 +5099,24 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder addAllSequenceVariations(
           java.lang.Iterable<? extends edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation> values) {
         if (sequenceVariationsBuilder_ == null) {
           ensureSequenceVariationsIsMutable();
-          super.addAll(values, sequenceVariations_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sequenceVariations_);
           onChanged();
         } else {
           sequenceVariationsBuilder_.addAllMessages(values);
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder clearSequenceVariations() {
         if (sequenceVariationsBuilder_ == null) {
           sequenceVariations_ = java.util.Collections.emptyList();
@@ -2624,6 +5127,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public Builder removeSequenceVariations(int index) {
         if (sequenceVariationsBuilder_ == null) {
           ensureSequenceVariationsIsMutable();
@@ -2634,10 +5140,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder getSequenceVariationsBuilder(
           int index) {
         return getSequenceVariationsFieldBuilder().getBuilder(index);
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder getSequenceVariationsOrBuilder(
           int index) {
         if (sequenceVariationsBuilder_ == null) {
@@ -2645,6 +5157,9 @@ public final class Alignments {
           return sequenceVariationsBuilder_.getMessageOrBuilder(index);
         }
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder> 
            getSequenceVariationsOrBuilderList() {
         if (sequenceVariationsBuilder_ != null) {
@@ -2653,111 +5168,313 @@ public final class Alignments {
           return java.util.Collections.unmodifiableList(sequenceVariations_);
         }
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder addSequenceVariationsBuilder() {
         return getSequenceVariationsFieldBuilder().addBuilder(
             edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDefaultInstance());
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder addSequenceVariationsBuilder(
           int index) {
         return getSequenceVariationsFieldBuilder().addBuilder(
             index, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDefaultInstance());
       }
+      /**
+       * <code>repeated .goby.SequenceVariation sequence_variations = 13;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder> 
            getSequenceVariationsBuilderList() {
         return getSequenceVariationsFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder> 
           getSequenceVariationsFieldBuilder() {
         if (sequenceVariationsBuilder_ == null) {
-          sequenceVariationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          sequenceVariationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder>(
                   sequenceVariations_,
-                  ((bitField0_ & 0x00000800) == 0x00000800),
+                  ((bitField0_ & 0x00000800) != 0),
                   getParentForChildren(),
                   isClean());
           sequenceVariations_ = null;
         }
         return sequenceVariationsBuilder_;
       }
-      
-      // optional uint32 query_length = 10;
+
       private int queryLength_ ;
+      /**
+       * <pre>
+       *Length of the query sequence.
+       * </pre>
+       *
+       * <code>optional uint32 query_length = 10;</code>
+       */
       public boolean hasQueryLength() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00001000) != 0);
       }
+      /**
+       * <pre>
+       *Length of the query sequence.
+       * </pre>
+       *
+       * <code>optional uint32 query_length = 10;</code>
+       */
       public int getQueryLength() {
         return queryLength_;
       }
+      /**
+       * <pre>
+       *Length of the query sequence.
+       * </pre>
+       *
+       * <code>optional uint32 query_length = 10;</code>
+       */
       public Builder setQueryLength(int value) {
         bitField0_ |= 0x00001000;
         queryLength_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the query sequence.
+       * </pre>
+       *
+       * <code>optional uint32 query_length = 10;</code>
+       */
       public Builder clearQueryLength() {
         bitField0_ = (bitField0_ & ~0x00001000);
         queryLength_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional int32 mapping_quality = 14;
+
       private int mappingQuality_ ;
+      /**
+       * <pre>
+       *Mapping Quality (phred-scaled posterior probability that the mapping
+       *position of this read is incorrect). Please note that different aligners
+       *may estimate mapping quality with different approaches, resulting in aligner
+       *specific differences in the distribution of mapping quality. It is recommended
+       *to condition mapping quality on the aligner that produced the specific alignment
+       *being processed. See aligner name and version in the header.
+       *Note that the following description is preliminary. A clear specification is
+       *needed:
+       *The mapping quality should be proportional to the
+       *log of the probability that the given mapping is the "correct" one.
+       *So if there are five equally good mappings of a read to the genome,
+       *the probability of each would be 0.2, and the mapping quality would be
+       *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+       *say a 1e-4 of it being wrong, then the mapping quality would be
+       *-10*log10(1e-4) = 40.
+       * </pre>
+       *
+       * <code>optional int32 mapping_quality = 14;</code>
+       */
       public boolean hasMappingQuality() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00002000) != 0);
       }
+      /**
+       * <pre>
+       *Mapping Quality (phred-scaled posterior probability that the mapping
+       *position of this read is incorrect). Please note that different aligners
+       *may estimate mapping quality with different approaches, resulting in aligner
+       *specific differences in the distribution of mapping quality. It is recommended
+       *to condition mapping quality on the aligner that produced the specific alignment
+       *being processed. See aligner name and version in the header.
+       *Note that the following description is preliminary. A clear specification is
+       *needed:
+       *The mapping quality should be proportional to the
+       *log of the probability that the given mapping is the "correct" one.
+       *So if there are five equally good mappings of a read to the genome,
+       *the probability of each would be 0.2, and the mapping quality would be
+       *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+       *say a 1e-4 of it being wrong, then the mapping quality would be
+       *-10*log10(1e-4) = 40.
+       * </pre>
+       *
+       * <code>optional int32 mapping_quality = 14;</code>
+       */
       public int getMappingQuality() {
         return mappingQuality_;
       }
+      /**
+       * <pre>
+       *Mapping Quality (phred-scaled posterior probability that the mapping
+       *position of this read is incorrect). Please note that different aligners
+       *may estimate mapping quality with different approaches, resulting in aligner
+       *specific differences in the distribution of mapping quality. It is recommended
+       *to condition mapping quality on the aligner that produced the specific alignment
+       *being processed. See aligner name and version in the header.
+       *Note that the following description is preliminary. A clear specification is
+       *needed:
+       *The mapping quality should be proportional to the
+       *log of the probability that the given mapping is the "correct" one.
+       *So if there are five equally good mappings of a read to the genome,
+       *the probability of each would be 0.2, and the mapping quality would be
+       *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+       *say a 1e-4 of it being wrong, then the mapping quality would be
+       *-10*log10(1e-4) = 40.
+       * </pre>
+       *
+       * <code>optional int32 mapping_quality = 14;</code>
+       */
       public Builder setMappingQuality(int value) {
         bitField0_ |= 0x00002000;
         mappingQuality_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Mapping Quality (phred-scaled posterior probability that the mapping
+       *position of this read is incorrect). Please note that different aligners
+       *may estimate mapping quality with different approaches, resulting in aligner
+       *specific differences in the distribution of mapping quality. It is recommended
+       *to condition mapping quality on the aligner that produced the specific alignment
+       *being processed. See aligner name and version in the header.
+       *Note that the following description is preliminary. A clear specification is
+       *needed:
+       *The mapping quality should be proportional to the
+       *log of the probability that the given mapping is the "correct" one.
+       *So if there are five equally good mappings of a read to the genome,
+       *the probability of each would be 0.2, and the mapping quality would be
+       *something like -10*log10(1-0.2) = 1.  If a mapping is highly likely,
+       *say a 1e-4 of it being wrong, then the mapping quality would be
+       *-10*log10(1e-4) = 40.
+       * </pre>
+       *
+       * <code>optional int32 mapping_quality = 14;</code>
+       */
       public Builder clearMappingQuality() {
         bitField0_ = (bitField0_ & ~0x00002000);
         mappingQuality_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 pair_flags = 15;
+
       private int pairFlags_ ;
+      /**
+       * <pre>
+       *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+       *000000001    paired
+       *000000010    properly paired
+       *000000100    read unmapped
+       *000001000    mate unmapped
+       *000010000    read reverse strand
+       *000100000    mate reverse strand
+       *001000000    first in pair
+       *010000000    second in pair
+       *100000000    not primary alignment
+       * </pre>
+       *
+       * <code>optional uint32 pair_flags = 15;</code>
+       */
       public boolean hasPairFlags() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00004000) != 0);
       }
+      /**
+       * <pre>
+       *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+       *000000001    paired
+       *000000010    properly paired
+       *000000100    read unmapped
+       *000001000    mate unmapped
+       *000010000    read reverse strand
+       *000100000    mate reverse strand
+       *001000000    first in pair
+       *010000000    second in pair
+       *100000000    not primary alignment
+       * </pre>
+       *
+       * <code>optional uint32 pair_flags = 15;</code>
+       */
       public int getPairFlags() {
         return pairFlags_;
       }
+      /**
+       * <pre>
+       *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+       *000000001    paired
+       *000000010    properly paired
+       *000000100    read unmapped
+       *000001000    mate unmapped
+       *000010000    read reverse strand
+       *000100000    mate reverse strand
+       *001000000    first in pair
+       *010000000    second in pair
+       *100000000    not primary alignment
+       * </pre>
+       *
+       * <code>optional uint32 pair_flags = 15;</code>
+       */
       public Builder setPairFlags(int value) {
         bitField0_ |= 0x00004000;
         pairFlags_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *If this read was aligned with a pair, the flags for the pair alignment (based on SAM):
+       *000000001    paired
+       *000000010    properly paired
+       *000000100    read unmapped
+       *000001000    mate unmapped
+       *000010000    read reverse strand
+       *000100000    mate reverse strand
+       *001000000    first in pair
+       *010000000    second in pair
+       *100000000    not primary alignment
+       * </pre>
+       *
+       * <code>optional uint32 pair_flags = 15;</code>
+       */
       public Builder clearPairFlags() {
         bitField0_ = (bitField0_ & ~0x00004000);
         pairFlags_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;
-      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry pairAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+
+      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry pairAlignmentLink_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder> pairAlignmentLinkBuilder_;
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public boolean hasPairAlignmentLink() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00008000) != 0);
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getPairAlignmentLink() {
         if (pairAlignmentLinkBuilder_ == null) {
-          return pairAlignmentLink_;
+          return pairAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : pairAlignmentLink_;
         } else {
           return pairAlignmentLinkBuilder_.getMessage();
         }
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public Builder setPairAlignmentLink(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry value) {
         if (pairAlignmentLinkBuilder_ == null) {
           if (value == null) {
@@ -2771,6 +5488,13 @@ public final class Alignments {
         bitField0_ |= 0x00008000;
         return this;
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public Builder setPairAlignmentLink(
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder builderForValue) {
         if (pairAlignmentLinkBuilder_ == null) {
@@ -2782,9 +5506,17 @@ public final class Alignments {
         bitField0_ |= 0x00008000;
         return this;
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public Builder mergePairAlignmentLink(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry value) {
         if (pairAlignmentLinkBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+          if (((bitField0_ & 0x00008000) != 0) &&
+              pairAlignmentLink_ != null &&
               pairAlignmentLink_ != edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance()) {
             pairAlignmentLink_ =
               edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder(pairAlignmentLink_).mergeFrom(value).buildPartial();
@@ -2798,9 +5530,16 @@ public final class Alignments {
         bitField0_ |= 0x00008000;
         return this;
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public Builder clearPairAlignmentLink() {
         if (pairAlignmentLinkBuilder_ == null) {
-          pairAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+          pairAlignmentLink_ = null;
           onChanged();
         } else {
           pairAlignmentLinkBuilder_.clear();
@@ -2808,67 +5547,145 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder getPairAlignmentLinkBuilder() {
         bitField0_ |= 0x00008000;
         onChanged();
         return getPairAlignmentLinkFieldBuilder().getBuilder();
       }
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getPairAlignmentLinkOrBuilder() {
         if (pairAlignmentLinkBuilder_ != null) {
           return pairAlignmentLinkBuilder_.getMessageOrBuilder();
         } else {
-          return pairAlignmentLink_;
+          return pairAlignmentLink_ == null ?
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : pairAlignmentLink_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
+      /**
+       * <pre>
+       *If there is an alignment entry for the paired read (the paired read was mapped), a link to the entry is given.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry pair_alignment_link = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder> 
           getPairAlignmentLinkFieldBuilder() {
         if (pairAlignmentLinkBuilder_ == null) {
-          pairAlignmentLinkBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          pairAlignmentLinkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder>(
-                  pairAlignmentLink_,
+                  getPairAlignmentLink(),
                   getParentForChildren(),
                   isClean());
           pairAlignmentLink_ = null;
         }
         return pairAlignmentLinkBuilder_;
       }
-      
-      // optional uint32 fragment_index = 17;
+
       private int fragmentIndex_ ;
+      /**
+       * <pre>
+       * Index of the read fragment from which this alignment was obtained. 
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 17;</code>
+       */
       public boolean hasFragmentIndex() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00010000) != 0);
       }
+      /**
+       * <pre>
+       * Index of the read fragment from which this alignment was obtained. 
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 17;</code>
+       */
       public int getFragmentIndex() {
         return fragmentIndex_;
       }
+      /**
+       * <pre>
+       * Index of the read fragment from which this alignment was obtained. 
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 17;</code>
+       */
       public Builder setFragmentIndex(int value) {
         bitField0_ |= 0x00010000;
         fragmentIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * Index of the read fragment from which this alignment was obtained. 
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 17;</code>
+       */
       public Builder clearFragmentIndex() {
         bitField0_ = (bitField0_ & ~0x00010000);
         fragmentIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;
-      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedForwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+
+      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedForwardAlignmentLink_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder> splicedForwardAlignmentLinkBuilder_;
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public boolean hasSplicedForwardAlignmentLink() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00020000) != 0);
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedForwardAlignmentLink() {
         if (splicedForwardAlignmentLinkBuilder_ == null) {
-          return splicedForwardAlignmentLink_;
+          return splicedForwardAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedForwardAlignmentLink_;
         } else {
           return splicedForwardAlignmentLinkBuilder_.getMessage();
         }
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public Builder setSplicedForwardAlignmentLink(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry value) {
         if (splicedForwardAlignmentLinkBuilder_ == null) {
           if (value == null) {
@@ -2882,6 +5699,16 @@ public final class Alignments {
         bitField0_ |= 0x00020000;
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public Builder setSplicedForwardAlignmentLink(
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder builderForValue) {
         if (splicedForwardAlignmentLinkBuilder_ == null) {
@@ -2893,9 +5720,20 @@ public final class Alignments {
         bitField0_ |= 0x00020000;
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public Builder mergeSplicedForwardAlignmentLink(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry value) {
         if (splicedForwardAlignmentLinkBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) == 0x00020000) &&
+          if (((bitField0_ & 0x00020000) != 0) &&
+              splicedForwardAlignmentLink_ != null &&
               splicedForwardAlignmentLink_ != edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance()) {
             splicedForwardAlignmentLink_ =
               edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder(splicedForwardAlignmentLink_).mergeFrom(value).buildPartial();
@@ -2909,9 +5747,19 @@ public final class Alignments {
         bitField0_ |= 0x00020000;
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public Builder clearSplicedForwardAlignmentLink() {
         if (splicedForwardAlignmentLinkBuilder_ == null) {
-          splicedForwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+          splicedForwardAlignmentLink_ = null;
           onChanged();
         } else {
           splicedForwardAlignmentLinkBuilder_.clear();
@@ -2919,46 +5767,106 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder getSplicedForwardAlignmentLinkBuilder() {
         bitField0_ |= 0x00020000;
         onChanged();
         return getSplicedForwardAlignmentLinkFieldBuilder().getBuilder();
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedForwardAlignmentLinkOrBuilder() {
         if (splicedForwardAlignmentLinkBuilder_ != null) {
           return splicedForwardAlignmentLinkBuilder_.getMessageOrBuilder();
         } else {
-          return splicedForwardAlignmentLink_;
+          return splicedForwardAlignmentLink_ == null ?
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedForwardAlignmentLink_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_forward_alignment_link points to the next
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_forward_alignment_link = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder> 
           getSplicedForwardAlignmentLinkFieldBuilder() {
         if (splicedForwardAlignmentLinkBuilder_ == null) {
-          splicedForwardAlignmentLinkBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          splicedForwardAlignmentLinkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder>(
-                  splicedForwardAlignmentLink_,
+                  getSplicedForwardAlignmentLink(),
                   getParentForChildren(),
                   isClean());
           splicedForwardAlignmentLink_ = null;
         }
         return splicedForwardAlignmentLinkBuilder_;
       }
-      
-      // optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;
-      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedBackwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+
+      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry splicedBackwardAlignmentLink_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder> splicedBackwardAlignmentLinkBuilder_;
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public boolean hasSplicedBackwardAlignmentLink() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00040000) != 0);
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getSplicedBackwardAlignmentLink() {
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
-          return splicedBackwardAlignmentLink_;
+          return splicedBackwardAlignmentLink_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedBackwardAlignmentLink_;
         } else {
           return splicedBackwardAlignmentLinkBuilder_.getMessage();
         }
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public Builder setSplicedBackwardAlignmentLink(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry value) {
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
           if (value == null) {
@@ -2972,6 +5880,16 @@ public final class Alignments {
         bitField0_ |= 0x00040000;
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public Builder setSplicedBackwardAlignmentLink(
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder builderForValue) {
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
@@ -2983,9 +5901,20 @@ public final class Alignments {
         bitField0_ |= 0x00040000;
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public Builder mergeSplicedBackwardAlignmentLink(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry value) {
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
-          if (((bitField0_ & 0x00040000) == 0x00040000) &&
+          if (((bitField0_ & 0x00040000) != 0) &&
+              splicedBackwardAlignmentLink_ != null &&
               splicedBackwardAlignmentLink_ != edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance()) {
             splicedBackwardAlignmentLink_ =
               edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder(splicedBackwardAlignmentLink_).mergeFrom(value).buildPartial();
@@ -2999,9 +5928,19 @@ public final class Alignments {
         bitField0_ |= 0x00040000;
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public Builder clearSplicedBackwardAlignmentLink() {
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
-          splicedBackwardAlignmentLink_ = edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+          splicedBackwardAlignmentLink_ = null;
           onChanged();
         } else {
           splicedBackwardAlignmentLinkBuilder_.clear();
@@ -3009,157 +5948,458 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder getSplicedBackwardAlignmentLinkBuilder() {
         bitField0_ |= 0x00040000;
         onChanged();
         return getSplicedBackwardAlignmentLinkFieldBuilder().getBuilder();
       }
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder getSplicedBackwardAlignmentLinkOrBuilder() {
         if (splicedBackwardAlignmentLinkBuilder_ != null) {
           return splicedBackwardAlignmentLinkBuilder_.getMessageOrBuilder();
         } else {
-          return splicedBackwardAlignmentLink_;
+          return splicedBackwardAlignmentLink_ == null ?
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance() : splicedBackwardAlignmentLink_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
+      /**
+       * <pre>
+       * If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two or more
+       *alignment entries, one for each matching part of the read, and link these entries with
+       *spliced_alignment_links. The field spliced_backward_alignment_link points to the previous
+       *AlignmentEntry in the chain of spliced alignments.
+       * </pre>
+       *
+       * <code>optional .goby.RelatedAlignmentEntry spliced_backward_alignment_link = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder> 
           getSplicedBackwardAlignmentLinkFieldBuilder() {
         if (splicedBackwardAlignmentLinkBuilder_ == null) {
-          splicedBackwardAlignmentLinkBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          splicedBackwardAlignmentLinkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder>(
-                  splicedBackwardAlignmentLink_,
+                  getSplicedBackwardAlignmentLink(),
                   getParentForChildren(),
                   isClean());
           splicedBackwardAlignmentLink_ = null;
         }
         return splicedBackwardAlignmentLinkBuilder_;
       }
-      
-      // optional uint32 spliced_flags = 19;
+
       private int splicedFlags_ ;
+      /**
+       * <pre>
+       *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+       *matching part of the read, and flag describes the spliced_alignment_link with these
+       *binary flags:
+       *000000001    normal
+       *000000010    novel
+       * </pre>
+       *
+       * <code>optional uint32 spliced_flags = 19;</code>
+       */
       public boolean hasSplicedFlags() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00080000) != 0);
       }
+      /**
+       * <pre>
+       *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+       *matching part of the read, and flag describes the spliced_alignment_link with these
+       *binary flags:
+       *000000001    normal
+       *000000010    novel
+       * </pre>
+       *
+       * <code>optional uint32 spliced_flags = 19;</code>
+       */
       public int getSplicedFlags() {
         return splicedFlags_;
       }
+      /**
+       * <pre>
+       *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+       *matching part of the read, and flag describes the spliced_alignment_link with these
+       *binary flags:
+       *000000001    normal
+       *000000010    novel
+       * </pre>
+       *
+       * <code>optional uint32 spliced_flags = 19;</code>
+       */
       public Builder setSplicedFlags(int value) {
         bitField0_ |= 0x00080000;
         splicedFlags_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *If a read spans exon-exon junctions some aligners (e.g., GSNAP) will output two alignment entries, one for each
+       *matching part of the read, and flag describes the spliced_alignment_link with these
+       *binary flags:
+       *000000001    normal
+       *000000010    novel
+       * </pre>
+       *
+       * <code>optional uint32 spliced_flags = 19;</code>
+       */
       public Builder clearSplicedFlags() {
         bitField0_ = (bitField0_ & ~0x00080000);
         splicedFlags_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional sint32 insert_size = 20;
+
       private int insertSize_ ;
+      /**
+       * <pre>
+       * The size of the insert used when making the sequence library. This is the total size of the DNA
+       *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+       *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+       *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+       * </pre>
+       *
+       * <code>optional sint32 insert_size = 20;</code>
+       */
       public boolean hasInsertSize() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x00100000) != 0);
       }
+      /**
+       * <pre>
+       * The size of the insert used when making the sequence library. This is the total size of the DNA
+       *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+       *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+       *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+       * </pre>
+       *
+       * <code>optional sint32 insert_size = 20;</code>
+       */
       public int getInsertSize() {
         return insertSize_;
       }
+      /**
+       * <pre>
+       * The size of the insert used when making the sequence library. This is the total size of the DNA
+       *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+       *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+       *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+       * </pre>
+       *
+       * <code>optional sint32 insert_size = 20;</code>
+       */
       public Builder setInsertSize(int value) {
         bitField0_ |= 0x00100000;
         insertSize_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * The size of the insert used when making the sequence library. This is the total size of the DNA
+       *fragment to sequence, without the adapters. This is not the length of sequence that separates the reads.
+       *See http://seqanswers.com/forums/showthread.php?t=8730 for details. Insert size is inferred for each pair
+       *of reads by the aligner and is recorded here if was estimated (i.e., for paired-end reads).
+       * </pre>
+       *
+       * <code>optional sint32 insert_size = 20;</code>
+       */
       public Builder clearInsertSize() {
         bitField0_ = (bitField0_ & ~0x00100000);
         insertSize_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 sample_index = 21;
+
       private int sampleIndex_ ;
+      /**
+       * <pre>
+       *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+       *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+       *contained each entry.
+       * </pre>
+       *
+       * <code>optional uint32 sample_index = 21;</code>
+       */
       public boolean hasSampleIndex() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x00200000) != 0);
       }
+      /**
+       * <pre>
+       *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+       *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+       *contained each entry.
+       * </pre>
+       *
+       * <code>optional uint32 sample_index = 21;</code>
+       */
       public int getSampleIndex() {
         return sampleIndex_;
       }
+      /**
+       * <pre>
+       *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+       *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+       *contained each entry.
+       * </pre>
+       *
+       * <code>optional uint32 sample_index = 21;</code>
+       */
       public Builder setSampleIndex(int value) {
         bitField0_ |= 0x00200000;
         sampleIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The sample index. Uniquely identifies the aligned sample this read was read from. Storing the sample index in the
+       *alignment entry makes it possible to concat alignments from different origins and track what sample originally
+       *contained each entry.
+       * </pre>
+       *
+       * <code>optional uint32 sample_index = 21;</code>
+       */
       public Builder clearSampleIndex() {
         bitField0_ = (bitField0_ & ~0x00200000);
         sampleIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 query_index_occurrences = 25;
+
       private int queryIndexOccurrences_ ;
+      /**
+       * <pre>
+       *The total number of times the query index associated with this entry occurs across the entire alignment file.
+       *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+       *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+       *query_index_occurrences is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index_occurrences = 25;</code>
+       */
       public boolean hasQueryIndexOccurrences() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x00400000) != 0);
       }
+      /**
+       * <pre>
+       *The total number of times the query index associated with this entry occurs across the entire alignment file.
+       *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+       *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+       *query_index_occurrences is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index_occurrences = 25;</code>
+       */
       public int getQueryIndexOccurrences() {
         return queryIndexOccurrences_;
       }
+      /**
+       * <pre>
+       *The total number of times the query index associated with this entry occurs across the entire alignment file.
+       *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+       *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+       *query_index_occurrences is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index_occurrences = 25;</code>
+       */
       public Builder setQueryIndexOccurrences(int value) {
         bitField0_ |= 0x00400000;
         queryIndexOccurrences_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The total number of times the query index associated with this entry occurs across the entire alignment file.
+       *This field is used to purge queryIndex-&gt;smallIndex associations after all instances of a queryindex have
+       *been seen (see QueryIndexPermutation class). When each entry has a value for this field, the header field
+       *query_index_occurrences is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 query_index_occurrences = 25;</code>
+       */
       public Builder clearQueryIndexOccurrences() {
         bitField0_ = (bitField0_ & ~0x00400000);
         queryIndexOccurrences_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 ambiguity = 27;
+
       private int ambiguity_ ;
+      /**
+       * <pre>
+       *The total number of times the read matches the reference across the entire alignment file. This differs from
+       *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+       *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+       *entries to more smaller thresholds). When each entry has a value for this field, the header field
+       *ambiguity_stored_in_entries is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 ambiguity = 27;</code>
+       */
       public boolean hasAmbiguity() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x00800000) != 0);
       }
+      /**
+       * <pre>
+       *The total number of times the read matches the reference across the entire alignment file. This differs from
+       *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+       *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+       *entries to more smaller thresholds). When each entry has a value for this field, the header field
+       *ambiguity_stored_in_entries is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 ambiguity = 27;</code>
+       */
       public int getAmbiguity() {
         return ambiguity_;
       }
+      /**
+       * <pre>
+       *The total number of times the read matches the reference across the entire alignment file. This differs from
+       *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+       *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+       *entries to more smaller thresholds). When each entry has a value for this field, the header field
+       *ambiguity_stored_in_entries is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 ambiguity = 27;</code>
+       */
       public Builder setAmbiguity(int value) {
         bitField0_ |= 0x00800000;
         ambiguity_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The total number of times the read matches the reference across the entire alignment file. This differs from
+       *query_index_occurrences because reads that are matching through splice and pair links count as one for ambiguity.
+       *The field can be used to filter by ambiguity-threshold on the fly after an alignment has been done (to restrict
+       *entries to more smaller thresholds). When each entry has a value for this field, the header field
+       *ambiguity_stored_in_entries is true.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 ambiguity = 27;</code>
+       */
       public Builder clearAmbiguity() {
         bitField0_ = (bitField0_ & ~0x00800000);
         ambiguity_ = 0;
         onChanged();
         return this;
       }
-      
-      // repeated string bam_attributes = 50;
+
       private com.google.protobuf.LazyStringList bamAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureBamAttributesIsMutable() {
-        if (!((bitField0_ & 0x01000000) == 0x01000000)) {
+        if (!((bitField0_ & 0x01000000) != 0)) {
           bamAttributes_ = new com.google.protobuf.LazyStringArrayList(bamAttributes_);
           bitField0_ |= 0x01000000;
          }
       }
-      public java.util.List<String>
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
           getBamAttributesList() {
-        return java.util.Collections.unmodifiableList(bamAttributes_);
+        return bamAttributes_.getUnmodifiableView();
       }
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
       public int getBamAttributesCount() {
         return bamAttributes_.size();
       }
-      public String getBamAttributes(int index) {
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
+      public java.lang.String getBamAttributes(int index) {
         return bamAttributes_.get(index);
       }
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBamAttributesBytes(int index) {
+        return bamAttributes_.getByteString(index);
+      }
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
       public Builder setBamAttributes(
-          int index, String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3168,7 +6408,20 @@ public final class Alignments {
         onChanged();
         return this;
       }
-      public Builder addBamAttributes(String value) {
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
+      public Builder addBamAttributes(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3177,33 +6430,98 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
       public Builder addAllBamAttributes(
-          java.lang.Iterable<String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureBamAttributesIsMutable();
-        super.addAll(values, bamAttributes_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, bamAttributes_);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
       public Builder clearBamAttributes() {
         bamAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x01000000);
         onChanged();
         return this;
       }
-      void addBamAttributes(com.google.protobuf.ByteString value) {
-        ensureBamAttributesIsMutable();
+      /**
+       * <pre>
+       *List of BAM attributes, if the alignment was imported from BAM. The attributes are stored in exactly the format
+       *allowed for BAM. For instance, X0:i:9  X1:i:1  MD:Z:68 RG:Z:SRR084825 will be stored as four strings:
+       *"X0:i:9", "X1:i:1", "MD:Z:68", "RG:Z:SRR084825". Note that sam-to-compact will interpret some BAM attributes
+       *and populate goby native fields. Such tags do not appear in bam_attributes, and are instead re-generated from
+       *the corresponding goby native fields.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>repeated string bam_attributes = 50;</code>
+       */
+      public Builder addBamAttributesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureBamAttributesIsMutable();
         bamAttributes_.add(value);
         onChanged();
+        return this;
       }
-      
-      // optional bytes read_quality_scores = 55;
+
       private com.google.protobuf.ByteString readQualityScores_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       *Quality scores for all bases of the read.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>optional bytes read_quality_scores = 55;</code>
+       */
       public boolean hasReadQualityScores() {
-        return ((bitField0_ & 0x02000000) == 0x02000000);
+        return ((bitField0_ & 0x02000000) != 0);
       }
+      /**
+       * <pre>
+       *Quality scores for all bases of the read.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>optional bytes read_quality_scores = 55;</code>
+       */
       public com.google.protobuf.ByteString getReadQualityScores() {
         return readQualityScores_;
       }
+      /**
+       * <pre>
+       *Quality scores for all bases of the read.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>optional bytes read_quality_scores = 55;</code>
+       */
       public Builder setReadQualityScores(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3213,50 +6531,158 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Quality scores for all bases of the read.
+       *Since Goby 2.0.
+       * </pre>
+       *
+       * <code>optional bytes read_quality_scores = 55;</code>
+       */
       public Builder clearReadQualityScores() {
         bitField0_ = (bitField0_ & ~0x02000000);
         readQualityScores_ = getDefaultInstance().getReadQualityScores();
         onChanged();
         return this;
       }
-      
-      // optional uint32 read_origin_index = 26;
+
       private int readOriginIndex_ ;
+      /**
+       * <pre>
+       *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+       *makes it possible to track the origin of the read (especially useful after several alignments
+       *have been merged/concatenated).
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional uint32 read_origin_index = 26;</code>
+       */
       public boolean hasReadOriginIndex() {
-        return ((bitField0_ & 0x04000000) == 0x04000000);
+        return ((bitField0_ & 0x04000000) != 0);
       }
+      /**
+       * <pre>
+       *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+       *makes it possible to track the origin of the read (especially useful after several alignments
+       *have been merged/concatenated).
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional uint32 read_origin_index = 26;</code>
+       */
       public int getReadOriginIndex() {
         return readOriginIndex_;
       }
+      /**
+       * <pre>
+       *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+       *makes it possible to track the origin of the read (especially useful after several alignments
+       *have been merged/concatenated).
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional uint32 read_origin_index = 26;</code>
+       */
       public Builder setReadOriginIndex(int value) {
         bitField0_ |= 0x04000000;
         readOriginIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Origin index. An integer that references a ReadOriginInfo message in the alignment header and
+       *makes it possible to track the origin of the read (especially useful after several alignments
+       *have been merged/concatenated).
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional uint32 read_origin_index = 26;</code>
+       */
       public Builder clearReadOriginIndex() {
         bitField0_ = (bitField0_ & ~0x04000000);
         readOriginIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional string softClippedBasesLeft = 30;
+
       private java.lang.Object softClippedBasesLeft_ = "";
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+       *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesLeft = 30;</code>
+       */
       public boolean hasSoftClippedBasesLeft() {
-        return ((bitField0_ & 0x08000000) == 0x08000000);
+        return ((bitField0_ & 0x08000000) != 0);
       }
-      public String getSoftClippedBasesLeft() {
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+       *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesLeft = 30;</code>
+       */
+      public java.lang.String getSoftClippedBasesLeft() {
         java.lang.Object ref = softClippedBasesLeft_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          softClippedBasesLeft_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            softClippedBasesLeft_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setSoftClippedBasesLeft(String value) {
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+       *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesLeft = 30;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSoftClippedBasesLeftBytes() {
+        java.lang.Object ref = softClippedBasesLeft_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          softClippedBasesLeft_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+       *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesLeft = 30;</code>
+       */
+      public Builder setSoftClippedBasesLeft(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3265,34 +6691,122 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+       *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesLeft = 30;</code>
+       */
       public Builder clearSoftClippedBasesLeft() {
         bitField0_ = (bitField0_ & ~0x08000000);
         softClippedBasesLeft_ = getDefaultInstance().getSoftClippedBasesLeft();
         onChanged();
         return this;
       }
-      void setSoftClippedBasesLeft(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x08000000;
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Left clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. For instance "A=G" for three soft-clipped bases, the middle one matching the genome at
+       *this position. The number of bases in softClippedBasesLeft is exactly equal to queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesLeft = 30;</code>
+       */
+      public Builder setSoftClippedBasesLeftBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x08000000;
         softClippedBasesLeft_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string softClippedBasesRight = 31;
+
       private java.lang.Object softClippedBasesRight_ = "";
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. The number of bases in softClippedBasesRight is exactly equal
+       *to  queryLength - queryAlignedLength - queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesRight = 31;</code>
+       */
       public boolean hasSoftClippedBasesRight() {
-        return ((bitField0_ & 0x10000000) == 0x10000000);
+        return ((bitField0_ & 0x10000000) != 0);
       }
-      public String getSoftClippedBasesRight() {
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. The number of bases in softClippedBasesRight is exactly equal
+       *to  queryLength - queryAlignedLength - queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesRight = 31;</code>
+       */
+      public java.lang.String getSoftClippedBasesRight() {
         java.lang.Object ref = softClippedBasesRight_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          softClippedBasesRight_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            softClippedBasesRight_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setSoftClippedBasesRight(String value) {
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. The number of bases in softClippedBasesRight is exactly equal
+       *to  queryLength - queryAlignedLength - queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesRight = 31;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSoftClippedBasesRightBytes() {
+        java.lang.Object ref = softClippedBasesRight_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          softClippedBasesRight_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. The number of bases in softClippedBasesRight is exactly equal
+       *to  queryLength - queryAlignedLength - queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesRight = 31;</code>
+       */
+      public Builder setSoftClippedBasesRight(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3301,26 +6815,73 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. The number of bases in softClippedBasesRight is exactly equal
+       *to  queryLength - queryAlignedLength - queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesRight = 31;</code>
+       */
       public Builder clearSoftClippedBasesRight() {
         bitField0_ = (bitField0_ & ~0x10000000);
         softClippedBasesRight_ = getDefaultInstance().getSoftClippedBasesRight();
         onChanged();
         return this;
       }
-      void setSoftClippedBasesRight(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x10000000;
+      /**
+       * <pre>
+       *Bases that an aligner considered do not belong to the alignment of the read to the reference. Potentially
+       *erroneous bases, or bases that belong to a different part of the reference genome. Right clipped bases are
+       *stored in this field as character bases, or as an equal sign character '=' when the clipped base did match
+       *the reference base. The number of bases in softClippedBasesRight is exactly equal
+       *to  queryLength - queryAlignedLength - queryPosition.
+       * </pre>
+       *
+       * <code>optional string softClippedBasesRight = 31;</code>
+       */
+      public Builder setSoftClippedBasesRightBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x10000000;
         softClippedBasesRight_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional bytes softClippedQualityLeft = 32;
+
       private com.google.protobuf.ByteString softClippedQualityLeft_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityLeft = 32;</code>
+       */
       public boolean hasSoftClippedQualityLeft() {
-        return ((bitField0_ & 0x20000000) == 0x20000000);
+        return ((bitField0_ & 0x20000000) != 0);
       }
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityLeft = 32;</code>
+       */
       public com.google.protobuf.ByteString getSoftClippedQualityLeft() {
         return softClippedQualityLeft_;
       }
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityLeft = 32;</code>
+       */
       public Builder setSoftClippedQualityLeft(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3330,21 +6891,48 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesLeft.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityLeft = 32;</code>
+       */
       public Builder clearSoftClippedQualityLeft() {
         bitField0_ = (bitField0_ & ~0x20000000);
         softClippedQualityLeft_ = getDefaultInstance().getSoftClippedQualityLeft();
         onChanged();
         return this;
       }
-      
-      // optional bytes softClippedQualityRight = 33;
+
       private com.google.protobuf.ByteString softClippedQualityRight_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityRight = 33;</code>
+       */
       public boolean hasSoftClippedQualityRight() {
-        return ((bitField0_ & 0x40000000) == 0x40000000);
+        return ((bitField0_ & 0x40000000) != 0);
       }
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityRight = 33;</code>
+       */
       public com.google.protobuf.ByteString getSoftClippedQualityRight() {
         return softClippedQualityRight_;
       }
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityRight = 33;</code>
+       */
       public Builder setSoftClippedQualityRight(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3354,29 +6942,93 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Quality scores for bases in softClippedBasesRight.  Stored in Phred Units.
+       * </pre>
+       *
+       * <code>optional bytes softClippedQualityRight = 33;</code>
+       */
       public Builder clearSoftClippedQualityRight() {
         bitField0_ = (bitField0_ & ~0x40000000);
         softClippedQualityRight_ = getDefaultInstance().getSoftClippedQualityRight();
         onChanged();
         return this;
       }
-      
-      // optional string placedUnmappedSequence = 40;
+
       private java.lang.Object placedUnmappedSequence_ = "";
+      /**
+       * <pre>
+       *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+       *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+       *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+       *from the reads file.
+       * </pre>
+       *
+       * <code>optional string placedUnmappedSequence = 40;</code>
+       */
       public boolean hasPlacedUnmappedSequence() {
-        return ((bitField0_ & 0x80000000) == 0x80000000);
+        return ((bitField0_ & 0x80000000) != 0);
       }
-      public String getPlacedUnmappedSequence() {
+      /**
+       * <pre>
+       *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+       *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+       *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+       *from the reads file.
+       * </pre>
+       *
+       * <code>optional string placedUnmappedSequence = 40;</code>
+       */
+      public java.lang.String getPlacedUnmappedSequence() {
         java.lang.Object ref = placedUnmappedSequence_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          placedUnmappedSequence_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            placedUnmappedSequence_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setPlacedUnmappedSequence(String value) {
+      /**
+       * <pre>
+       *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+       *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+       *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+       *from the reads file.
+       * </pre>
+       *
+       * <code>optional string placedUnmappedSequence = 40;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlacedUnmappedSequenceBytes() {
+        java.lang.Object ref = placedUnmappedSequence_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          placedUnmappedSequence_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+       *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+       *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+       *from the reads file.
+       * </pre>
+       *
+       * <code>optional string placedUnmappedSequence = 40;</code>
+       */
+      public Builder setPlacedUnmappedSequence(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3385,26 +7037,71 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+       *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+       *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+       *from the reads file.
+       * </pre>
+       *
+       * <code>optional string placedUnmappedSequence = 40;</code>
+       */
       public Builder clearPlacedUnmappedSequence() {
         bitField0_ = (bitField0_ & ~0x80000000);
         placedUnmappedSequence_ = getDefaultInstance().getPlacedUnmappedSequence();
         onChanged();
         return this;
       }
-      void setPlacedUnmappedSequence(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x80000000;
+      /**
+       * <pre>
+       *Sequence for a read placed near this entry, but unmapped to the reference sequence. For instance, used to record
+       *the sequence of a mate that did not map to the reference. We know that the mate maps in the proximity of this entry
+       *(it is placed) but are unable to map it to a specific genomic position. The sequence is always given as obtained
+       *from the reads file.
+       * </pre>
+       *
+       * <code>optional string placedUnmappedSequence = 40;</code>
+       */
+      public Builder setPlacedUnmappedSequenceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x80000000;
         placedUnmappedSequence_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional bytes placedUnmappedQuality = 41;
+
       private com.google.protobuf.ByteString placedUnmappedQuality_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       *Quality scores for a read placed near this entry.  Phred units.
+       * </pre>
+       *
+       * <code>optional bytes placedUnmappedQuality = 41;</code>
+       */
       public boolean hasPlacedUnmappedQuality() {
-        return ((bitField1_ & 0x00000001) == 0x00000001);
+        return ((bitField1_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       *Quality scores for a read placed near this entry.  Phred units.
+       * </pre>
+       *
+       * <code>optional bytes placedUnmappedQuality = 41;</code>
+       */
       public com.google.protobuf.ByteString getPlacedUnmappedQuality() {
         return placedUnmappedQuality_;
       }
+      /**
+       * <pre>
+       *Quality scores for a read placed near this entry.  Phred units.
+       * </pre>
+       *
+       * <code>optional bytes placedUnmappedQuality = 41;</code>
+       */
       public Builder setPlacedUnmappedQuality(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -3414,29 +7111,81 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Quality scores for a read placed near this entry.  Phred units.
+       * </pre>
+       *
+       * <code>optional bytes placedUnmappedQuality = 41;</code>
+       */
       public Builder clearPlacedUnmappedQuality() {
         bitField1_ = (bitField1_ & ~0x00000001);
         placedUnmappedQuality_ = getDefaultInstance().getPlacedUnmappedQuality();
         onChanged();
         return this;
       }
-      
-      // optional string readName = 42;
+
       private java.lang.Object readName_ = "";
+      /**
+       * <pre>
+       *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+       * </pre>
+       *
+       * <code>optional string readName = 42;</code>
+       */
       public boolean hasReadName() {
-        return ((bitField1_ & 0x00000002) == 0x00000002);
+        return ((bitField1_ & 0x00000002) != 0);
       }
-      public String getReadName() {
+      /**
+       * <pre>
+       *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+       * </pre>
+       *
+       * <code>optional string readName = 42;</code>
+       */
+      public java.lang.String getReadName() {
         java.lang.Object ref = readName_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          readName_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            readName_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setReadName(String value) {
+      /**
+       * <pre>
+       *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+       * </pre>
+       *
+       * <code>optional string readName = 42;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReadNameBytes() {
+        java.lang.Object ref = readName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          readName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+       * </pre>
+       *
+       * <code>optional string readName = 42;</code>
+       */
+      public Builder setReadName(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3445,417 +7194,216 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+       * </pre>
+       *
+       * <code>optional string readName = 42;</code>
+       */
       public Builder clearReadName() {
         bitField1_ = (bitField1_ & ~0x00000002);
         readName_ = getDefaultInstance().getReadName();
         onChanged();
         return this;
       }
-      void setReadName(com.google.protobuf.ByteString value) {
-        bitField1_ |= 0x00000002;
+      /**
+       * <pre>
+       *Read name. In SAM/BAM this is referred to as QNAME. Paired and segmented reads will have the same Read name.
+       * </pre>
+       *
+       * <code>optional string readName = 42;</code>
+       */
+      public Builder setReadNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000002;
         readName_ = value;
         onChanged();
+        return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.AlignmentEntry)
     }
-    
-    static {
-      defaultInstance = new AlignmentEntry(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.AlignmentEntry)
-  }
-  
-  public interface RelatedAlignmentEntryOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional uint32 target_index = 1;
-    boolean hasTargetIndex();
-    int getTargetIndex();
-    
-    // optional uint32 position = 2;
-    boolean hasPosition();
-    int getPosition();
-    
-    // optional uint32 fragment_index = 3;
-    boolean hasFragmentIndex();
-    int getFragmentIndex();
-    
-    // optional uint32 optimized_index = 50;
-    boolean hasOptimizedIndex();
-    int getOptimizedIndex();
-  }
-  public static final class RelatedAlignmentEntry extends
-      com.google.protobuf.GeneratedMessage
-      implements RelatedAlignmentEntryOrBuilder {
-    // Use RelatedAlignmentEntry.newBuilder() to construct.
-    private RelatedAlignmentEntry(Builder builder) {
-      super(builder);
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry();
     }
-    private RelatedAlignmentEntry(boolean noInit) {}
-    
-    private static final RelatedAlignmentEntry defaultInstance;
-    public static RelatedAlignmentEntry getDefaultInstance() {
-      return defaultInstance;
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
     }
-    
-    public RelatedAlignmentEntry getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional uint32 target_index = 1;
-    public static final int TARGET_INDEX_FIELD_NUMBER = 1;
-    private int targetIndex_;
-    public boolean hasTargetIndex() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getTargetIndex() {
-      return targetIndex_;
-    }
-    
-    // optional uint32 position = 2;
-    public static final int POSITION_FIELD_NUMBER = 2;
-    private int position_;
-    public boolean hasPosition() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public int getPosition() {
-      return position_;
-    }
-    
-    // optional uint32 fragment_index = 3;
-    public static final int FRAGMENT_INDEX_FIELD_NUMBER = 3;
-    private int fragmentIndex_;
-    public boolean hasFragmentIndex() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getFragmentIndex() {
-      return fragmentIndex_;
-    }
-    
-    // optional uint32 optimized_index = 50;
-    public static final int OPTIMIZED_INDEX_FIELD_NUMBER = 50;
-    private int optimizedIndex_;
-    public boolean hasOptimizedIndex() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public int getOptimizedIndex() {
-      return optimizedIndex_;
-    }
-    
-    private void initFields() {
-      targetIndex_ = 0;
-      position_ = 0;
-      fragmentIndex_ = 0;
-      optimizedIndex_ = 0;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, targetIndex_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeUInt32(2, position_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeUInt32(3, fragmentIndex_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeUInt32(50, optimizedIndex_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, targetIndex_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, position_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, fragmentIndex_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(50, optimizedIndex_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable;
-      }
-      
-      // Construct using edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        targetIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        position_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fragmentIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        optimizedIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDescriptor();
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getDefaultInstanceForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry build() {
-        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry buildPartial() {
-        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry result = new edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.targetIndex_ = targetIndex_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.position_ = position_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.fragmentIndex_ = fragmentIndex_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.optimizedIndex_ = optimizedIndex_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry) {
-          return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry other) {
-        if (other == edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance()) return this;
-        if (other.hasTargetIndex()) {
-          setTargetIndex(other.getTargetIndex());
-        }
-        if (other.hasPosition()) {
-          setPosition(other.getPosition());
-        }
-        if (other.hasFragmentIndex()) {
-          setFragmentIndex(other.getFragmentIndex());
-        }
-        if (other.hasOptimizedIndex()) {
-          setOptimizedIndex(other.getOptimizedIndex());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AlignmentEntry>
+        PARSER = new com.google.protobuf.AbstractParser<AlignmentEntry>() {
+      @java.lang.Override
+      public AlignmentEntry parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlignmentEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlignmentEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlignmentEntry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RelatedAlignmentEntryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.RelatedAlignmentEntry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Target index of the location where the other alignment entry is mapped.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 1;</code>
+     */
+    boolean hasTargetIndex();
+    /**
+     * <pre>
+     * Target index of the location where the other alignment entry is mapped.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 1;</code>
+     */
+    int getTargetIndex();
+
+    /**
+     * <pre>
+     * Position on the reference where the other alignment entry is mapped. *
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 2;</code>
+     */
+    boolean hasPosition();
+    /**
+     * <pre>
+     * Position on the reference where the other alignment entry is mapped. *
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 2;</code>
+     */
+    int getPosition();
+
+    /**
+     * <pre>
+     * Index of the fragment for the related alignment entry. This index
+     *makes it possible to identify which of the read fragments mapped to the given
+     *location is related to the source alignment entry.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 3;</code>
+     */
+    boolean hasFragmentIndex();
+    /**
+     * <pre>
+     * Index of the fragment for the related alignment entry. This index
+     *makes it possible to identify which of the read fragments mapped to the given
+     *location is related to the source alignment entry.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 3;</code>
+     */
+    int getFragmentIndex();
+
+    /**
+     * <code>optional uint32 optimized_index = 50;</code>
+     */
+    boolean hasOptimizedIndex();
+    /**
+     * <code>optional uint32 optimized_index = 50;</code>
+     */
+    int getOptimizedIndex();
+  }
+  /**
+   * <pre>
+   * A link to another alignment entry. This message type is used to represent relations
+   *between alignments, such as the relation between the two read fragments in a paired-end protocol,
+   *or the relation between parts of reads that align through an exon exon junction and map in
+   *different locations of the genome.
+   * </pre>
+   *
+   * Protobuf type {@code goby.RelatedAlignmentEntry}
+   */
+  public  static final class RelatedAlignmentEntry extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.RelatedAlignmentEntry)
+      RelatedAlignmentEntryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RelatedAlignmentEntry.newBuilder() to construct.
+    private RelatedAlignmentEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RelatedAlignmentEntry() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RelatedAlignmentEntry();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RelatedAlignmentEntry(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
+              done = true;
               break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               targetIndex_ = input.readUInt32();
@@ -3876,578 +7424,1007 @@ public final class Alignments {
               optimizedIndex_ = input.readUInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.class, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TARGET_INDEX_FIELD_NUMBER = 1;
+    private int targetIndex_;
+    /**
+     * <pre>
+     * Target index of the location where the other alignment entry is mapped.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 1;</code>
+     */
+    public boolean hasTargetIndex() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Target index of the location where the other alignment entry is mapped.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 target_index = 1;</code>
+     */
+    public int getTargetIndex() {
+      return targetIndex_;
+    }
+
+    public static final int POSITION_FIELD_NUMBER = 2;
+    private int position_;
+    /**
+     * <pre>
+     * Position on the reference where the other alignment entry is mapped. *
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 2;</code>
+     */
+    public boolean hasPosition() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * Position on the reference where the other alignment entry is mapped. *
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 2;</code>
+     */
+    public int getPosition() {
+      return position_;
+    }
+
+    public static final int FRAGMENT_INDEX_FIELD_NUMBER = 3;
+    private int fragmentIndex_;
+    /**
+     * <pre>
+     * Index of the fragment for the related alignment entry. This index
+     *makes it possible to identify which of the read fragments mapped to the given
+     *location is related to the source alignment entry.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 3;</code>
+     */
+    public boolean hasFragmentIndex() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * Index of the fragment for the related alignment entry. This index
+     *makes it possible to identify which of the read fragments mapped to the given
+     *location is related to the source alignment entry.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 fragment_index = 3;</code>
+     */
+    public int getFragmentIndex() {
+      return fragmentIndex_;
+    }
+
+    public static final int OPTIMIZED_INDEX_FIELD_NUMBER = 50;
+    private int optimizedIndex_;
+    /**
+     * <code>optional uint32 optimized_index = 50;</code>
+     */
+    public boolean hasOptimizedIndex() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional uint32 optimized_index = 50;</code>
+     */
+    public int getOptimizedIndex() {
+      return optimizedIndex_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeUInt32(1, targetIndex_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeUInt32(2, position_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeUInt32(3, fragmentIndex_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeUInt32(50, optimizedIndex_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, targetIndex_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, position_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, fragmentIndex_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(50, optimizedIndex_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry other = (edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry) obj;
+
+      if (hasTargetIndex() != other.hasTargetIndex()) return false;
+      if (hasTargetIndex()) {
+        if (getTargetIndex()
+            != other.getTargetIndex()) return false;
+      }
+      if (hasPosition() != other.hasPosition()) return false;
+      if (hasPosition()) {
+        if (getPosition()
+            != other.getPosition()) return false;
+      }
+      if (hasFragmentIndex() != other.hasFragmentIndex()) return false;
+      if (hasFragmentIndex()) {
+        if (getFragmentIndex()
+            != other.getFragmentIndex()) return false;
+      }
+      if (hasOptimizedIndex() != other.hasOptimizedIndex()) return false;
+      if (hasOptimizedIndex()) {
+        if (getOptimizedIndex()
+            != other.getOptimizedIndex()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTargetIndex()) {
+        hash = (37 * hash) + TARGET_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetIndex();
+      }
+      if (hasPosition()) {
+        hash = (37 * hash) + POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getPosition();
+      }
+      if (hasFragmentIndex()) {
+        hash = (37 * hash) + FRAGMENT_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getFragmentIndex();
+      }
+      if (hasOptimizedIndex()) {
+        hash = (37 * hash) + OPTIMIZED_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getOptimizedIndex();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A link to another alignment entry. This message type is used to represent relations
+     *between alignments, such as the relation between the two read fragments in a paired-end protocol,
+     *or the relation between parts of reads that align through an exon exon junction and map in
+     *different locations of the genome.
+     * </pre>
+     *
+     * Protobuf type {@code goby.RelatedAlignmentEntry}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.RelatedAlignmentEntry)
+        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.class, edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder.class);
+      }
+
+      // Construct using edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        targetIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        position_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fragmentIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        optimizedIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_RelatedAlignmentEntry_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getDefaultInstanceForType() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry build() {
+        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry buildPartial() {
+        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry result = new edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetIndex_ = targetIndex_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.position_ = position_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.fragmentIndex_ = fragmentIndex_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.optimizedIndex_ = optimizedIndex_;
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry) {
+          return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry other) {
+        if (other == edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.getDefaultInstance()) return this;
+        if (other.hasTargetIndex()) {
+          setTargetIndex(other.getTargetIndex());
+        }
+        if (other.hasPosition()) {
+          setPosition(other.getPosition());
+        }
+        if (other.hasFragmentIndex()) {
+          setFragmentIndex(other.getFragmentIndex());
+        }
+        if (other.hasOptimizedIndex()) {
+          setOptimizedIndex(other.getOptimizedIndex());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
-      // optional uint32 target_index = 1;
+
       private int targetIndex_ ;
+      /**
+       * <pre>
+       * Target index of the location where the other alignment entry is mapped.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 1;</code>
+       */
       public boolean hasTargetIndex() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       * Target index of the location where the other alignment entry is mapped.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 1;</code>
+       */
       public int getTargetIndex() {
         return targetIndex_;
       }
+      /**
+       * <pre>
+       * Target index of the location where the other alignment entry is mapped.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 1;</code>
+       */
       public Builder setTargetIndex(int value) {
         bitField0_ |= 0x00000001;
         targetIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * Target index of the location where the other alignment entry is mapped.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 target_index = 1;</code>
+       */
       public Builder clearTargetIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         targetIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 position = 2;
+
       private int position_ ;
+      /**
+       * <pre>
+       * Position on the reference where the other alignment entry is mapped. *
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 2;</code>
+       */
       public boolean hasPosition() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
+      /**
+       * <pre>
+       * Position on the reference where the other alignment entry is mapped. *
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 2;</code>
+       */
       public int getPosition() {
         return position_;
       }
+      /**
+       * <pre>
+       * Position on the reference where the other alignment entry is mapped. *
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 2;</code>
+       */
       public Builder setPosition(int value) {
         bitField0_ |= 0x00000002;
         position_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * Position on the reference where the other alignment entry is mapped. *
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 2;</code>
+       */
       public Builder clearPosition() {
         bitField0_ = (bitField0_ & ~0x00000002);
         position_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 fragment_index = 3;
+
       private int fragmentIndex_ ;
+      /**
+       * <pre>
+       * Index of the fragment for the related alignment entry. This index
+       *makes it possible to identify which of the read fragments mapped to the given
+       *location is related to the source alignment entry.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 3;</code>
+       */
       public boolean hasFragmentIndex() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
+      /**
+       * <pre>
+       * Index of the fragment for the related alignment entry. This index
+       *makes it possible to identify which of the read fragments mapped to the given
+       *location is related to the source alignment entry.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 3;</code>
+       */
       public int getFragmentIndex() {
         return fragmentIndex_;
       }
+      /**
+       * <pre>
+       * Index of the fragment for the related alignment entry. This index
+       *makes it possible to identify which of the read fragments mapped to the given
+       *location is related to the source alignment entry.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 3;</code>
+       */
       public Builder setFragmentIndex(int value) {
         bitField0_ |= 0x00000004;
         fragmentIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * Index of the fragment for the related alignment entry. This index
+       *makes it possible to identify which of the read fragments mapped to the given
+       *location is related to the source alignment entry.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 fragment_index = 3;</code>
+       */
       public Builder clearFragmentIndex() {
         bitField0_ = (bitField0_ & ~0x00000004);
         fragmentIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 optimized_index = 50;
+
       private int optimizedIndex_ ;
+      /**
+       * <code>optional uint32 optimized_index = 50;</code>
+       */
       public boolean hasOptimizedIndex() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
+      /**
+       * <code>optional uint32 optimized_index = 50;</code>
+       */
       public int getOptimizedIndex() {
         return optimizedIndex_;
       }
+      /**
+       * <code>optional uint32 optimized_index = 50;</code>
+       */
       public Builder setOptimizedIndex(int value) {
         bitField0_ |= 0x00000008;
         optimizedIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>optional uint32 optimized_index = 50;</code>
+       */
       public Builder clearOptimizedIndex() {
         bitField0_ = (bitField0_ & ~0x00000008);
         optimizedIndex_ = 0;
         onChanged();
         return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.RelatedAlignmentEntry)
     }
-    
-    static {
-      defaultInstance = new RelatedAlignmentEntry(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.RelatedAlignmentEntry)
-  }
-  
-  public interface SequenceVariationOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional string from = 2;
-    boolean hasFrom();
-    String getFrom();
-    
-    // optional string to = 1;
-    boolean hasTo();
-    String getTo();
-    
-    // optional uint32 position = 3;
-    boolean hasPosition();
-    int getPosition();
-    
-    // optional uint32 read_index = 5;
-    boolean hasReadIndex();
-    int getReadIndex();
-    
-    // optional bytes to_quality = 4;
-    boolean hasToQuality();
-    com.google.protobuf.ByteString getToQuality();
-  }
-  public static final class SequenceVariation extends
-      com.google.protobuf.GeneratedMessage
-      implements SequenceVariationOrBuilder {
-    // Use SequenceVariation.newBuilder() to construct.
-    private SequenceVariation(Builder builder) {
-      super(builder);
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry();
     }
-    private SequenceVariation(boolean noInit) {}
-    
-    private static final SequenceVariation defaultInstance;
-    public static SequenceVariation getDefaultInstance() {
-      return defaultInstance;
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
     }
-    
-    public SequenceVariation getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional string from = 2;
-    public static final int FROM_FIELD_NUMBER = 2;
-    private java.lang.Object from_;
-    public boolean hasFrom() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public String getFrom() {
-      java.lang.Object ref = from_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          from_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getFromBytes() {
-      java.lang.Object ref = from_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        from_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string to = 1;
-    public static final int TO_FIELD_NUMBER = 1;
-    private java.lang.Object to_;
-    public boolean hasTo() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public String getTo() {
-      java.lang.Object ref = to_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          to_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getToBytes() {
-      java.lang.Object ref = to_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        to_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional uint32 position = 3;
-    public static final int POSITION_FIELD_NUMBER = 3;
-    private int position_;
-    public boolean hasPosition() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getPosition() {
-      return position_;
-    }
-    
-    // optional uint32 read_index = 5;
-    public static final int READ_INDEX_FIELD_NUMBER = 5;
-    private int readIndex_;
-    public boolean hasReadIndex() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public int getReadIndex() {
-      return readIndex_;
-    }
-    
-    // optional bytes to_quality = 4;
-    public static final int TO_QUALITY_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString toQuality_;
-    public boolean hasToQuality() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public com.google.protobuf.ByteString getToQuality() {
-      return toQuality_;
-    }
-    
-    private void initFields() {
-      from_ = "";
-      to_ = "";
-      position_ = 0;
-      readIndex_ = 0;
-      toQuality_ = com.google.protobuf.ByteString.EMPTY;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(1, getToBytes());
-      }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(2, getFromBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeUInt32(3, position_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(4, toQuality_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeUInt32(5, readIndex_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getToBytes());
-      }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getFromBytes());
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, position_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, toQuality_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, readIndex_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_fieldAccessorTable;
-      }
-      
-      // Construct using edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        from_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        to_ = "";
-        bitField0_ = (bitField0_ & ~0x00000002);
-        position_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        readIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        toQuality_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDescriptor();
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getDefaultInstanceForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDefaultInstance();
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation build() {
-        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation buildPartial() {
-        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation result = new edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.from_ = from_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.to_ = to_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.position_ = position_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.readIndex_ = readIndex_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.toQuality_ = toQuality_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation) {
-          return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation other) {
-        if (other == edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDefaultInstance()) return this;
-        if (other.hasFrom()) {
-          setFrom(other.getFrom());
-        }
-        if (other.hasTo()) {
-          setTo(other.getTo());
-        }
-        if (other.hasPosition()) {
-          setPosition(other.getPosition());
-        }
-        if (other.hasReadIndex()) {
-          setReadIndex(other.getReadIndex());
-        }
-        if (other.hasToQuality()) {
-          setToQuality(other.getToQuality());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RelatedAlignmentEntry>
+        PARSER = new com.google.protobuf.AbstractParser<RelatedAlignmentEntry>() {
+      @java.lang.Override
+      public RelatedAlignmentEntry parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RelatedAlignmentEntry(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RelatedAlignmentEntry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RelatedAlignmentEntry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SequenceVariationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.SequenceVariation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+     *no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string from = 2;</code>
+     */
+    boolean hasFrom();
+    /**
+     * <pre>
+     * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+     *no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string from = 2;</code>
+     */
+    java.lang.String getFrom();
+    /**
+     * <pre>
+     * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+     *no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string from = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFromBytes();
+
+    /**
+     * <pre>
+     * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+     *that the query sequence has no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string to = 1;</code>
+     */
+    boolean hasTo();
+    /**
+     * <pre>
+     * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+     *that the query sequence has no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string to = 1;</code>
+     */
+    java.lang.String getTo();
+    /**
+     * <pre>
+     * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+     *that the query sequence has no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string to = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getToBytes();
+
+    /**
+     * <pre>
+     *The position of the variation on the read, as if the read always matched on the forward strand.
+     *Adding position to the index where the reference starts aligning the read yields the position of the variation
+     *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
+    boolean hasPosition();
+    /**
+     * <pre>
+     *The position of the variation on the read, as if the read always matched on the forward strand.
+     *Adding position to the index where the reference starts aligning the read yields the position of the variation
+     *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
+    int getPosition();
+
+    /**
+     * <pre>
+     *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+     *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+     *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+     *where the bases are inserted (these bases are in the to field).
+     *When the read has a deletion, read_index records the position in the read after which the bases that would align
+     *in the reference are missing (these bases are in the from field).
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 read_index = 5;</code>
+     */
+    boolean hasReadIndex();
+    /**
+     * <pre>
+     *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+     *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+     *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+     *where the bases are inserted (these bases are in the to field).
+     *When the read has a deletion, read_index records the position in the read after which the bases that would align
+     *in the reference are missing (these bases are in the from field).
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 read_index = 5;</code>
+     */
+    int getReadIndex();
+
+    /**
+     * <pre>
+     **
+     *The read base quality scores for those bases that are given in the to field. This field
+     *is populated when the reads used to perform the search include quality scores, and when
+     *the alignment parser can extract the information from the aligner's output.
+     *(this option is currently not implemented in Goby.)
+     * </pre>
+     *
+     * <code>optional bytes to_quality = 4;</code>
+     */
+    boolean hasToQuality();
+    /**
+     * <pre>
+     **
+     *The read base quality scores for those bases that are given in the to field. This field
+     *is populated when the reads used to perform the search include quality scores, and when
+     *the alignment parser can extract the information from the aligner's output.
+     *(this option is currently not implemented in Goby.)
+     * </pre>
+     *
+     * <code>optional bytes to_quality = 4;</code>
+     */
+    com.google.protobuf.ByteString getToQuality();
+  }
+  /**
+   * <pre>
+   *Represents sequence variations between the query and the reference sequences. Many variations can be represented.
+   *For instance, an insertion at position 5 in the reference would be represented as from="A", to="" position=5.
+   *A mutation T-&gt;G at position 6 would be rendered as from="T", to="G" position=6. Padded alignments (see SAM description)
+   *can be described by a combination of pair-wise alignments, where the gap character '-' is used to indicate that no
+   *base exists in the sequence considered for the alignment position, for instance:
+   *- Padding example:
+   *123 (&lt;-positions)
+   *ref A-C
+   *A-T [from="-" to=""  position=2] [from="C" to="T"  position=3]
+   *ACT [from=""  to="C" position=2] [from="C" to="T"  position=3]
+   *A-T [from="-" to=""  position=2] [from="C" to="T"  position=3]
+   *- Mutation example:
+   *123 (&lt;-positions)
+   *ref ATT
+   *ACT [from="T"  to="C" position=2]
+   *-- Example of deletion in a read:
+   *123 (&lt;-positions)
+   *ref ATT
+   *A-T [from="T"  to="-" position=2]
+   *-- Example of insertion of two base pairs in a read:
+   *12345 (&lt;-positions)
+   *ref A--TT
+   *ACCTT [from=""  to="CC" position=2]
+   * </pre>
+   *
+   * Protobuf type {@code goby.SequenceVariation}
+   */
+  public  static final class SequenceVariation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.SequenceVariation)
+      SequenceVariationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SequenceVariation.newBuilder() to construct.
+    private SequenceVariation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SequenceVariation() {
+      from_ = "";
+      to_ = "";
+      toQuality_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SequenceVariation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SequenceVariation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
+              done = true;
               break;
-            }
             case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              to_ = input.readBytes();
+              to_ = bs;
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
-              from_ = input.readBytes();
+              from_ = bs;
               break;
             }
             case 24: {
@@ -4465,28 +8442,765 @@ public final class Alignments {
               readIndex_ = input.readUInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
-      private int bitField0_;
-      
-      // optional string from = 2;
-      private java.lang.Object from_ = "";
-      public boolean hasFrom() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public String getFrom() {
-        java.lang.Object ref = from_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.class, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int FROM_FIELD_NUMBER = 2;
+    private volatile java.lang.Object from_;
+    /**
+     * <pre>
+     * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+     *no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string from = 2;</code>
+     */
+    public boolean hasFrom() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+     *no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string from = 2;</code>
+     */
+    public java.lang.String getFrom() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           from_ = s;
-          return s;
-        } else {
-          return (String) ref;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+     *no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string from = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFromBytes() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        from_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TO_FIELD_NUMBER = 1;
+    private volatile java.lang.Object to_;
+    /**
+     * <pre>
+     * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+     *that the query sequence has no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string to = 1;</code>
+     */
+    public boolean hasTo() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+     *that the query sequence has no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string to = 1;</code>
+     */
+    public java.lang.String getTo() {
+      java.lang.Object ref = to_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          to_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+     *that the query sequence has no base at this alignment position.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional string to = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getToBytes() {
+      java.lang.Object ref = to_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        to_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSITION_FIELD_NUMBER = 3;
+    private int position_;
+    /**
+     * <pre>
+     *The position of the variation on the read, as if the read always matched on the forward strand.
+     *Adding position to the index where the reference starts aligning the read yields the position of the variation
+     *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
+    public boolean hasPosition() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     *The position of the variation on the read, as if the read always matched on the forward strand.
+     *Adding position to the index where the reference starts aligning the read yields the position of the variation
+     *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 position = 3;</code>
+     */
+    public int getPosition() {
+      return position_;
+    }
+
+    public static final int READ_INDEX_FIELD_NUMBER = 5;
+    private int readIndex_;
+    /**
+     * <pre>
+     *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+     *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+     *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+     *where the bases are inserted (these bases are in the to field).
+     *When the read has a deletion, read_index records the position in the read after which the bases that would align
+     *in the reference are missing (these bases are in the from field).
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 read_index = 5;</code>
+     */
+    public boolean hasReadIndex() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+     *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+     *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+     *where the bases are inserted (these bases are in the to field).
+     *When the read has a deletion, read_index records the position in the read after which the bases that would align
+     *in the reference are missing (these bases are in the from field).
+     *This field is required (enforced by semantic validation in Goby 2.0+).
+     * </pre>
+     *
+     * <code>optional uint32 read_index = 5;</code>
+     */
+    public int getReadIndex() {
+      return readIndex_;
+    }
+
+    public static final int TO_QUALITY_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString toQuality_;
+    /**
+     * <pre>
+     **
+     *The read base quality scores for those bases that are given in the to field. This field
+     *is populated when the reads used to perform the search include quality scores, and when
+     *the alignment parser can extract the information from the aligner's output.
+     *(this option is currently not implemented in Goby.)
+     * </pre>
+     *
+     * <code>optional bytes to_quality = 4;</code>
+     */
+    public boolean hasToQuality() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     **
+     *The read base quality scores for those bases that are given in the to field. This field
+     *is populated when the reads used to perform the search include quality scores, and when
+     *the alignment parser can extract the information from the aligner's output.
+     *(this option is currently not implemented in Goby.)
+     * </pre>
+     *
+     * <code>optional bytes to_quality = 4;</code>
+     */
+    public com.google.protobuf.ByteString getToQuality() {
+      return toQuality_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, to_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, from_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeUInt32(3, position_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeBytes(4, toQuality_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeUInt32(5, readIndex_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, to_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, from_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, position_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, toQuality_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, readIndex_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation other = (edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation) obj;
+
+      if (hasFrom() != other.hasFrom()) return false;
+      if (hasFrom()) {
+        if (!getFrom()
+            .equals(other.getFrom())) return false;
+      }
+      if (hasTo() != other.hasTo()) return false;
+      if (hasTo()) {
+        if (!getTo()
+            .equals(other.getTo())) return false;
+      }
+      if (hasPosition() != other.hasPosition()) return false;
+      if (hasPosition()) {
+        if (getPosition()
+            != other.getPosition()) return false;
+      }
+      if (hasReadIndex() != other.hasReadIndex()) return false;
+      if (hasReadIndex()) {
+        if (getReadIndex()
+            != other.getReadIndex()) return false;
+      }
+      if (hasToQuality() != other.hasToQuality()) return false;
+      if (hasToQuality()) {
+        if (!getToQuality()
+            .equals(other.getToQuality())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasFrom()) {
+        hash = (37 * hash) + FROM_FIELD_NUMBER;
+        hash = (53 * hash) + getFrom().hashCode();
+      }
+      if (hasTo()) {
+        hash = (37 * hash) + TO_FIELD_NUMBER;
+        hash = (53 * hash) + getTo().hashCode();
+      }
+      if (hasPosition()) {
+        hash = (37 * hash) + POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getPosition();
+      }
+      if (hasReadIndex()) {
+        hash = (37 * hash) + READ_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getReadIndex();
+      }
+      if (hasToQuality()) {
+        hash = (37 * hash) + TO_QUALITY_FIELD_NUMBER;
+        hash = (53 * hash) + getToQuality().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *Represents sequence variations between the query and the reference sequences. Many variations can be represented.
+     *For instance, an insertion at position 5 in the reference would be represented as from="A", to="" position=5.
+     *A mutation T-&gt;G at position 6 would be rendered as from="T", to="G" position=6. Padded alignments (see SAM description)
+     *can be described by a combination of pair-wise alignments, where the gap character '-' is used to indicate that no
+     *base exists in the sequence considered for the alignment position, for instance:
+     *- Padding example:
+     *123 (&lt;-positions)
+     *ref A-C
+     *A-T [from="-" to=""  position=2] [from="C" to="T"  position=3]
+     *ACT [from=""  to="C" position=2] [from="C" to="T"  position=3]
+     *A-T [from="-" to=""  position=2] [from="C" to="T"  position=3]
+     *- Mutation example:
+     *123 (&lt;-positions)
+     *ref ATT
+     *ACT [from="T"  to="C" position=2]
+     *-- Example of deletion in a read:
+     *123 (&lt;-positions)
+     *ref ATT
+     *A-T [from="T"  to="-" position=2]
+     *-- Example of insertion of two base pairs in a read:
+     *12345 (&lt;-positions)
+     *ref A--TT
+     *ACCTT [from=""  to="CC" position=2]
+     * </pre>
+     *
+     * Protobuf type {@code goby.SequenceVariation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.SequenceVariation)
+        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.class, edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder.class);
+      }
+
+      // Construct using edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      public Builder setFrom(String value) {
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        from_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        to_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        position_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        readIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        toQuality_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_SequenceVariation_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getDefaultInstanceForType() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation build() {
+        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation buildPartial() {
+        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation result = new edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.from_ = from_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.to_ = to_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.position_ = position_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.readIndex_ = readIndex_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.toQuality_ = toQuality_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation) {
+          return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation other) {
+        if (other == edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.getDefaultInstance()) return this;
+        if (other.hasFrom()) {
+          bitField0_ |= 0x00000001;
+          from_ = other.from_;
+          onChanged();
+        }
+        if (other.hasTo()) {
+          bitField0_ |= 0x00000002;
+          to_ = other.to_;
+          onChanged();
+        }
+        if (other.hasPosition()) {
+          setPosition(other.getPosition());
+        }
+        if (other.hasReadIndex()) {
+          setReadIndex(other.getReadIndex());
+        }
+        if (other.hasToQuality()) {
+          setToQuality(other.getToQuality());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object from_ = "";
+      /**
+       * <pre>
+       * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+       *no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string from = 2;</code>
+       */
+      public boolean hasFrom() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+       *no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string from = 2;</code>
+       */
+      public java.lang.String getFrom() {
+        java.lang.Object ref = from_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            from_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+       *no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string from = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFromBytes() {
+        java.lang.Object ref = from_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          from_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+       *no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string from = 2;</code>
+       */
+      public Builder setFrom(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4495,34 +9209,110 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+       *no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string from = 2;</code>
+       */
       public Builder clearFrom() {
         bitField0_ = (bitField0_ & ~0x00000001);
         from_ = getDefaultInstance().getFrom();
         onChanged();
         return this;
       }
-      void setFrom(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <pre>
+       * The reference bases. Can include one or more gap characters '-', to indicate that the reference sequence has
+       *no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string from = 2;</code>
+       */
+      public Builder setFromBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         from_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string to = 1;
+
       private java.lang.Object to_ = "";
+      /**
+       * <pre>
+       * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+       *that the query sequence has no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string to = 1;</code>
+       */
       public boolean hasTo() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
-      public String getTo() {
+      /**
+       * <pre>
+       * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+       *that the query sequence has no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string to = 1;</code>
+       */
+      public java.lang.String getTo() {
         java.lang.Object ref = to_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          to_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            to_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setTo(String value) {
+      /**
+       * <pre>
+       * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+       *that the query sequence has no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string to = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getToBytes() {
+        java.lang.Object ref = to_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          to_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+       *that the query sequence has no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string to = 1;</code>
+       */
+      public Builder setTo(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4531,68 +9321,213 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+       *that the query sequence has no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string to = 1;</code>
+       */
       public Builder clearTo() {
         bitField0_ = (bitField0_ & ~0x00000002);
         to_ = getDefaultInstance().getTo();
         onChanged();
         return this;
       }
-      void setTo(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <pre>
+       * The read bases that differ from the reference sequence.  Can include one or more gap characters '-', to indicate
+       *that the query sequence has no base at this alignment position.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional string to = 1;</code>
+       */
+      public Builder setToBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         to_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional uint32 position = 3;
+
       private int position_ ;
+      /**
+       * <pre>
+       *The position of the variation on the read, as if the read always matched on the forward strand.
+       *Adding position to the index where the reference starts aligning the read yields the position of the variation
+       *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public boolean hasPosition() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
+      /**
+       * <pre>
+       *The position of the variation on the read, as if the read always matched on the forward strand.
+       *Adding position to the index where the reference starts aligning the read yields the position of the variation
+       *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public int getPosition() {
         return position_;
       }
+      /**
+       * <pre>
+       *The position of the variation on the read, as if the read always matched on the forward strand.
+       *Adding position to the index where the reference starts aligning the read yields the position of the variation
+       *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public Builder setPosition(int value) {
         bitField0_ |= 0x00000004;
         position_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The position of the variation on the read, as if the read always matched on the forward strand.
+       *Adding position to the index where the reference starts aligning the read yields the position of the variation
+       *in reference/target sequence space. Since position starts at one the resulting position will also be one based.
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 position = 3;</code>
+       */
       public Builder clearPosition() {
         bitField0_ = (bitField0_ & ~0x00000004);
         position_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 read_index = 5;
+
       private int readIndex_ ;
+      /**
+       * <pre>
+       *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+       *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+       *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+       *where the bases are inserted (these bases are in the to field).
+       *When the read has a deletion, read_index records the position in the read after which the bases that would align
+       *in the reference are missing (these bases are in the from field).
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 read_index = 5;</code>
+       */
       public boolean hasReadIndex() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
+      /**
+       * <pre>
+       *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+       *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+       *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+       *where the bases are inserted (these bases are in the to field).
+       *When the read has a deletion, read_index records the position in the read after which the bases that would align
+       *in the reference are missing (these bases are in the from field).
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 read_index = 5;</code>
+       */
       public int getReadIndex() {
         return readIndex_;
       }
+      /**
+       * <pre>
+       *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+       *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+       *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+       *where the bases are inserted (these bases are in the to field).
+       *When the read has a deletion, read_index records the position in the read after which the bases that would align
+       *in the reference are missing (these bases are in the from field).
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 read_index = 5;</code>
+       */
       public Builder setReadIndex(int value) {
         bitField0_ |= 0x00000008;
         readIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The position of the variation, starting from the beginning of the aligned read (position 1), and up to the length
+       *of the read (inclusive). Use this index if you need to know  how far the variation is observed from the beginning
+       *of the sequenced read. When the read has an insertion, this index records the position immediately before the base
+       *where the bases are inserted (these bases are in the to field).
+       *When the read has a deletion, read_index records the position in the read after which the bases that would align
+       *in the reference are missing (these bases are in the from field).
+       *This field is required (enforced by semantic validation in Goby 2.0+).
+       * </pre>
+       *
+       * <code>optional uint32 read_index = 5;</code>
+       */
       public Builder clearReadIndex() {
         bitField0_ = (bitField0_ & ~0x00000008);
         readIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional bytes to_quality = 4;
+
       private com.google.protobuf.ByteString toQuality_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       **
+       *The read base quality scores for those bases that are given in the to field. This field
+       *is populated when the reads used to perform the search include quality scores, and when
+       *the alignment parser can extract the information from the aligner's output.
+       *(this option is currently not implemented in Goby.)
+       * </pre>
+       *
+       * <code>optional bytes to_quality = 4;</code>
+       */
       public boolean hasToQuality() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
+      /**
+       * <pre>
+       **
+       *The read base quality scores for those bases that are given in the to field. This field
+       *is populated when the reads used to perform the search include quality scores, and when
+       *the alignment parser can extract the information from the aligner's output.
+       *(this option is currently not implemented in Goby.)
+       * </pre>
+       *
+       * <code>optional bytes to_quality = 4;</code>
+       */
       public com.google.protobuf.ByteString getToQuality() {
         return toQuality_;
       }
+      /**
+       * <pre>
+       **
+       *The read base quality scores for those bases that are given in the to field. This field
+       *is populated when the reads used to perform the search include quality scores, and when
+       *the alignment parser can extract the information from the aligner's output.
+       *(this option is currently not implemented in Goby.)
+       * </pre>
+       *
+       * <code>optional bytes to_quality = 4;</code>
+       */
       public Builder setToQuality(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -4602,499 +9537,1613 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       **
+       *The read base quality scores for those bases that are given in the to field. This field
+       *is populated when the reads used to perform the search include quality scores, and when
+       *the alignment parser can extract the information from the aligner's output.
+       *(this option is currently not implemented in Goby.)
+       * </pre>
+       *
+       * <code>optional bytes to_quality = 4;</code>
+       */
       public Builder clearToQuality() {
         bitField0_ = (bitField0_ & ~0x00000010);
         toQuality_ = getDefaultInstance().getToQuality();
         onChanged();
         return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.SequenceVariation)
     }
-    
-    static {
-      defaultInstance = new SequenceVariation(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.SequenceVariation)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<SequenceVariation>
+        PARSER = new com.google.protobuf.AbstractParser<SequenceVariation>() {
+      @java.lang.Override
+      public SequenceVariation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SequenceVariation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SequenceVariation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SequenceVariation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface AlignmentHeaderOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional uint32 smallest_split_query_index = 9;
+
+  public interface AlignmentHeaderOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.AlignmentHeader)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *The smallest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 smallest_split_query_index = 9;</code>
+     */
     boolean hasSmallestSplitQueryIndex();
+    /**
+     * <pre>
+     *The smallest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 smallest_split_query_index = 9;</code>
+     */
     int getSmallestSplitQueryIndex();
-    
-    // optional uint32 largest_split_query_index = 11;
+
+    /**
+     * <pre>
+     *The largest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 largest_split_query_index = 11;</code>
+     */
     boolean hasLargestSplitQueryIndex();
+    /**
+     * <pre>
+     *The largest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 largest_split_query_index = 11;</code>
+     */
     int getLargestSplitQueryIndex();
-    
-    // optional .goby.IdentifierMapping query_name_mapping = 1;
+
+    /**
+     * <pre>
+     * Mapping from query identifier name to query index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+     */
     boolean hasQueryNameMapping();
+    /**
+     * <pre>
+     * Mapping from query identifier name to query index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getQueryNameMapping();
+    /**
+     * <pre>
+     * Mapping from query identifier name to query index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder getQueryNameMappingOrBuilder();
-    
-    // optional .goby.IdentifierMapping target_name_mapping = 2;
+
+    /**
+     * <pre>
+     * Mapping from target identifier name to target index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+     */
     boolean hasTargetNameMapping();
+    /**
+     * <pre>
+     * Mapping from target identifier name to target index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getTargetNameMapping();
+    /**
+     * <pre>
+     * Mapping from target identifier name to target index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder getTargetNameMappingOrBuilder();
-    
-    // optional uint32 number_of_queries = 5;
+
+    /**
+     * <pre>
+     *The number of query sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_queries = 5;</code>
+     */
     boolean hasNumberOfQueries();
+    /**
+     * <pre>
+     *The number of query sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_queries = 5;</code>
+     */
     int getNumberOfQueries();
-    
-    // optional uint32 number_of_targets = 6;
+
+    /**
+     * <pre>
+     *The number of target sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_targets = 6;</code>
+     */
     boolean hasNumberOfTargets();
+    /**
+     * <pre>
+     *The number of target sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_targets = 6;</code>
+     */
     int getNumberOfTargets();
-    
-    // optional uint32 number_of_aligned_reads = 7;
+
+    /**
+     * <pre>
+     *The number of reads that were aligned to the reference and are represented in this alignment archive.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_aligned_reads = 7;</code>
+     */
     boolean hasNumberOfAlignedReads();
+    /**
+     * <pre>
+     *The number of reads that were aligned to the reference and are represented in this alignment archive.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_aligned_reads = 7;</code>
+     */
     int getNumberOfAlignedReads();
-    
-    // repeated uint32 query_length = 3 [deprecated = true];
+
+    /**
+     * <pre>
+     *Length of the query sequences. One number per query, in the order of increasing query index.
+     *This information has been moved to the individual alignment entries.
+     * </pre>
+     *
+     * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+     */
     @java.lang.Deprecated java.util.List<java.lang.Integer> getQueryLengthList();
+    /**
+     * <pre>
+     *Length of the query sequences. One number per query, in the order of increasing query index.
+     *This information has been moved to the individual alignment entries.
+     * </pre>
+     *
+     * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+     */
     @java.lang.Deprecated int getQueryLengthCount();
+    /**
+     * <pre>
+     *Length of the query sequences. One number per query, in the order of increasing query index.
+     *This information has been moved to the individual alignment entries.
+     * </pre>
+     *
+     * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+     */
     @java.lang.Deprecated int getQueryLength(int index);
-    
-    // optional uint32 constant_query_length = 10;
+
+    /**
+     * <pre>
+     *If query length is constant across all the queries, this field contains the constant length.
+     *In such cases, query_length will be empty.
+     * </pre>
+     *
+     * <code>optional uint32 constant_query_length = 10;</code>
+     */
     boolean hasConstantQueryLength();
+    /**
+     * <pre>
+     *If query length is constant across all the queries, this field contains the constant length.
+     *In such cases, query_length will be empty.
+     * </pre>
+     *
+     * <code>optional uint32 constant_query_length = 10;</code>
+     */
     int getConstantQueryLength();
-    
-    // repeated uint32 target_length = 8;
+
+    /**
+     * <pre>
+     *Length of the target sequences. One number per target, in the order of increasing target index.
+     *The target indexes must be 0..(number of targets - 1).
+     * </pre>
+     *
+     * <code>repeated uint32 target_length = 8;</code>
+     */
     java.util.List<java.lang.Integer> getTargetLengthList();
+    /**
+     * <pre>
+     *Length of the target sequences. One number per target, in the order of increasing target index.
+     *The target indexes must be 0..(number of targets - 1).
+     * </pre>
+     *
+     * <code>repeated uint32 target_length = 8;</code>
+     */
     int getTargetLengthCount();
+    /**
+     * <pre>
+     *Length of the target sequences. One number per target, in the order of increasing target index.
+     *The target indexes must be 0..(number of targets - 1).
+     * </pre>
+     *
+     * <code>repeated uint32 target_length = 8;</code>
+     */
     int getTargetLength(int index);
-    
-    // optional bool sorted = 13;
+
+    /**
+     * <pre>
+     *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+     *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+     *have the same target, when a.position &lt; b.position.
+     * </pre>
+     *
+     * <code>optional bool sorted = 13;</code>
+     */
     boolean hasSorted();
+    /**
+     * <pre>
+     *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+     *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+     *have the same target, when a.position &lt; b.position.
+     * </pre>
+     *
+     * <code>optional bool sorted = 13;</code>
+     */
     boolean getSorted();
-    
-    // optional bool indexed = 14;
+
+    /**
+     * <pre>
+     *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+     *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+     * </pre>
+     *
+     * <code>optional bool indexed = 14;</code>
+     */
     boolean hasIndexed();
+    /**
+     * <pre>
+     *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+     *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+     * </pre>
+     *
+     * <code>optional bool indexed = 14;</code>
+     */
     boolean getIndexed();
-    
-    // optional bool query_lengths_stored_in_entries = 15;
+
+    /**
+     * <pre>
+     *True when query lengths are stored in alignment entries (Goby 1.7+).
+     * </pre>
+     *
+     * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+     */
     boolean hasQueryLengthsStoredInEntries();
+    /**
+     * <pre>
+     *True when query lengths are stored in alignment entries (Goby 1.7+).
+     * </pre>
+     *
+     * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+     */
     boolean getQueryLengthsStoredInEntries();
-    
-    // optional string aligner_name = 17;
+
+    /**
+     * <pre>
+     *Name of the aligner that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_name = 17;</code>
+     */
     boolean hasAlignerName();
-    String getAlignerName();
-    
-    // optional string aligner_version = 18;
+    /**
+     * <pre>
+     *Name of the aligner that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_name = 17;</code>
+     */
+    java.lang.String getAlignerName();
+    /**
+     * <pre>
+     *Name of the aligner that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_name = 17;</code>
+     */
+    com.google.protobuf.ByteString
+        getAlignerNameBytes();
+
+    /**
+     * <pre>
+     *Version number for the aligner implementation that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_version = 18;</code>
+     */
     boolean hasAlignerVersion();
-    String getAlignerVersion();
-    
-    // optional string version = 25;
+    /**
+     * <pre>
+     *Version number for the aligner implementation that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_version = 18;</code>
+     */
+    java.lang.String getAlignerVersion();
+    /**
+     * <pre>
+     *Version number for the aligner implementation that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_version = 18;</code>
+     */
+    com.google.protobuf.ByteString
+        getAlignerVersionBytes();
+
+    /**
+     * <pre>
+     *The version of Goby that created this alignment file.
+     * </pre>
+     *
+     * <code>optional string version = 25;</code>
+     */
     boolean hasVersion();
-    String getVersion();
-    
-    // repeated string sample_basename = 30;
-    java.util.List<String> getSampleBasenameList();
+    /**
+     * <pre>
+     *The version of Goby that created this alignment file.
+     * </pre>
+     *
+     * <code>optional string version = 25;</code>
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     *The version of Goby that created this alignment file.
+     * </pre>
+     *
+     * <code>optional string version = 25;</code>
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
+    java.util.List<java.lang.String>
+        getSampleBasenameList();
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
     int getSampleBasenameCount();
-    String getSampleBasename(int index);
-    
-    // optional bool query_indices_were_permuted = 26;
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
+    java.lang.String getSampleBasename(int index);
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
+    com.google.protobuf.ByteString
+        getSampleBasenameBytes(int index);
+
+    /**
+     * <pre>
+     *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+     *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+     *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+     *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+     *each small index of interest to the original query index.
+     * </pre>
+     *
+     * <code>optional bool query_indices_were_permuted = 26;</code>
+     */
     boolean hasQueryIndicesWerePermuted();
+    /**
+     * <pre>
+     *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+     *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+     *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+     *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+     *each small index of interest to the original query index.
+     * </pre>
+     *
+     * <code>optional bool query_indices_were_permuted = 26;</code>
+     */
     boolean getQueryIndicesWerePermuted();
-    
-    // optional bool query_index_occurrences = 35;
+
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool query_index_occurrences = 35;</code>
+     */
     boolean hasQueryIndexOccurrences();
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool query_index_occurrences = 35;</code>
+     */
     boolean getQueryIndexOccurrences();
-    
-    // optional bool ambiguity_stored_in_entries = 36;
+
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+     */
     boolean hasAmbiguityStoredInEntries();
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+     */
     boolean getAmbiguityStoredInEntries();
-    
-    // optional bool all_read_quality_scores = 40;
+
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool all_read_quality_scores = 40;</code>
+     */
     boolean hasAllReadQualityScores();
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool all_read_quality_scores = 40;</code>
+     */
     boolean getAllReadQualityScores();
-    
-    // repeated .goby.ReadOriginInfo read_origin = 27;
+
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo> 
         getReadOriginList();
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo getReadOrigin(int index);
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     int getReadOriginCount();
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder> 
         getReadOriginOrBuilderList();
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder getReadOriginOrBuilder(
         int index);
   }
-  public static final class AlignmentHeader extends
-      com.google.protobuf.GeneratedMessage
-      implements AlignmentHeaderOrBuilder {
+  /**
+   * Protobuf type {@code goby.AlignmentHeader}
+   */
+  public  static final class AlignmentHeader extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.AlignmentHeader)
+      AlignmentHeaderOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AlignmentHeader.newBuilder() to construct.
-    private AlignmentHeader(Builder builder) {
+    private AlignmentHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AlignmentHeader(boolean noInit) {}
-    
-    private static final AlignmentHeader defaultInstance;
-    public static AlignmentHeader getDefaultInstance() {
-      return defaultInstance;
+    private AlignmentHeader() {
+      queryLength_ = emptyIntList();
+      targetLength_ = emptyIntList();
+      alignerName_ = "";
+      alignerVersion_ = "";
+      version_ = "";
+      sampleBasename_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      readOrigin_ = java.util.Collections.emptyList();
     }
-    
-    public AlignmentHeader getDefaultInstanceForType() {
-      return defaultInstance;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AlignmentHeader();
     }
-    
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlignmentHeader(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) != 0)) {
+                subBuilder = queryNameMapping_.toBuilder();
+              }
+              queryNameMapping_ = input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(queryNameMapping_);
+                queryNameMapping_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 18: {
+              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) != 0)) {
+                subBuilder = targetNameMapping_.toBuilder();
+              }
+              targetNameMapping_ = input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetNameMapping_);
+                targetNameMapping_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                queryLength_ = newIntList();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              queryLength_.addInt(input.readUInt32());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000080) != 0) && input.getBytesUntilLimit() > 0) {
+                queryLength_ = newIntList();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                queryLength_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              numberOfQueries_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              numberOfTargets_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              numberOfAlignedReads_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                targetLength_ = newIntList();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              targetLength_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000200) != 0) && input.getBytesUntilLimit() > 0) {
+                targetLength_ = newIntList();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                targetLength_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
+              bitField0_ |= 0x00000001;
+              smallestSplitQueryIndex_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000080;
+              constantQueryLength_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000002;
+              largestSplitQueryIndex_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              bitField0_ |= 0x00000100;
+              sorted_ = input.readBool();
+              break;
+            }
+            case 112: {
+              bitField0_ |= 0x00000200;
+              indexed_ = input.readBool();
+              break;
+            }
+            case 120: {
+              bitField0_ |= 0x00000400;
+              queryLengthsStoredInEntries_ = input.readBool();
+              break;
+            }
+            case 138: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000800;
+              alignerName_ = bs;
+              break;
+            }
+            case 146: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00001000;
+              alignerVersion_ = bs;
+              break;
+            }
+            case 202: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00002000;
+              version_ = bs;
+              break;
+            }
+            case 208: {
+              bitField0_ |= 0x00004000;
+              queryIndicesWerePermuted_ = input.readBool();
+              break;
+            }
+            case 218: {
+              if (!((mutable_bitField0_ & 0x00200000) != 0)) {
+                readOrigin_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo>();
+                mutable_bitField0_ |= 0x00200000;
+              }
+              readOrigin_.add(
+                  input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.PARSER, extensionRegistry));
+              break;
+            }
+            case 242: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00010000) != 0)) {
+                sampleBasename_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00010000;
+              }
+              sampleBasename_.add(bs);
+              break;
+            }
+            case 280: {
+              bitField0_ |= 0x00008000;
+              queryIndexOccurrences_ = input.readBool();
+              break;
+            }
+            case 288: {
+              bitField0_ |= 0x00010000;
+              ambiguityStoredInEntries_ = input.readBool();
+              break;
+            }
+            case 320: {
+              bitField0_ |= 0x00020000;
+              allReadQualityScores_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          queryLength_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000200) != 0)) {
+          targetLength_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00200000) != 0)) {
+          readOrigin_ = java.util.Collections.unmodifiableList(readOrigin_);
+        }
+        if (((mutable_bitField0_ & 0x00010000) != 0)) {
+          sampleBasename_ = sampleBasename_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_fieldAccessorTable;
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.Builder.class);
     }
-    
+
     private int bitField0_;
-    // optional uint32 smallest_split_query_index = 9;
     public static final int SMALLEST_SPLIT_QUERY_INDEX_FIELD_NUMBER = 9;
     private int smallestSplitQueryIndex_;
+    /**
+     * <pre>
+     *The smallest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 smallest_split_query_index = 9;</code>
+     */
     public boolean hasSmallestSplitQueryIndex() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
+    /**
+     * <pre>
+     *The smallest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 smallest_split_query_index = 9;</code>
+     */
     public int getSmallestSplitQueryIndex() {
       return smallestSplitQueryIndex_;
     }
-    
-    // optional uint32 largest_split_query_index = 11;
+
     public static final int LARGEST_SPLIT_QUERY_INDEX_FIELD_NUMBER = 11;
     private int largestSplitQueryIndex_;
+    /**
+     * <pre>
+     *The largest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 largest_split_query_index = 11;</code>
+     */
     public boolean hasLargestSplitQueryIndex() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
+    /**
+     * <pre>
+     *The largest possible query index in this alignment. Data stored as an array where
+     *queryIndex is the array index will be stored with only the elements in the inclusive
+     *range [smallestSplitQueryIndex largestSplitQueryIndex]
+     *Such data structures include queryLength and some arrays in the TooManyHits data
+     *structure.
+     * </pre>
+     *
+     * <code>optional uint32 largest_split_query_index = 11;</code>
+     */
     public int getLargestSplitQueryIndex() {
       return largestSplitQueryIndex_;
     }
-    
-    // optional .goby.IdentifierMapping query_name_mapping = 1;
+
     public static final int QUERY_NAME_MAPPING_FIELD_NUMBER = 1;
     private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping queryNameMapping_;
+    /**
+     * <pre>
+     * Mapping from query identifier name to query index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+     */
     public boolean hasQueryNameMapping() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
+    /**
+     * <pre>
+     * Mapping from query identifier name to query index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getQueryNameMapping() {
-      return queryNameMapping_;
+      return queryNameMapping_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : queryNameMapping_;
     }
+    /**
+     * <pre>
+     * Mapping from query identifier name to query index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder getQueryNameMappingOrBuilder() {
-      return queryNameMapping_;
+      return queryNameMapping_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : queryNameMapping_;
     }
-    
-    // optional .goby.IdentifierMapping target_name_mapping = 2;
+
     public static final int TARGET_NAME_MAPPING_FIELD_NUMBER = 2;
     private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping targetNameMapping_;
+    /**
+     * <pre>
+     * Mapping from target identifier name to target index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+     */
     public boolean hasTargetNameMapping() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000008) != 0);
     }
+    /**
+     * <pre>
+     * Mapping from target identifier name to target index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getTargetNameMapping() {
-      return targetNameMapping_;
+      return targetNameMapping_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : targetNameMapping_;
     }
+    /**
+     * <pre>
+     * Mapping from target identifier name to target index (as used in alignment entries).
+     * </pre>
+     *
+     * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder getTargetNameMappingOrBuilder() {
-      return targetNameMapping_;
+      return targetNameMapping_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : targetNameMapping_;
     }
-    
-    // optional uint32 number_of_queries = 5;
+
     public static final int NUMBER_OF_QUERIES_FIELD_NUMBER = 5;
     private int numberOfQueries_;
+    /**
+     * <pre>
+     *The number of query sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_queries = 5;</code>
+     */
     public boolean hasNumberOfQueries() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000010) != 0);
     }
+    /**
+     * <pre>
+     *The number of query sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_queries = 5;</code>
+     */
     public int getNumberOfQueries() {
       return numberOfQueries_;
     }
-    
-    // optional uint32 number_of_targets = 6;
+
     public static final int NUMBER_OF_TARGETS_FIELD_NUMBER = 6;
     private int numberOfTargets_;
+    /**
+     * <pre>
+     *The number of target sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_targets = 6;</code>
+     */
     public boolean hasNumberOfTargets() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000020) != 0);
     }
+    /**
+     * <pre>
+     *The number of target sequences
+     * </pre>
+     *
+     * <code>optional uint32 number_of_targets = 6;</code>
+     */
     public int getNumberOfTargets() {
       return numberOfTargets_;
     }
-    
-    // optional uint32 number_of_aligned_reads = 7;
+
     public static final int NUMBER_OF_ALIGNED_READS_FIELD_NUMBER = 7;
     private int numberOfAlignedReads_;
+    /**
+     * <pre>
+     *The number of reads that were aligned to the reference and are represented in this alignment archive.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_aligned_reads = 7;</code>
+     */
     public boolean hasNumberOfAlignedReads() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000040) != 0);
     }
+    /**
+     * <pre>
+     *The number of reads that were aligned to the reference and are represented in this alignment archive.
+     * </pre>
+     *
+     * <code>optional uint32 number_of_aligned_reads = 7;</code>
+     */
     public int getNumberOfAlignedReads() {
       return numberOfAlignedReads_;
     }
-    
-    // repeated uint32 query_length = 3 [deprecated = true];
+
     public static final int QUERY_LENGTH_FIELD_NUMBER = 3;
-    private java.util.List<java.lang.Integer> queryLength_;
+    private com.google.protobuf.Internal.IntList queryLength_;
+    /**
+     * <pre>
+     *Length of the query sequences. One number per query, in the order of increasing query index.
+     *This information has been moved to the individual alignment entries.
+     * </pre>
+     *
+     * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+     */
     @java.lang.Deprecated public java.util.List<java.lang.Integer>
         getQueryLengthList() {
       return queryLength_;
     }
+    /**
+     * <pre>
+     *Length of the query sequences. One number per query, in the order of increasing query index.
+     *This information has been moved to the individual alignment entries.
+     * </pre>
+     *
+     * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+     */
     @java.lang.Deprecated public int getQueryLengthCount() {
       return queryLength_.size();
     }
+    /**
+     * <pre>
+     *Length of the query sequences. One number per query, in the order of increasing query index.
+     *This information has been moved to the individual alignment entries.
+     * </pre>
+     *
+     * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+     */
     @java.lang.Deprecated public int getQueryLength(int index) {
-      return queryLength_.get(index);
+      return queryLength_.getInt(index);
     }
-    
-    // optional uint32 constant_query_length = 10;
+
     public static final int CONSTANT_QUERY_LENGTH_FIELD_NUMBER = 10;
     private int constantQueryLength_;
+    /**
+     * <pre>
+     *If query length is constant across all the queries, this field contains the constant length.
+     *In such cases, query_length will be empty.
+     * </pre>
+     *
+     * <code>optional uint32 constant_query_length = 10;</code>
+     */
     public boolean hasConstantQueryLength() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000080) != 0);
     }
+    /**
+     * <pre>
+     *If query length is constant across all the queries, this field contains the constant length.
+     *In such cases, query_length will be empty.
+     * </pre>
+     *
+     * <code>optional uint32 constant_query_length = 10;</code>
+     */
     public int getConstantQueryLength() {
       return constantQueryLength_;
     }
-    
-    // repeated uint32 target_length = 8;
+
     public static final int TARGET_LENGTH_FIELD_NUMBER = 8;
-    private java.util.List<java.lang.Integer> targetLength_;
+    private com.google.protobuf.Internal.IntList targetLength_;
+    /**
+     * <pre>
+     *Length of the target sequences. One number per target, in the order of increasing target index.
+     *The target indexes must be 0..(number of targets - 1).
+     * </pre>
+     *
+     * <code>repeated uint32 target_length = 8;</code>
+     */
     public java.util.List<java.lang.Integer>
         getTargetLengthList() {
       return targetLength_;
     }
+    /**
+     * <pre>
+     *Length of the target sequences. One number per target, in the order of increasing target index.
+     *The target indexes must be 0..(number of targets - 1).
+     * </pre>
+     *
+     * <code>repeated uint32 target_length = 8;</code>
+     */
     public int getTargetLengthCount() {
       return targetLength_.size();
     }
+    /**
+     * <pre>
+     *Length of the target sequences. One number per target, in the order of increasing target index.
+     *The target indexes must be 0..(number of targets - 1).
+     * </pre>
+     *
+     * <code>repeated uint32 target_length = 8;</code>
+     */
     public int getTargetLength(int index) {
-      return targetLength_.get(index);
+      return targetLength_.getInt(index);
     }
-    
-    // optional bool sorted = 13;
+
     public static final int SORTED_FIELD_NUMBER = 13;
     private boolean sorted_;
+    /**
+     * <pre>
+     *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+     *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+     *have the same target, when a.position &lt; b.position.
+     * </pre>
+     *
+     * <code>optional bool sorted = 13;</code>
+     */
     public boolean hasSorted() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000100) != 0);
     }
+    /**
+     * <pre>
+     *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+     *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+     *have the same target, when a.position &lt; b.position.
+     * </pre>
+     *
+     * <code>optional bool sorted = 13;</code>
+     */
     public boolean getSorted() {
       return sorted_;
     }
-    
-    // optional bool indexed = 14;
+
     public static final int INDEXED_FIELD_NUMBER = 14;
     private boolean indexed_;
+    /**
+     * <pre>
+     *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+     *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+     * </pre>
+     *
+     * <code>optional bool indexed = 14;</code>
+     */
     public boolean hasIndexed() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000200) != 0);
     }
+    /**
+     * <pre>
+     *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+     *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+     * </pre>
+     *
+     * <code>optional bool indexed = 14;</code>
+     */
     public boolean getIndexed() {
       return indexed_;
     }
-    
-    // optional bool query_lengths_stored_in_entries = 15;
+
     public static final int QUERY_LENGTHS_STORED_IN_ENTRIES_FIELD_NUMBER = 15;
     private boolean queryLengthsStoredInEntries_;
+    /**
+     * <pre>
+     *True when query lengths are stored in alignment entries (Goby 1.7+).
+     * </pre>
+     *
+     * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+     */
     public boolean hasQueryLengthsStoredInEntries() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000400) != 0);
     }
+    /**
+     * <pre>
+     *True when query lengths are stored in alignment entries (Goby 1.7+).
+     * </pre>
+     *
+     * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+     */
     public boolean getQueryLengthsStoredInEntries() {
       return queryLengthsStoredInEntries_;
     }
-    
-    // optional string aligner_name = 17;
+
     public static final int ALIGNER_NAME_FIELD_NUMBER = 17;
-    private java.lang.Object alignerName_;
+    private volatile java.lang.Object alignerName_;
+    /**
+     * <pre>
+     *Name of the aligner that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_name = 17;</code>
+     */
     public boolean hasAlignerName() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000800) != 0);
     }
-    public String getAlignerName() {
+    /**
+     * <pre>
+     *Name of the aligner that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_name = 17;</code>
+     */
+    public java.lang.String getAlignerName() {
       java.lang.Object ref = alignerName_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           alignerName_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getAlignerNameBytes() {
+    /**
+     * <pre>
+     *Name of the aligner that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_name = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAlignerNameBytes() {
       java.lang.Object ref = alignerName_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         alignerName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // optional string aligner_version = 18;
+
     public static final int ALIGNER_VERSION_FIELD_NUMBER = 18;
-    private java.lang.Object alignerVersion_;
+    private volatile java.lang.Object alignerVersion_;
+    /**
+     * <pre>
+     *Version number for the aligner implementation that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_version = 18;</code>
+     */
     public boolean hasAlignerVersion() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00001000) != 0);
     }
-    public String getAlignerVersion() {
+    /**
+     * <pre>
+     *Version number for the aligner implementation that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_version = 18;</code>
+     */
+    public java.lang.String getAlignerVersion() {
       java.lang.Object ref = alignerVersion_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           alignerVersion_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getAlignerVersionBytes() {
+    /**
+     * <pre>
+     *Version number for the aligner implementation that produced this alignment.
+     * </pre>
+     *
+     * <code>optional string aligner_version = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAlignerVersionBytes() {
       java.lang.Object ref = alignerVersion_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         alignerVersion_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // optional string version = 25;
+
     public static final int VERSION_FIELD_NUMBER = 25;
-    private java.lang.Object version_;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     *The version of Goby that created this alignment file.
+     * </pre>
+     *
+     * <code>optional string version = 25;</code>
+     */
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00002000) != 0);
     }
-    public String getVersion() {
+    /**
+     * <pre>
+     *The version of Goby that created this alignment file.
+     * </pre>
+     *
+     * <code>optional string version = 25;</code>
+     */
+    public java.lang.String getVersion() {
       java.lang.Object ref = version_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           version_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getVersionBytes() {
+    /**
+     * <pre>
+     *The version of Goby that created this alignment file.
+     * </pre>
+     *
+     * <code>optional string version = 25;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
       java.lang.Object ref = version_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // repeated string sample_basename = 30;
+
     public static final int SAMPLE_BASENAME_FIELD_NUMBER = 30;
     private com.google.protobuf.LazyStringList sampleBasename_;
-    public java.util.List<String>
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
         getSampleBasenameList() {
       return sampleBasename_;
     }
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
     public int getSampleBasenameCount() {
       return sampleBasename_.size();
     }
-    public String getSampleBasename(int index) {
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
+    public java.lang.String getSampleBasename(int index) {
       return sampleBasename_.get(index);
     }
-    
-    // optional bool query_indices_were_permuted = 26;
+    /**
+     * <code>repeated string sample_basename = 30;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSampleBasenameBytes(int index) {
+      return sampleBasename_.getByteString(index);
+    }
+
     public static final int QUERY_INDICES_WERE_PERMUTED_FIELD_NUMBER = 26;
     private boolean queryIndicesWerePermuted_;
+    /**
+     * <pre>
+     *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+     *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+     *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+     *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+     *each small index of interest to the original query index.
+     * </pre>
+     *
+     * <code>optional bool query_indices_were_permuted = 26;</code>
+     */
     public boolean hasQueryIndicesWerePermuted() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00004000) != 0);
     }
+    /**
+     * <pre>
+     *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+     *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+     *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+     *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+     *each small index of interest to the original query index.
+     * </pre>
+     *
+     * <code>optional bool query_indices_were_permuted = 26;</code>
+     */
     public boolean getQueryIndicesWerePermuted() {
       return queryIndicesWerePermuted_;
     }
-    
-    // optional bool query_index_occurrences = 35;
+
     public static final int QUERY_INDEX_OCCURRENCES_FIELD_NUMBER = 35;
     private boolean queryIndexOccurrences_;
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool query_index_occurrences = 35;</code>
+     */
     public boolean hasQueryIndexOccurrences() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00008000) != 0);
     }
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool query_index_occurrences = 35;</code>
+     */
     public boolean getQueryIndexOccurrences() {
       return queryIndexOccurrences_;
     }
-    
-    // optional bool ambiguity_stored_in_entries = 36;
+
     public static final int AMBIGUITY_STORED_IN_ENTRIES_FIELD_NUMBER = 36;
     private boolean ambiguityStoredInEntries_;
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+     */
     public boolean hasAmbiguityStoredInEntries() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00010000) != 0);
     }
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+     */
     public boolean getAmbiguityStoredInEntries() {
       return ambiguityStoredInEntries_;
     }
-    
-    // optional bool all_read_quality_scores = 40;
+
     public static final int ALL_READ_QUALITY_SCORES_FIELD_NUMBER = 40;
     private boolean allReadQualityScores_;
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool all_read_quality_scores = 40;</code>
+     */
     public boolean hasAllReadQualityScores() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
+      return ((bitField0_ & 0x00020000) != 0);
     }
+    /**
+     * <pre>
+     *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>optional bool all_read_quality_scores = 40;</code>
+     */
     public boolean getAllReadQualityScores() {
       return allReadQualityScores_;
     }
-    
-    // repeated .goby.ReadOriginInfo read_origin = 27;
+
     public static final int READ_ORIGIN_FIELD_NUMBER = 27;
     private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo> readOrigin_;
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo> getReadOriginList() {
       return readOrigin_;
     }
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder> 
         getReadOriginOrBuilderList() {
       return readOrigin_;
     }
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     public int getReadOriginCount() {
       return readOrigin_.size();
     }
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo getReadOrigin(int index) {
       return readOrigin_.get(index);
     }
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+     *efficient. Instead of storing strings, we use integers in the entries.
+     *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder getReadOriginOrBuilder(
         int index) {
       return readOrigin_.get(index);
     }
-    
-    private void initFields() {
-      smallestSplitQueryIndex_ = 0;
-      largestSplitQueryIndex_ = 0;
-      queryNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
-      targetNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
-      numberOfQueries_ = 0;
-      numberOfTargets_ = 0;
-      numberOfAlignedReads_ = 0;
-      queryLength_ = java.util.Collections.emptyList();;
-      constantQueryLength_ = 0;
-      targetLength_ = java.util.Collections.emptyList();;
-      sorted_ = false;
-      indexed_ = false;
-      queryLengthsStoredInEntries_ = false;
-      alignerName_ = "";
-      alignerVersion_ = "";
-      version_ = "";
-      sampleBasename_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      queryIndicesWerePermuted_ = false;
-      queryIndexOccurrences_ = false;
-      ambiguityStoredInEntries_ = false;
-      allReadQualityScores_ = false;
-      readOrigin_ = java.util.Collections.emptyList();
-    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       if (hasQueryNameMapping()) {
         if (!getQueryNameMapping().isInitialized()) {
           memoizedIsInitialized = 0;
@@ -5116,111 +11165,111 @@ public final class Alignments {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(1, queryNameMapping_);
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(1, getQueryNameMapping());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(2, targetNameMapping_);
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(2, getTargetNameMapping());
       }
       for (int i = 0; i < queryLength_.size(); i++) {
-        output.writeUInt32(3, queryLength_.get(i));
+        output.writeUInt32(3, queryLength_.getInt(i));
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeUInt32(5, numberOfQueries_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeUInt32(6, numberOfTargets_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         output.writeUInt32(7, numberOfAlignedReads_);
       }
       for (int i = 0; i < targetLength_.size(); i++) {
-        output.writeUInt32(8, targetLength_.get(i));
+        output.writeUInt32(8, targetLength_.getInt(i));
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt32(9, smallestSplitQueryIndex_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeUInt32(10, constantQueryLength_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeUInt32(11, largestSplitQueryIndex_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeBool(13, sorted_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         output.writeBool(14, indexed_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         output.writeBool(15, queryLengthsStoredInEntries_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeBytes(17, getAlignerNameBytes());
+      if (((bitField0_ & 0x00000800) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, alignerName_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeBytes(18, getAlignerVersionBytes());
+      if (((bitField0_ & 0x00001000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, alignerVersion_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeBytes(25, getVersionBytes());
+      if (((bitField0_ & 0x00002000) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, version_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         output.writeBool(26, queryIndicesWerePermuted_);
       }
       for (int i = 0; i < readOrigin_.size(); i++) {
         output.writeMessage(27, readOrigin_.get(i));
       }
       for (int i = 0; i < sampleBasename_.size(); i++) {
-        output.writeBytes(30, sampleBasename_.getByteString(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 30, sampleBasename_.getRaw(i));
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         output.writeBool(35, queryIndexOccurrences_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         output.writeBool(36, ambiguityStoredInEntries_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         output.writeBool(40, allReadQualityScores_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, queryNameMapping_);
+          .computeMessageSize(1, getQueryNameMapping());
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, targetNameMapping_);
+          .computeMessageSize(2, getTargetNameMapping());
       }
       {
         int dataSize = 0;
         for (int i = 0; i < queryLength_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(queryLength_.get(i));
+            .computeUInt32SizeNoTag(queryLength_.getInt(i));
         }
         size += dataSize;
         size += 1 * getQueryLengthList().size();
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, numberOfQueries_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, numberOfTargets_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, numberOfAlignedReads_);
       }
@@ -5228,48 +11277,45 @@ public final class Alignments {
         int dataSize = 0;
         for (int i = 0; i < targetLength_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(targetLength_.get(i));
+            .computeUInt32SizeNoTag(targetLength_.getInt(i));
         }
         size += dataSize;
         size += 1 * getTargetLengthList().size();
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, smallestSplitQueryIndex_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, constantQueryLength_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, largestSplitQueryIndex_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, sorted_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, indexed_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, queryLengthsStoredInEntries_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(17, getAlignerNameBytes());
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, alignerName_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(18, getAlignerVersionBytes());
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, alignerVersion_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(25, getVersionBytes());
+      if (((bitField0_ & 0x00002000) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, version_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(26, queryIndicesWerePermuted_);
       }
@@ -5280,149 +11326,376 @@ public final class Alignments {
       {
         int dataSize = 0;
         for (int i = 0; i < sampleBasename_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(sampleBasename_.getByteString(i));
+          dataSize += computeStringSizeNoTag(sampleBasename_.getRaw(i));
         }
         size += dataSize;
         size += 2 * getSampleBasenameList().size();
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(35, queryIndexOccurrences_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(36, ambiguityStoredInEntries_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(40, allReadQualityScores_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader other = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader) obj;
+
+      if (hasSmallestSplitQueryIndex() != other.hasSmallestSplitQueryIndex()) return false;
+      if (hasSmallestSplitQueryIndex()) {
+        if (getSmallestSplitQueryIndex()
+            != other.getSmallestSplitQueryIndex()) return false;
+      }
+      if (hasLargestSplitQueryIndex() != other.hasLargestSplitQueryIndex()) return false;
+      if (hasLargestSplitQueryIndex()) {
+        if (getLargestSplitQueryIndex()
+            != other.getLargestSplitQueryIndex()) return false;
+      }
+      if (hasQueryNameMapping() != other.hasQueryNameMapping()) return false;
+      if (hasQueryNameMapping()) {
+        if (!getQueryNameMapping()
+            .equals(other.getQueryNameMapping())) return false;
+      }
+      if (hasTargetNameMapping() != other.hasTargetNameMapping()) return false;
+      if (hasTargetNameMapping()) {
+        if (!getTargetNameMapping()
+            .equals(other.getTargetNameMapping())) return false;
+      }
+      if (hasNumberOfQueries() != other.hasNumberOfQueries()) return false;
+      if (hasNumberOfQueries()) {
+        if (getNumberOfQueries()
+            != other.getNumberOfQueries()) return false;
+      }
+      if (hasNumberOfTargets() != other.hasNumberOfTargets()) return false;
+      if (hasNumberOfTargets()) {
+        if (getNumberOfTargets()
+            != other.getNumberOfTargets()) return false;
+      }
+      if (hasNumberOfAlignedReads() != other.hasNumberOfAlignedReads()) return false;
+      if (hasNumberOfAlignedReads()) {
+        if (getNumberOfAlignedReads()
+            != other.getNumberOfAlignedReads()) return false;
+      }
+      if (!getQueryLengthList()
+          .equals(other.getQueryLengthList())) return false;
+      if (hasConstantQueryLength() != other.hasConstantQueryLength()) return false;
+      if (hasConstantQueryLength()) {
+        if (getConstantQueryLength()
+            != other.getConstantQueryLength()) return false;
+      }
+      if (!getTargetLengthList()
+          .equals(other.getTargetLengthList())) return false;
+      if (hasSorted() != other.hasSorted()) return false;
+      if (hasSorted()) {
+        if (getSorted()
+            != other.getSorted()) return false;
+      }
+      if (hasIndexed() != other.hasIndexed()) return false;
+      if (hasIndexed()) {
+        if (getIndexed()
+            != other.getIndexed()) return false;
+      }
+      if (hasQueryLengthsStoredInEntries() != other.hasQueryLengthsStoredInEntries()) return false;
+      if (hasQueryLengthsStoredInEntries()) {
+        if (getQueryLengthsStoredInEntries()
+            != other.getQueryLengthsStoredInEntries()) return false;
+      }
+      if (hasAlignerName() != other.hasAlignerName()) return false;
+      if (hasAlignerName()) {
+        if (!getAlignerName()
+            .equals(other.getAlignerName())) return false;
+      }
+      if (hasAlignerVersion() != other.hasAlignerVersion()) return false;
+      if (hasAlignerVersion()) {
+        if (!getAlignerVersion()
+            .equals(other.getAlignerVersion())) return false;
+      }
+      if (hasVersion() != other.hasVersion()) return false;
+      if (hasVersion()) {
+        if (!getVersion()
+            .equals(other.getVersion())) return false;
+      }
+      if (!getSampleBasenameList()
+          .equals(other.getSampleBasenameList())) return false;
+      if (hasQueryIndicesWerePermuted() != other.hasQueryIndicesWerePermuted()) return false;
+      if (hasQueryIndicesWerePermuted()) {
+        if (getQueryIndicesWerePermuted()
+            != other.getQueryIndicesWerePermuted()) return false;
+      }
+      if (hasQueryIndexOccurrences() != other.hasQueryIndexOccurrences()) return false;
+      if (hasQueryIndexOccurrences()) {
+        if (getQueryIndexOccurrences()
+            != other.getQueryIndexOccurrences()) return false;
+      }
+      if (hasAmbiguityStoredInEntries() != other.hasAmbiguityStoredInEntries()) return false;
+      if (hasAmbiguityStoredInEntries()) {
+        if (getAmbiguityStoredInEntries()
+            != other.getAmbiguityStoredInEntries()) return false;
+      }
+      if (hasAllReadQualityScores() != other.hasAllReadQualityScores()) return false;
+      if (hasAllReadQualityScores()) {
+        if (getAllReadQualityScores()
+            != other.getAllReadQualityScores()) return false;
+      }
+      if (!getReadOriginList()
+          .equals(other.getReadOriginList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSmallestSplitQueryIndex()) {
+        hash = (37 * hash) + SMALLEST_SPLIT_QUERY_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getSmallestSplitQueryIndex();
+      }
+      if (hasLargestSplitQueryIndex()) {
+        hash = (37 * hash) + LARGEST_SPLIT_QUERY_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getLargestSplitQueryIndex();
+      }
+      if (hasQueryNameMapping()) {
+        hash = (37 * hash) + QUERY_NAME_MAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryNameMapping().hashCode();
+      }
+      if (hasTargetNameMapping()) {
+        hash = (37 * hash) + TARGET_NAME_MAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetNameMapping().hashCode();
+      }
+      if (hasNumberOfQueries()) {
+        hash = (37 * hash) + NUMBER_OF_QUERIES_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberOfQueries();
+      }
+      if (hasNumberOfTargets()) {
+        hash = (37 * hash) + NUMBER_OF_TARGETS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberOfTargets();
+      }
+      if (hasNumberOfAlignedReads()) {
+        hash = (37 * hash) + NUMBER_OF_ALIGNED_READS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumberOfAlignedReads();
+      }
+      if (getQueryLengthCount() > 0) {
+        hash = (37 * hash) + QUERY_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryLengthList().hashCode();
+      }
+      if (hasConstantQueryLength()) {
+        hash = (37 * hash) + CONSTANT_QUERY_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getConstantQueryLength();
+      }
+      if (getTargetLengthCount() > 0) {
+        hash = (37 * hash) + TARGET_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetLengthList().hashCode();
+      }
+      if (hasSorted()) {
+        hash = (37 * hash) + SORTED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getSorted());
+      }
+      if (hasIndexed()) {
+        hash = (37 * hash) + INDEXED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIndexed());
+      }
+      if (hasQueryLengthsStoredInEntries()) {
+        hash = (37 * hash) + QUERY_LENGTHS_STORED_IN_ENTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getQueryLengthsStoredInEntries());
+      }
+      if (hasAlignerName()) {
+        hash = (37 * hash) + ALIGNER_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getAlignerName().hashCode();
+      }
+      if (hasAlignerVersion()) {
+        hash = (37 * hash) + ALIGNER_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getAlignerVersion().hashCode();
+      }
+      if (hasVersion()) {
+        hash = (37 * hash) + VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getVersion().hashCode();
+      }
+      if (getSampleBasenameCount() > 0) {
+        hash = (37 * hash) + SAMPLE_BASENAME_FIELD_NUMBER;
+        hash = (53 * hash) + getSampleBasenameList().hashCode();
+      }
+      if (hasQueryIndicesWerePermuted()) {
+        hash = (37 * hash) + QUERY_INDICES_WERE_PERMUTED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getQueryIndicesWerePermuted());
+      }
+      if (hasQueryIndexOccurrences()) {
+        hash = (37 * hash) + QUERY_INDEX_OCCURRENCES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getQueryIndexOccurrences());
+      }
+      if (hasAmbiguityStoredInEntries()) {
+        hash = (37 * hash) + AMBIGUITY_STORED_IN_ENTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAmbiguityStoredInEntries());
+      }
+      if (hasAllReadQualityScores()) {
+        hash = (37 * hash) + ALL_READ_QUALITY_SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getAllReadQualityScores());
+      }
+      if (getReadOriginCount() > 0) {
+        hash = (37 * hash) + READ_ORIGIN_FIELD_NUMBER;
+        hash = (53 * hash) + getReadOriginList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code goby.AlignmentHeader}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeaderOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.AlignmentHeader)
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeaderOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getQueryNameMappingFieldBuilder();
           getTargetNameMappingFieldBuilder();
           getReadOriginFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         smallestSplitQueryIndex_ = 0;
@@ -5430,13 +11703,13 @@ public final class Alignments {
         largestSplitQueryIndex_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         if (queryNameMappingBuilder_ == null) {
-          queryNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
+          queryNameMapping_ = null;
         } else {
           queryNameMappingBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (targetNameMappingBuilder_ == null) {
-          targetNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
+          targetNameMapping_ = null;
         } else {
           targetNameMappingBuilder_.clear();
         }
@@ -5447,11 +11720,11 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00000020);
         numberOfAlignedReads_ = 0;
         bitField0_ = (bitField0_ & ~0x00000040);
-        queryLength_ = java.util.Collections.emptyList();;
+        queryLength_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000080);
         constantQueryLength_ = 0;
         bitField0_ = (bitField0_ & ~0x00000100);
-        targetLength_ = java.util.Collections.emptyList();;
+        targetLength_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000200);
         sorted_ = false;
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -5483,20 +11756,19 @@ public final class Alignments {
         }
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentHeader_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader build() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader result = buildPartial();
         if (!result.isInitialized()) {
@@ -5504,119 +11776,109 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader result = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.smallestSplitQueryIndex_ = smallestSplitQueryIndex_;
           to_bitField0_ |= 0x00000001;
         }
-        result.smallestSplitQueryIndex_ = smallestSplitQueryIndex_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.largestSplitQueryIndex_ = largestSplitQueryIndex_;
           to_bitField0_ |= 0x00000002;
         }
-        result.largestSplitQueryIndex_ = largestSplitQueryIndex_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          if (queryNameMappingBuilder_ == null) {
+            result.queryNameMapping_ = queryNameMapping_;
+          } else {
+            result.queryNameMapping_ = queryNameMappingBuilder_.build();
+          }
           to_bitField0_ |= 0x00000004;
         }
-        if (queryNameMappingBuilder_ == null) {
-          result.queryNameMapping_ = queryNameMapping_;
-        } else {
-          result.queryNameMapping_ = queryNameMappingBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          if (targetNameMappingBuilder_ == null) {
+            result.targetNameMapping_ = targetNameMapping_;
+          } else {
+            result.targetNameMapping_ = targetNameMappingBuilder_.build();
+          }
           to_bitField0_ |= 0x00000008;
         }
-        if (targetNameMappingBuilder_ == null) {
-          result.targetNameMapping_ = targetNameMapping_;
-        } else {
-          result.targetNameMapping_ = targetNameMappingBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.numberOfQueries_ = numberOfQueries_;
           to_bitField0_ |= 0x00000010;
         }
-        result.numberOfQueries_ = numberOfQueries_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.numberOfTargets_ = numberOfTargets_;
           to_bitField0_ |= 0x00000020;
         }
-        result.numberOfTargets_ = numberOfTargets_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.numberOfAlignedReads_ = numberOfAlignedReads_;
           to_bitField0_ |= 0x00000040;
         }
-        result.numberOfAlignedReads_ = numberOfAlignedReads_;
-        if (((bitField0_ & 0x00000080) == 0x00000080)) {
-          queryLength_ = java.util.Collections.unmodifiableList(queryLength_);
+        if (((bitField0_ & 0x00000080) != 0)) {
+          queryLength_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.queryLength_ = queryLength_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.constantQueryLength_ = constantQueryLength_;
           to_bitField0_ |= 0x00000080;
         }
-        result.constantQueryLength_ = constantQueryLength_;
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
-          targetLength_ = java.util.Collections.unmodifiableList(targetLength_);
+        if (((bitField0_ & 0x00000200) != 0)) {
+          targetLength_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.targetLength_ = targetLength_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.sorted_ = sorted_;
           to_bitField0_ |= 0x00000100;
         }
-        result.sorted_ = sorted_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.indexed_ = indexed_;
           to_bitField0_ |= 0x00000200;
         }
-        result.indexed_ = indexed_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.queryLengthsStoredInEntries_ = queryLengthsStoredInEntries_;
           to_bitField0_ |= 0x00000400;
         }
-        result.queryLengthsStoredInEntries_ = queryLengthsStoredInEntries_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           to_bitField0_ |= 0x00000800;
         }
         result.alignerName_ = alignerName_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           to_bitField0_ |= 0x00001000;
         }
         result.alignerVersion_ = alignerVersion_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
           to_bitField0_ |= 0x00002000;
         }
         result.version_ = version_;
-        if (((bitField0_ & 0x00010000) == 0x00010000)) {
-          sampleBasename_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              sampleBasename_);
+        if (((bitField0_ & 0x00010000) != 0)) {
+          sampleBasename_ = sampleBasename_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.sampleBasename_ = sampleBasename_;
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.queryIndicesWerePermuted_ = queryIndicesWerePermuted_;
           to_bitField0_ |= 0x00004000;
         }
-        result.queryIndicesWerePermuted_ = queryIndicesWerePermuted_;
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.queryIndexOccurrences_ = queryIndexOccurrences_;
           to_bitField0_ |= 0x00008000;
         }
-        result.queryIndexOccurrences_ = queryIndexOccurrences_;
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.ambiguityStoredInEntries_ = ambiguityStoredInEntries_;
           to_bitField0_ |= 0x00010000;
         }
-        result.ambiguityStoredInEntries_ = ambiguityStoredInEntries_;
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.allReadQualityScores_ = allReadQualityScores_;
           to_bitField0_ |= 0x00020000;
         }
-        result.allReadQualityScores_ = allReadQualityScores_;
         if (readOriginBuilder_ == null) {
-          if (((bitField0_ & 0x00200000) == 0x00200000)) {
+          if (((bitField0_ & 0x00200000) != 0)) {
             readOrigin_ = java.util.Collections.unmodifiableList(readOrigin_);
             bitField0_ = (bitField0_ & ~0x00200000);
           }
@@ -5628,7 +11890,40 @@ public final class Alignments {
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader)other);
@@ -5637,7 +11932,7 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.getDefaultInstance()) return this;
         if (other.hasSmallestSplitQueryIndex()) {
@@ -5694,13 +11989,19 @@ public final class Alignments {
           setQueryLengthsStoredInEntries(other.getQueryLengthsStoredInEntries());
         }
         if (other.hasAlignerName()) {
-          setAlignerName(other.getAlignerName());
+          bitField0_ |= 0x00002000;
+          alignerName_ = other.alignerName_;
+          onChanged();
         }
         if (other.hasAlignerVersion()) {
-          setAlignerVersion(other.getAlignerVersion());
+          bitField0_ |= 0x00004000;
+          alignerVersion_ = other.alignerVersion_;
+          onChanged();
         }
         if (other.hasVersion()) {
-          setVersion(other.getVersion());
+          bitField0_ |= 0x00008000;
+          version_ = other.version_;
+          onChanged();
         }
         if (!other.sampleBasename_.isEmpty()) {
           if (sampleBasename_.isEmpty()) {
@@ -5743,261 +12044,220 @@ public final class Alignments {
               readOrigin_ = other.readOrigin_;
               bitField0_ = (bitField0_ & ~0x00200000);
               readOriginBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getReadOriginFieldBuilder() : null;
             } else {
               readOriginBuilder_.addAllMessages(other.readOrigin_);
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         if (hasQueryNameMapping()) {
           if (!getQueryNameMapping().isInitialized()) {
-            
             return false;
           }
         }
         if (hasTargetNameMapping()) {
           if (!getTargetNameMapping().isInitialized()) {
-            
             return false;
           }
         }
         for (int i = 0; i < getReadOriginCount(); i++) {
           if (!getReadOrigin(i).isInitialized()) {
-            
             return false;
           }
         }
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.newBuilder();
-              if (hasQueryNameMapping()) {
-                subBuilder.mergeFrom(getQueryNameMapping());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setQueryNameMapping(subBuilder.buildPartial());
-              break;
-            }
-            case 18: {
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.newBuilder();
-              if (hasTargetNameMapping()) {
-                subBuilder.mergeFrom(getTargetNameMapping());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setTargetNameMapping(subBuilder.buildPartial());
-              break;
-            }
-            case 24: {
-              ensureQueryLengthIsMutable();
-              queryLength_.add(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addQueryLength(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
-              numberOfQueries_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              bitField0_ |= 0x00000020;
-              numberOfTargets_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              bitField0_ |= 0x00000040;
-              numberOfAlignedReads_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              ensureTargetLengthIsMutable();
-              targetLength_.add(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addTargetLength(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000001;
-              smallestSplitQueryIndex_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000100;
-              constantQueryLength_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              bitField0_ |= 0x00000002;
-              largestSplitQueryIndex_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              bitField0_ |= 0x00000400;
-              sorted_ = input.readBool();
-              break;
-            }
-            case 112: {
-              bitField0_ |= 0x00000800;
-              indexed_ = input.readBool();
-              break;
-            }
-            case 120: {
-              bitField0_ |= 0x00001000;
-              queryLengthsStoredInEntries_ = input.readBool();
-              break;
-            }
-            case 138: {
-              bitField0_ |= 0x00002000;
-              alignerName_ = input.readBytes();
-              break;
-            }
-            case 146: {
-              bitField0_ |= 0x00004000;
-              alignerVersion_ = input.readBytes();
-              break;
-            }
-            case 202: {
-              bitField0_ |= 0x00008000;
-              version_ = input.readBytes();
-              break;
-            }
-            case 208: {
-              bitField0_ |= 0x00020000;
-              queryIndicesWerePermuted_ = input.readBool();
-              break;
-            }
-            case 218: {
-              edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addReadOrigin(subBuilder.buildPartial());
-              break;
-            }
-            case 242: {
-              ensureSampleBasenameIsMutable();
-              sampleBasename_.add(input.readBytes());
-              break;
-            }
-            case 280: {
-              bitField0_ |= 0x00040000;
-              queryIndexOccurrences_ = input.readBool();
-              break;
-            }
-            case 288: {
-              bitField0_ |= 0x00080000;
-              ambiguityStoredInEntries_ = input.readBool();
-              break;
-            }
-            case 320: {
-              bitField0_ |= 0x00100000;
-              allReadQualityScores_ = input.readBool();
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // optional uint32 smallest_split_query_index = 9;
+
       private int smallestSplitQueryIndex_ ;
+      /**
+       * <pre>
+       *The smallest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 smallest_split_query_index = 9;</code>
+       */
       public boolean hasSmallestSplitQueryIndex() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       *The smallest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 smallest_split_query_index = 9;</code>
+       */
       public int getSmallestSplitQueryIndex() {
         return smallestSplitQueryIndex_;
       }
+      /**
+       * <pre>
+       *The smallest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 smallest_split_query_index = 9;</code>
+       */
       public Builder setSmallestSplitQueryIndex(int value) {
         bitField0_ |= 0x00000001;
         smallestSplitQueryIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The smallest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 smallest_split_query_index = 9;</code>
+       */
       public Builder clearSmallestSplitQueryIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         smallestSplitQueryIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 largest_split_query_index = 11;
+
       private int largestSplitQueryIndex_ ;
+      /**
+       * <pre>
+       *The largest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 largest_split_query_index = 11;</code>
+       */
       public boolean hasLargestSplitQueryIndex() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
+      /**
+       * <pre>
+       *The largest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 largest_split_query_index = 11;</code>
+       */
       public int getLargestSplitQueryIndex() {
         return largestSplitQueryIndex_;
       }
+      /**
+       * <pre>
+       *The largest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 largest_split_query_index = 11;</code>
+       */
       public Builder setLargestSplitQueryIndex(int value) {
         bitField0_ |= 0x00000002;
         largestSplitQueryIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The largest possible query index in this alignment. Data stored as an array where
+       *queryIndex is the array index will be stored with only the elements in the inclusive
+       *range [smallestSplitQueryIndex largestSplitQueryIndex]
+       *Such data structures include queryLength and some arrays in the TooManyHits data
+       *structure.
+       * </pre>
+       *
+       * <code>optional uint32 largest_split_query_index = 11;</code>
+       */
       public Builder clearLargestSplitQueryIndex() {
         bitField0_ = (bitField0_ & ~0x00000002);
         largestSplitQueryIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional .goby.IdentifierMapping query_name_mapping = 1;
-      private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping queryNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+
+      private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping queryNameMapping_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder> queryNameMappingBuilder_;
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public boolean hasQueryNameMapping() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getQueryNameMapping() {
         if (queryNameMappingBuilder_ == null) {
-          return queryNameMapping_;
+          return queryNameMapping_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : queryNameMapping_;
         } else {
           return queryNameMappingBuilder_.getMessage();
         }
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public Builder setQueryNameMapping(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping value) {
         if (queryNameMappingBuilder_ == null) {
           if (value == null) {
@@ -6011,6 +12271,13 @@ public final class Alignments {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public Builder setQueryNameMapping(
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder builderForValue) {
         if (queryNameMappingBuilder_ == null) {
@@ -6022,9 +12289,17 @@ public final class Alignments {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public Builder mergeQueryNameMapping(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping value) {
         if (queryNameMappingBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+          if (((bitField0_ & 0x00000004) != 0) &&
+              queryNameMapping_ != null &&
               queryNameMapping_ != edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance()) {
             queryNameMapping_ =
               edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.newBuilder(queryNameMapping_).mergeFrom(value).buildPartial();
@@ -6038,9 +12313,16 @@ public final class Alignments {
         bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public Builder clearQueryNameMapping() {
         if (queryNameMappingBuilder_ == null) {
-          queryNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
+          queryNameMapping_ = null;
           onChanged();
         } else {
           queryNameMappingBuilder_.clear();
@@ -6048,46 +12330,88 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder getQueryNameMappingBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getQueryNameMappingFieldBuilder().getBuilder();
       }
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder getQueryNameMappingOrBuilder() {
         if (queryNameMappingBuilder_ != null) {
           return queryNameMappingBuilder_.getMessageOrBuilder();
         } else {
-          return queryNameMapping_;
+          return queryNameMapping_ == null ?
+              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : queryNameMapping_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
+      /**
+       * <pre>
+       * Mapping from query identifier name to query index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping query_name_mapping = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder> 
           getQueryNameMappingFieldBuilder() {
         if (queryNameMappingBuilder_ == null) {
-          queryNameMappingBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          queryNameMappingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder>(
-                  queryNameMapping_,
+                  getQueryNameMapping(),
                   getParentForChildren(),
                   isClean());
           queryNameMapping_ = null;
         }
         return queryNameMappingBuilder_;
       }
-      
-      // optional .goby.IdentifierMapping target_name_mapping = 2;
-      private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping targetNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+
+      private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping targetNameMapping_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder> targetNameMappingBuilder_;
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public boolean hasTargetNameMapping() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getTargetNameMapping() {
         if (targetNameMappingBuilder_ == null) {
-          return targetNameMapping_;
+          return targetNameMapping_ == null ? edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : targetNameMapping_;
         } else {
           return targetNameMappingBuilder_.getMessage();
         }
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public Builder setTargetNameMapping(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping value) {
         if (targetNameMappingBuilder_ == null) {
           if (value == null) {
@@ -6101,6 +12425,13 @@ public final class Alignments {
         bitField0_ |= 0x00000008;
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public Builder setTargetNameMapping(
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder builderForValue) {
         if (targetNameMappingBuilder_ == null) {
@@ -6112,9 +12443,17 @@ public final class Alignments {
         bitField0_ |= 0x00000008;
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public Builder mergeTargetNameMapping(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping value) {
         if (targetNameMappingBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+          if (((bitField0_ & 0x00000008) != 0) &&
+              targetNameMapping_ != null &&
               targetNameMapping_ != edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance()) {
             targetNameMapping_ =
               edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.newBuilder(targetNameMapping_).mergeFrom(value).buildPartial();
@@ -6128,9 +12467,16 @@ public final class Alignments {
         bitField0_ |= 0x00000008;
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public Builder clearTargetNameMapping() {
         if (targetNameMappingBuilder_ == null) {
-          targetNameMapping_ = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
+          targetNameMapping_ = null;
           onChanged();
         } else {
           targetNameMappingBuilder_.clear();
@@ -6138,285 +12484,671 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder getTargetNameMappingBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getTargetNameMappingFieldBuilder().getBuilder();
       }
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder getTargetNameMappingOrBuilder() {
         if (targetNameMappingBuilder_ != null) {
           return targetNameMappingBuilder_.getMessageOrBuilder();
         } else {
-          return targetNameMapping_;
+          return targetNameMapping_ == null ?
+              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance() : targetNameMapping_;
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
+      /**
+       * <pre>
+       * Mapping from target identifier name to target index (as used in alignment entries).
+       * </pre>
+       *
+       * <code>optional .goby.IdentifierMapping target_name_mapping = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder> 
           getTargetNameMappingFieldBuilder() {
         if (targetNameMappingBuilder_ == null) {
-          targetNameMappingBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          targetNameMappingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder>(
-                  targetNameMapping_,
+                  getTargetNameMapping(),
                   getParentForChildren(),
                   isClean());
           targetNameMapping_ = null;
         }
         return targetNameMappingBuilder_;
       }
-      
-      // optional uint32 number_of_queries = 5;
+
       private int numberOfQueries_ ;
+      /**
+       * <pre>
+       *The number of query sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_queries = 5;</code>
+       */
       public boolean hasNumberOfQueries() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
+      /**
+       * <pre>
+       *The number of query sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_queries = 5;</code>
+       */
       public int getNumberOfQueries() {
         return numberOfQueries_;
       }
+      /**
+       * <pre>
+       *The number of query sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_queries = 5;</code>
+       */
       public Builder setNumberOfQueries(int value) {
         bitField0_ |= 0x00000010;
         numberOfQueries_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The number of query sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_queries = 5;</code>
+       */
       public Builder clearNumberOfQueries() {
         bitField0_ = (bitField0_ & ~0x00000010);
         numberOfQueries_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 number_of_targets = 6;
+
       private int numberOfTargets_ ;
+      /**
+       * <pre>
+       *The number of target sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_targets = 6;</code>
+       */
       public boolean hasNumberOfTargets() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
+      /**
+       * <pre>
+       *The number of target sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_targets = 6;</code>
+       */
       public int getNumberOfTargets() {
         return numberOfTargets_;
       }
+      /**
+       * <pre>
+       *The number of target sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_targets = 6;</code>
+       */
       public Builder setNumberOfTargets(int value) {
         bitField0_ |= 0x00000020;
         numberOfTargets_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The number of target sequences
+       * </pre>
+       *
+       * <code>optional uint32 number_of_targets = 6;</code>
+       */
       public Builder clearNumberOfTargets() {
         bitField0_ = (bitField0_ & ~0x00000020);
         numberOfTargets_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 number_of_aligned_reads = 7;
+
       private int numberOfAlignedReads_ ;
+      /**
+       * <pre>
+       *The number of reads that were aligned to the reference and are represented in this alignment archive.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_aligned_reads = 7;</code>
+       */
       public boolean hasNumberOfAlignedReads() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
+      /**
+       * <pre>
+       *The number of reads that were aligned to the reference and are represented in this alignment archive.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_aligned_reads = 7;</code>
+       */
       public int getNumberOfAlignedReads() {
         return numberOfAlignedReads_;
       }
+      /**
+       * <pre>
+       *The number of reads that were aligned to the reference and are represented in this alignment archive.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_aligned_reads = 7;</code>
+       */
       public Builder setNumberOfAlignedReads(int value) {
         bitField0_ |= 0x00000040;
         numberOfAlignedReads_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The number of reads that were aligned to the reference and are represented in this alignment archive.
+       * </pre>
+       *
+       * <code>optional uint32 number_of_aligned_reads = 7;</code>
+       */
       public Builder clearNumberOfAlignedReads() {
         bitField0_ = (bitField0_ & ~0x00000040);
         numberOfAlignedReads_ = 0;
         onChanged();
         return this;
       }
-      
-      // repeated uint32 query_length = 3 [deprecated = true];
-      private java.util.List<java.lang.Integer> queryLength_ = java.util.Collections.emptyList();;
+
+      private com.google.protobuf.Internal.IntList queryLength_ = emptyIntList();
       private void ensureQueryLengthIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-          queryLength_ = new java.util.ArrayList<java.lang.Integer>(queryLength_);
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          queryLength_ = mutableCopy(queryLength_);
           bitField0_ |= 0x00000080;
          }
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public java.util.List<java.lang.Integer>
           getQueryLengthList() {
-        return java.util.Collections.unmodifiableList(queryLength_);
+        return ((bitField0_ & 0x00000080) != 0) ?
+                 java.util.Collections.unmodifiableList(queryLength_) : queryLength_;
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public int getQueryLengthCount() {
         return queryLength_.size();
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public int getQueryLength(int index) {
-        return queryLength_.get(index);
+        return queryLength_.getInt(index);
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public Builder setQueryLength(
           int index, int value) {
         ensureQueryLengthIsMutable();
-        queryLength_.set(index, value);
+        queryLength_.setInt(index, value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public Builder addQueryLength(int value) {
         ensureQueryLengthIsMutable();
-        queryLength_.add(value);
+        queryLength_.addInt(value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public Builder addAllQueryLength(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureQueryLengthIsMutable();
-        super.addAll(values, queryLength_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, queryLength_);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the query sequences. One number per query, in the order of increasing query index.
+       *This information has been moved to the individual alignment entries.
+       * </pre>
+       *
+       * <code>repeated uint32 query_length = 3 [deprecated = true];</code>
+       */
       @java.lang.Deprecated public Builder clearQueryLength() {
-        queryLength_ = java.util.Collections.emptyList();;
+        queryLength_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
-      
-      // optional uint32 constant_query_length = 10;
+
       private int constantQueryLength_ ;
+      /**
+       * <pre>
+       *If query length is constant across all the queries, this field contains the constant length.
+       *In such cases, query_length will be empty.
+       * </pre>
+       *
+       * <code>optional uint32 constant_query_length = 10;</code>
+       */
       public boolean hasConstantQueryLength() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000100) != 0);
       }
+      /**
+       * <pre>
+       *If query length is constant across all the queries, this field contains the constant length.
+       *In such cases, query_length will be empty.
+       * </pre>
+       *
+       * <code>optional uint32 constant_query_length = 10;</code>
+       */
       public int getConstantQueryLength() {
         return constantQueryLength_;
       }
+      /**
+       * <pre>
+       *If query length is constant across all the queries, this field contains the constant length.
+       *In such cases, query_length will be empty.
+       * </pre>
+       *
+       * <code>optional uint32 constant_query_length = 10;</code>
+       */
       public Builder setConstantQueryLength(int value) {
         bitField0_ |= 0x00000100;
         constantQueryLength_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *If query length is constant across all the queries, this field contains the constant length.
+       *In such cases, query_length will be empty.
+       * </pre>
+       *
+       * <code>optional uint32 constant_query_length = 10;</code>
+       */
       public Builder clearConstantQueryLength() {
         bitField0_ = (bitField0_ & ~0x00000100);
         constantQueryLength_ = 0;
         onChanged();
         return this;
       }
-      
-      // repeated uint32 target_length = 8;
-      private java.util.List<java.lang.Integer> targetLength_ = java.util.Collections.emptyList();;
+
+      private com.google.protobuf.Internal.IntList targetLength_ = emptyIntList();
       private void ensureTargetLengthIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-          targetLength_ = new java.util.ArrayList<java.lang.Integer>(targetLength_);
+        if (!((bitField0_ & 0x00000200) != 0)) {
+          targetLength_ = mutableCopy(targetLength_);
           bitField0_ |= 0x00000200;
          }
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public java.util.List<java.lang.Integer>
           getTargetLengthList() {
-        return java.util.Collections.unmodifiableList(targetLength_);
+        return ((bitField0_ & 0x00000200) != 0) ?
+                 java.util.Collections.unmodifiableList(targetLength_) : targetLength_;
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public int getTargetLengthCount() {
         return targetLength_.size();
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public int getTargetLength(int index) {
-        return targetLength_.get(index);
+        return targetLength_.getInt(index);
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public Builder setTargetLength(
           int index, int value) {
         ensureTargetLengthIsMutable();
-        targetLength_.set(index, value);
+        targetLength_.setInt(index, value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public Builder addTargetLength(int value) {
         ensureTargetLengthIsMutable();
-        targetLength_.add(value);
+        targetLength_.addInt(value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public Builder addAllTargetLength(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureTargetLengthIsMutable();
-        super.addAll(values, targetLength_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, targetLength_);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Length of the target sequences. One number per target, in the order of increasing target index.
+       *The target indexes must be 0..(number of targets - 1).
+       * </pre>
+       *
+       * <code>repeated uint32 target_length = 8;</code>
+       */
       public Builder clearTargetLength() {
-        targetLength_ = java.util.Collections.emptyList();;
+        targetLength_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
-      
-      // optional bool sorted = 13;
+
       private boolean sorted_ ;
+      /**
+       * <pre>
+       *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+       *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+       *have the same target, when a.position &lt; b.position.
+       * </pre>
+       *
+       * <code>optional bool sorted = 13;</code>
+       */
       public boolean hasSorted() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000400) != 0);
       }
+      /**
+       * <pre>
+       *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+       *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+       *have the same target, when a.position &lt; b.position.
+       * </pre>
+       *
+       * <code>optional bool sorted = 13;</code>
+       */
       public boolean getSorted() {
         return sorted_;
       }
+      /**
+       * <pre>
+       *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+       *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+       *have the same target, when a.position &lt; b.position.
+       * </pre>
+       *
+       * <code>optional bool sorted = 13;</code>
+       */
       public Builder setSorted(boolean value) {
         bitField0_ |= 0x00000400;
         sorted_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Indicates whether this alignment is sorted by position. True: the alignment entries occur in sorted
+       *order, such that entry a occurs before entry b if a.targetIndex&lt; b.targetIndex or, when entries
+       *have the same target, when a.position &lt; b.position.
+       * </pre>
+       *
+       * <code>optional bool sorted = 13;</code>
+       */
       public Builder clearSorted() {
         bitField0_ = (bitField0_ & ~0x00000400);
         sorted_ = false;
         onChanged();
         return this;
       }
-      
-      // optional bool indexed = 14;
+
       private boolean indexed_ ;
+      /**
+       * <pre>
+       *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+       *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+       * </pre>
+       *
+       * <code>optional bool indexed = 14;</code>
+       */
       public boolean hasIndexed() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000800) != 0);
       }
+      /**
+       * <pre>
+       *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+       *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+       * </pre>
+       *
+       * <code>optional bool indexed = 14;</code>
+       */
       public boolean getIndexed() {
         return indexed_;
       }
+      /**
+       * <pre>
+       *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+       *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+       * </pre>
+       *
+       * <code>optional bool indexed = 14;</code>
+       */
       public Builder setIndexed(boolean value) {
         bitField0_ |= 0x00000800;
         indexed_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Indicates whether this alignment is indexed by position. When this attribute is true, a file called
+       *'basename'.index exists that contains the AlignmentIndex message (GZip compressed).
+       * </pre>
+       *
+       * <code>optional bool indexed = 14;</code>
+       */
       public Builder clearIndexed() {
         bitField0_ = (bitField0_ & ~0x00000800);
         indexed_ = false;
         onChanged();
         return this;
       }
-      
-      // optional bool query_lengths_stored_in_entries = 15;
+
       private boolean queryLengthsStoredInEntries_ ;
+      /**
+       * <pre>
+       *True when query lengths are stored in alignment entries (Goby 1.7+).
+       * </pre>
+       *
+       * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+       */
       public boolean hasQueryLengthsStoredInEntries() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00001000) != 0);
       }
+      /**
+       * <pre>
+       *True when query lengths are stored in alignment entries (Goby 1.7+).
+       * </pre>
+       *
+       * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+       */
       public boolean getQueryLengthsStoredInEntries() {
         return queryLengthsStoredInEntries_;
       }
+      /**
+       * <pre>
+       *True when query lengths are stored in alignment entries (Goby 1.7+).
+       * </pre>
+       *
+       * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+       */
       public Builder setQueryLengthsStoredInEntries(boolean value) {
         bitField0_ |= 0x00001000;
         queryLengthsStoredInEntries_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *True when query lengths are stored in alignment entries (Goby 1.7+).
+       * </pre>
+       *
+       * <code>optional bool query_lengths_stored_in_entries = 15;</code>
+       */
       public Builder clearQueryLengthsStoredInEntries() {
         bitField0_ = (bitField0_ & ~0x00001000);
         queryLengthsStoredInEntries_ = false;
         onChanged();
         return this;
       }
-      
-      // optional string aligner_name = 17;
+
       private java.lang.Object alignerName_ = "";
+      /**
+       * <pre>
+       *Name of the aligner that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_name = 17;</code>
+       */
       public boolean hasAlignerName() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00002000) != 0);
       }
-      public String getAlignerName() {
+      /**
+       * <pre>
+       *Name of the aligner that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_name = 17;</code>
+       */
+      public java.lang.String getAlignerName() {
         java.lang.Object ref = alignerName_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          alignerName_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            alignerName_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setAlignerName(String value) {
+      /**
+       * <pre>
+       *Name of the aligner that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_name = 17;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAlignerNameBytes() {
+        java.lang.Object ref = alignerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alignerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Name of the aligner that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_name = 17;</code>
+       */
+      public Builder setAlignerName(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6425,34 +13157,98 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Name of the aligner that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_name = 17;</code>
+       */
       public Builder clearAlignerName() {
         bitField0_ = (bitField0_ & ~0x00002000);
         alignerName_ = getDefaultInstance().getAlignerName();
         onChanged();
         return this;
       }
-      void setAlignerName(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00002000;
+      /**
+       * <pre>
+       *Name of the aligner that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_name = 17;</code>
+       */
+      public Builder setAlignerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
         alignerName_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string aligner_version = 18;
+
       private java.lang.Object alignerVersion_ = "";
+      /**
+       * <pre>
+       *Version number for the aligner implementation that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_version = 18;</code>
+       */
       public boolean hasAlignerVersion() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00004000) != 0);
       }
-      public String getAlignerVersion() {
+      /**
+       * <pre>
+       *Version number for the aligner implementation that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_version = 18;</code>
+       */
+      public java.lang.String getAlignerVersion() {
         java.lang.Object ref = alignerVersion_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          alignerVersion_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            alignerVersion_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setAlignerVersion(String value) {
+      /**
+       * <pre>
+       *Version number for the aligner implementation that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_version = 18;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAlignerVersionBytes() {
+        java.lang.Object ref = alignerVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alignerVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Version number for the aligner implementation that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_version = 18;</code>
+       */
+      public Builder setAlignerVersion(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6461,34 +13257,98 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Version number for the aligner implementation that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_version = 18;</code>
+       */
       public Builder clearAlignerVersion() {
         bitField0_ = (bitField0_ & ~0x00004000);
         alignerVersion_ = getDefaultInstance().getAlignerVersion();
         onChanged();
         return this;
       }
-      void setAlignerVersion(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00004000;
+      /**
+       * <pre>
+       *Version number for the aligner implementation that produced this alignment.
+       * </pre>
+       *
+       * <code>optional string aligner_version = 18;</code>
+       */
+      public Builder setAlignerVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
         alignerVersion_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string version = 25;
+
       private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       *The version of Goby that created this alignment file.
+       * </pre>
+       *
+       * <code>optional string version = 25;</code>
+       */
       public boolean hasVersion() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00008000) != 0);
       }
-      public String getVersion() {
+      /**
+       * <pre>
+       *The version of Goby that created this alignment file.
+       * </pre>
+       *
+       * <code>optional string version = 25;</code>
+       */
+      public java.lang.String getVersion() {
         java.lang.Object ref = version_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          version_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            version_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setVersion(String value) {
+      /**
+       * <pre>
+       *The version of Goby that created this alignment file.
+       * </pre>
+       *
+       * <code>optional string version = 25;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *The version of Goby that created this alignment file.
+       * </pre>
+       *
+       * <code>optional string version = 25;</code>
+       */
+      public Builder setVersion(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6497,38 +13357,75 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The version of Goby that created this alignment file.
+       * </pre>
+       *
+       * <code>optional string version = 25;</code>
+       */
       public Builder clearVersion() {
         bitField0_ = (bitField0_ & ~0x00008000);
         version_ = getDefaultInstance().getVersion();
         onChanged();
         return this;
       }
-      void setVersion(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00008000;
+      /**
+       * <pre>
+       *The version of Goby that created this alignment file.
+       * </pre>
+       *
+       * <code>optional string version = 25;</code>
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00008000;
         version_ = value;
         onChanged();
+        return this;
       }
-      
-      // repeated string sample_basename = 30;
+
       private com.google.protobuf.LazyStringList sampleBasename_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureSampleBasenameIsMutable() {
-        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
+        if (!((bitField0_ & 0x00010000) != 0)) {
           sampleBasename_ = new com.google.protobuf.LazyStringArrayList(sampleBasename_);
           bitField0_ |= 0x00010000;
          }
       }
-      public java.util.List<String>
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
           getSampleBasenameList() {
-        return java.util.Collections.unmodifiableList(sampleBasename_);
+        return sampleBasename_.getUnmodifiableView();
       }
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
       public int getSampleBasenameCount() {
         return sampleBasename_.size();
       }
-      public String getSampleBasename(int index) {
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
+      public java.lang.String getSampleBasename(int index) {
         return sampleBasename_.get(index);
       }
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSampleBasenameBytes(int index) {
+        return sampleBasename_.getByteString(index);
+      }
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
       public Builder setSampleBasename(
-          int index, String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6537,7 +13434,11 @@ public final class Alignments {
         onChanged();
         return this;
       }
-      public Builder addSampleBasename(String value) {
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
+      public Builder addSampleBasename(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6546,122 +13447,282 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
       public Builder addAllSampleBasename(
-          java.lang.Iterable<String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureSampleBasenameIsMutable();
-        super.addAll(values, sampleBasename_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, sampleBasename_);
         onChanged();
         return this;
       }
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
       public Builder clearSampleBasename() {
         sampleBasename_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
         return this;
       }
-      void addSampleBasename(com.google.protobuf.ByteString value) {
-        ensureSampleBasenameIsMutable();
+      /**
+       * <code>repeated string sample_basename = 30;</code>
+       */
+      public Builder addSampleBasenameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSampleBasenameIsMutable();
         sampleBasename_.add(value);
         onChanged();
+        return this;
       }
-      
-      // optional bool query_indices_were_permuted = 26;
+
       private boolean queryIndicesWerePermuted_ ;
+      /**
+       * <pre>
+       *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+       *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+       *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+       *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+       *each small index of interest to the original query index.
+       * </pre>
+       *
+       * <code>optional bool query_indices_were_permuted = 26;</code>
+       */
       public boolean hasQueryIndicesWerePermuted() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00020000) != 0);
       }
+      /**
+       * <pre>
+       *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+       *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+       *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+       *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+       *each small index of interest to the original query index.
+       * </pre>
+       *
+       * <code>optional bool query_indices_were_permuted = 26;</code>
+       */
       public boolean getQueryIndicesWerePermuted() {
         return queryIndicesWerePermuted_;
       }
+      /**
+       * <pre>
+       *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+       *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+       *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+       *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+       *each small index of interest to the original query index.
+       * </pre>
+       *
+       * <code>optional bool query_indices_were_permuted = 26;</code>
+       */
       public Builder setQueryIndicesWerePermuted(boolean value) {
         bitField0_ |= 0x00020000;
         queryIndicesWerePermuted_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *This field is true when the query indices of alignment entries were permuted to smaller indices. Only sorted
+       *alignments can have query_indices_were_permuted=true. When the field is true, and you need to retrieve the
+       *original query-index of an alignment (because you want to retrieve the specific read(s) from a read file for
+       *instance), you will need the information in the permutation file (extension basename.perm) and transform back
+       *each small index of interest to the original query index.
+       * </pre>
+       *
+       * <code>optional bool query_indices_were_permuted = 26;</code>
+       */
       public Builder clearQueryIndicesWerePermuted() {
         bitField0_ = (bitField0_ & ~0x00020000);
         queryIndicesWerePermuted_ = false;
         onChanged();
         return this;
       }
-      
-      // optional bool query_index_occurrences = 35;
+
       private boolean queryIndexOccurrences_ ;
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool query_index_occurrences = 35;</code>
+       */
       public boolean hasQueryIndexOccurrences() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00040000) != 0);
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool query_index_occurrences = 35;</code>
+       */
       public boolean getQueryIndexOccurrences() {
         return queryIndexOccurrences_;
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool query_index_occurrences = 35;</code>
+       */
       public Builder setQueryIndexOccurrences(boolean value) {
         bitField0_ |= 0x00040000;
         queryIndexOccurrences_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the query_index_occurrences field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool query_index_occurrences = 35;</code>
+       */
       public Builder clearQueryIndexOccurrences() {
         bitField0_ = (bitField0_ & ~0x00040000);
         queryIndexOccurrences_ = false;
         onChanged();
         return this;
       }
-      
-      // optional bool ambiguity_stored_in_entries = 36;
+
       private boolean ambiguityStoredInEntries_ ;
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+       */
       public boolean hasAmbiguityStoredInEntries() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00080000) != 0);
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+       */
       public boolean getAmbiguityStoredInEntries() {
         return ambiguityStoredInEntries_;
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+       */
       public Builder setAmbiguityStoredInEntries(boolean value) {
         bitField0_ |= 0x00080000;
         ambiguityStoredInEntries_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the ambiguity field populated
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool ambiguity_stored_in_entries = 36;</code>
+       */
       public Builder clearAmbiguityStoredInEntries() {
         bitField0_ = (bitField0_ & ~0x00080000);
         ambiguityStoredInEntries_ = false;
         onChanged();
         return this;
       }
-      
-      // optional bool all_read_quality_scores = 40;
+
       private boolean allReadQualityScores_ ;
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool all_read_quality_scores = 40;</code>
+       */
       public boolean hasAllReadQualityScores() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x00100000) != 0);
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool all_read_quality_scores = 40;</code>
+       */
       public boolean getAllReadQualityScores() {
         return allReadQualityScores_;
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool all_read_quality_scores = 40;</code>
+       */
       public Builder setAllReadQualityScores(boolean value) {
         bitField0_ |= 0x00100000;
         allReadQualityScores_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *This field is true when entries in the alignment .entries file all have the read_quality_score field populated.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>optional bool all_read_quality_scores = 40;</code>
+       */
       public Builder clearAllReadQualityScores() {
         bitField0_ = (bitField0_ & ~0x00100000);
         allReadQualityScores_ = false;
         onChanged();
         return this;
       }
-      
-      // repeated .goby.ReadOriginInfo read_origin = 27;
+
       private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo> readOrigin_ =
         java.util.Collections.emptyList();
       private void ensureReadOriginIsMutable() {
-        if (!((bitField0_ & 0x00200000) == 0x00200000)) {
+        if (!((bitField0_ & 0x00200000) != 0)) {
           readOrigin_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo>(readOrigin_);
           bitField0_ |= 0x00200000;
          }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder> readOriginBuilder_;
-      
+
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo> getReadOriginList() {
         if (readOriginBuilder_ == null) {
           return java.util.Collections.unmodifiableList(readOrigin_);
@@ -6669,6 +13730,16 @@ public final class Alignments {
           return readOriginBuilder_.getMessageList();
         }
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public int getReadOriginCount() {
         if (readOriginBuilder_ == null) {
           return readOrigin_.size();
@@ -6676,6 +13747,16 @@ public final class Alignments {
           return readOriginBuilder_.getCount();
         }
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo getReadOrigin(int index) {
         if (readOriginBuilder_ == null) {
           return readOrigin_.get(index);
@@ -6683,6 +13764,16 @@ public final class Alignments {
           return readOriginBuilder_.getMessage(index);
         }
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder setReadOrigin(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo value) {
         if (readOriginBuilder_ == null) {
@@ -6697,6 +13788,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder setReadOrigin(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder builderForValue) {
         if (readOriginBuilder_ == null) {
@@ -6708,6 +13809,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder addReadOrigin(edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo value) {
         if (readOriginBuilder_ == null) {
           if (value == null) {
@@ -6721,6 +13832,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder addReadOrigin(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo value) {
         if (readOriginBuilder_ == null) {
@@ -6735,6 +13856,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder addReadOrigin(
           edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder builderForValue) {
         if (readOriginBuilder_ == null) {
@@ -6746,6 +13877,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder addReadOrigin(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder builderForValue) {
         if (readOriginBuilder_ == null) {
@@ -6757,17 +13898,38 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder addAllReadOrigin(
           java.lang.Iterable<? extends edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo> values) {
         if (readOriginBuilder_ == null) {
           ensureReadOriginIsMutable();
-          super.addAll(values, readOrigin_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, readOrigin_);
           onChanged();
         } else {
           readOriginBuilder_.addAllMessages(values);
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder clearReadOrigin() {
         if (readOriginBuilder_ == null) {
           readOrigin_ = java.util.Collections.emptyList();
@@ -6778,6 +13940,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public Builder removeReadOrigin(int index) {
         if (readOriginBuilder_ == null) {
           ensureReadOriginIsMutable();
@@ -6788,10 +13960,30 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder getReadOriginBuilder(
           int index) {
         return getReadOriginFieldBuilder().getBuilder(index);
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder getReadOriginOrBuilder(
           int index) {
         if (readOriginBuilder_ == null) {
@@ -6799,6 +13991,16 @@ public final class Alignments {
           return readOriginBuilder_.getMessageOrBuilder(index);
         }
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder> 
            getReadOriginOrBuilderList() {
         if (readOriginBuilder_ != null) {
@@ -6807,115 +14009,277 @@ public final class Alignments {
           return java.util.Collections.unmodifiableList(readOrigin_);
         }
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder addReadOriginBuilder() {
         return getReadOriginFieldBuilder().addBuilder(
             edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.getDefaultInstance());
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder addReadOriginBuilder(
           int index) {
         return getReadOriginFieldBuilder().addBuilder(
             index, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.getDefaultInstance());
       }
+      /**
+       * <pre>
+       *A description of the origin of sets of reads. Serves a similar function to BAM read groups, but more flexible and
+       *efficient. Instead of storing strings, we use integers in the entries.
+       *Alignemnt entries will link to a specific ReadOriginInfo with the origin_index field.
+       *(Since Goby 2.0).
+       * </pre>
+       *
+       * <code>repeated .goby.ReadOriginInfo read_origin = 27;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder> 
            getReadOriginBuilderList() {
         return getReadOriginFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder> 
           getReadOriginFieldBuilder() {
         if (readOriginBuilder_ == null) {
-          readOriginBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          readOriginBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder>(
                   readOrigin_,
-                  ((bitField0_ & 0x00200000) == 0x00200000),
+                  ((bitField0_ & 0x00200000) != 0),
                   getParentForChildren(),
                   isClean());
           readOrigin_ = null;
         }
         return readOriginBuilder_;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.AlignmentHeader)
     }
-    
-    static {
-      defaultInstance = new AlignmentHeader(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.AlignmentHeader)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AlignmentHeader>
+        PARSER = new com.google.protobuf.AbstractParser<AlignmentHeader>() {
+      @java.lang.Override
+      public AlignmentHeader parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlignmentHeader(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlignmentHeader> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlignmentHeader> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface IdentifierMappingOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // repeated .goby.IdentifierInfo mappings = 1;
+
+  public interface IdentifierMappingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.IdentifierMapping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo> 
         getMappingsList();
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo getMappings(int index);
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     int getMappingsCount();
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder> 
         getMappingsOrBuilderList();
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder getMappingsOrBuilder(
         int index);
   }
-  public static final class IdentifierMapping extends
-      com.google.protobuf.GeneratedMessage
-      implements IdentifierMappingOrBuilder {
+  /**
+   * Protobuf type {@code goby.IdentifierMapping}
+   */
+  public  static final class IdentifierMapping extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.IdentifierMapping)
+      IdentifierMappingOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use IdentifierMapping.newBuilder() to construct.
-    private IdentifierMapping(Builder builder) {
+    private IdentifierMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private IdentifierMapping(boolean noInit) {}
-    
-    private static final IdentifierMapping defaultInstance;
-    public static IdentifierMapping getDefaultInstance() {
-      return defaultInstance;
+    private IdentifierMapping() {
+      mappings_ = java.util.Collections.emptyList();
     }
-    
-    public IdentifierMapping getDefaultInstanceForType() {
-      return defaultInstance;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new IdentifierMapping();
     }
-    
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IdentifierMapping(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                mappings_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              mappings_.add(
+                  input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          mappings_ = java.util.Collections.unmodifiableList(mappings_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_fieldAccessorTable;
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.class, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder.class);
     }
-    
-    // repeated .goby.IdentifierInfo mappings = 1;
+
     public static final int MAPPINGS_FIELD_NUMBER = 1;
     private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo> mappings_;
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo> getMappingsList() {
       return mappings_;
     }
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder> 
         getMappingsOrBuilderList() {
       return mappings_;
     }
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     public int getMappingsCount() {
       return mappings_.size();
     }
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo getMappings(int index) {
       return mappings_.get(index);
     }
+    /**
+     * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder getMappingsOrBuilder(
         int index) {
       return mappings_.get(index);
     }
-    
-    private void initFields() {
-      mappings_ = java.util.Collections.emptyList();
-    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       for (int i = 0; i < getMappingsCount(); i++) {
         if (!getMappings(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -6925,149 +14289,190 @@ public final class Alignments {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       for (int i = 0; i < mappings_.size(); i++) {
         output.writeMessage(1, mappings_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       for (int i = 0; i < mappings_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, mappings_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping other = (edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping) obj;
+
+      if (!getMappingsList()
+          .equals(other.getMappingsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMappingsCount() > 0) {
+        hash = (37 * hash) + MAPPINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getMappingsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code goby.IdentifierMapping}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.IdentifierMapping)
+        edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMappingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.class, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getMappingsFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (mappingsBuilder_ == null) {
@@ -7078,20 +14483,19 @@ public final class Alignments {
         }
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierMapping_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping build() {
         edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping result = buildPartial();
         if (!result.isInitialized()) {
@@ -7099,22 +14503,13 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping result = new edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping(this);
         int from_bitField0_ = bitField0_;
         if (mappingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             mappings_ = java.util.Collections.unmodifiableList(mappings_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -7125,7 +14520,40 @@ public final class Alignments {
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping)other);
@@ -7134,7 +14562,7 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.getDefaultInstance()) return this;
         if (mappingsBuilder_ == null) {
@@ -7156,75 +14584,63 @@ public final class Alignments {
               mappings_ = other.mappings_;
               bitField0_ = (bitField0_ & ~0x00000001);
               mappingsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMappingsFieldBuilder() : null;
             } else {
               mappingsBuilder_.addAllMessages(other.mappings_);
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         for (int i = 0; i < getMappingsCount(); i++) {
           if (!getMappings(i).isInitialized()) {
-            
             return false;
           }
         }
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addMappings(subBuilder.buildPartial());
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // repeated .goby.IdentifierInfo mappings = 1;
+
       private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo> mappings_ =
         java.util.Collections.emptyList();
       private void ensureMappingsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           mappings_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo>(mappings_);
           bitField0_ |= 0x00000001;
          }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder> mappingsBuilder_;
-      
+
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo> getMappingsList() {
         if (mappingsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(mappings_);
@@ -7232,6 +14648,9 @@ public final class Alignments {
           return mappingsBuilder_.getMessageList();
         }
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public int getMappingsCount() {
         if (mappingsBuilder_ == null) {
           return mappings_.size();
@@ -7239,6 +14658,9 @@ public final class Alignments {
           return mappingsBuilder_.getCount();
         }
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo getMappings(int index) {
         if (mappingsBuilder_ == null) {
           return mappings_.get(index);
@@ -7246,6 +14668,9 @@ public final class Alignments {
           return mappingsBuilder_.getMessage(index);
         }
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder setMappings(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo value) {
         if (mappingsBuilder_ == null) {
@@ -7260,6 +14685,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder setMappings(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder builderForValue) {
         if (mappingsBuilder_ == null) {
@@ -7271,6 +14699,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder addMappings(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo value) {
         if (mappingsBuilder_ == null) {
           if (value == null) {
@@ -7284,6 +14715,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder addMappings(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo value) {
         if (mappingsBuilder_ == null) {
@@ -7298,6 +14732,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder addMappings(
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder builderForValue) {
         if (mappingsBuilder_ == null) {
@@ -7309,6 +14746,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder addMappings(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder builderForValue) {
         if (mappingsBuilder_ == null) {
@@ -7320,17 +14760,24 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder addAllMappings(
           java.lang.Iterable<? extends edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo> values) {
         if (mappingsBuilder_ == null) {
           ensureMappingsIsMutable();
-          super.addAll(values, mappings_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, mappings_);
           onChanged();
         } else {
           mappingsBuilder_.addAllMessages(values);
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder clearMappings() {
         if (mappingsBuilder_ == null) {
           mappings_ = java.util.Collections.emptyList();
@@ -7341,6 +14788,9 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public Builder removeMappings(int index) {
         if (mappingsBuilder_ == null) {
           ensureMappingsIsMutable();
@@ -7351,10 +14801,16 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder getMappingsBuilder(
           int index) {
         return getMappingsFieldBuilder().getBuilder(index);
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder getMappingsOrBuilder(
           int index) {
         if (mappingsBuilder_ == null) {
@@ -7362,6 +14818,9 @@ public final class Alignments {
           return mappingsBuilder_.getMessageOrBuilder(index);
         }
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder> 
            getMappingsOrBuilderList() {
         if (mappingsBuilder_ != null) {
@@ -7370,136 +14829,277 @@ public final class Alignments {
           return java.util.Collections.unmodifiableList(mappings_);
         }
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder addMappingsBuilder() {
         return getMappingsFieldBuilder().addBuilder(
             edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.getDefaultInstance());
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder addMappingsBuilder(
           int index) {
         return getMappingsFieldBuilder().addBuilder(
             index, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.getDefaultInstance());
       }
+      /**
+       * <code>repeated .goby.IdentifierInfo mappings = 1;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder> 
            getMappingsBuilderList() {
         return getMappingsFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder> 
           getMappingsFieldBuilder() {
         if (mappingsBuilder_ == null) {
-          mappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          mappingsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder>(
                   mappings_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           mappings_ = null;
         }
         return mappingsBuilder_;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.IdentifierMapping)
     }
-    
-    static {
-      defaultInstance = new IdentifierMapping(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.IdentifierMapping)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<IdentifierMapping>
+        PARSER = new com.google.protobuf.AbstractParser<IdentifierMapping>() {
+      @java.lang.Override
+      public IdentifierMapping parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IdentifierMapping(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<IdentifierMapping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IdentifierMapping> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface IdentifierInfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required string name = 1;
+
+  public interface IdentifierInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.IdentifierInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required string name = 1;</code>
+     */
     boolean hasName();
-    String getName();
-    
-    // required uint32 index = 2;
+    /**
+     * <code>required string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>required string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>required uint32 index = 2;</code>
+     */
     boolean hasIndex();
+    /**
+     * <code>required uint32 index = 2;</code>
+     */
     int getIndex();
   }
-  public static final class IdentifierInfo extends
-      com.google.protobuf.GeneratedMessage
-      implements IdentifierInfoOrBuilder {
+  /**
+   * Protobuf type {@code goby.IdentifierInfo}
+   */
+  public  static final class IdentifierInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.IdentifierInfo)
+      IdentifierInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use IdentifierInfo.newBuilder() to construct.
-    private IdentifierInfo(Builder builder) {
+    private IdentifierInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private IdentifierInfo(boolean noInit) {}
-    
-    private static final IdentifierInfo defaultInstance;
-    public static IdentifierInfo getDefaultInstance() {
-      return defaultInstance;
+    private IdentifierInfo() {
+      name_ = "";
     }
-    
-    public IdentifierInfo getDefaultInstanceForType() {
-      return defaultInstance;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new IdentifierInfo();
     }
-    
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IdentifierInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              index_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_fieldAccessorTable;
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.class, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder.class);
     }
-    
+
     private int bitField0_;
-    // required string name = 1;
     public static final int NAME_FIELD_NUMBER = 1;
-    private java.lang.Object name_;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>required string name = 1;</code>
+     */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
-    public String getName() {
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public java.lang.String getName() {
       java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           name_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getNameBytes() {
+    /**
+     * <code>required string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
-      if (ref instanceof String) {
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
-    // required uint32 index = 2;
+
     public static final int INDEX_FIELD_NUMBER = 2;
     private int index_;
+    /**
+     * <code>required uint32 index = 2;</code>
+     */
     public boolean hasIndex() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
+    /**
+     * <code>required uint32 index = 2;</code>
+     */
     public int getIndex() {
       return index_;
     }
-    
-    private void initFields() {
-      name_ = "";
-      index_ = 0;
-    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       if (!hasName()) {
         memoizedIsInitialized = 0;
         return false;
@@ -7511,155 +15111,207 @@ public final class Alignments {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, getNameBytes());
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeUInt32(2, index_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, getNameBytes());
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, index_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo other = (edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo) obj;
+
+      if (hasName() != other.hasName()) return false;
+      if (hasName()) {
+        if (!getName()
+            .equals(other.getName())) return false;
+      }
+      if (hasIndex() != other.hasIndex()) return false;
+      if (hasIndex()) {
+        if (getIndex()
+            != other.getIndex()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasIndex()) {
+        hash = (37 * hash) + INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getIndex();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code goby.IdentifierInfo}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.IdentifierInfo)
+        edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.class, edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -7668,20 +15320,19 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_IdentifierInfo_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo build() {
         edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -7689,34 +15340,58 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo result = new edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.index_ = index_;
           to_bitField0_ |= 0x00000002;
         }
-        result.index_ = index_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo)other);
@@ -7725,86 +15400,98 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.getDefaultInstance()) return this;
         if (other.hasName()) {
-          setName(other.getName());
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
         }
         if (other.hasIndex()) {
           setIndex(other.getIndex());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasName()) {
-          
           return false;
         }
         if (!hasIndex()) {
-          
           return false;
         }
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              name_ = input.readBytes();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              index_ = input.readUInt32();
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // required string name = 1;
+
       private java.lang.Object name_ = "";
+      /**
+       * <code>required string name = 1;</code>
+       */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
-      public String getName() {
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public java.lang.String getName() {
         java.lang.Object ref = name_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          name_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setName(String value) {
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7813,314 +15500,330 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string name = 1;</code>
+       */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-      void setName(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         name_ = value;
         onChanged();
+        return this;
       }
-      
-      // required uint32 index = 2;
+
       private int index_ ;
+      /**
+       * <code>required uint32 index = 2;</code>
+       */
       public boolean hasIndex() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
+      /**
+       * <code>required uint32 index = 2;</code>
+       */
       public int getIndex() {
         return index_;
       }
+      /**
+       * <code>required uint32 index = 2;</code>
+       */
       public Builder setIndex(int value) {
         bitField0_ |= 0x00000002;
         index_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <code>required uint32 index = 2;</code>
+       */
       public Builder clearIndex() {
         bitField0_ = (bitField0_ & ~0x00000002);
         index_ = 0;
         onChanged();
         return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.IdentifierInfo)
     }
-    
-    static {
-      defaultInstance = new IdentifierInfo(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.IdentifierInfo)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<IdentifierInfo>
+        PARSER = new com.google.protobuf.AbstractParser<IdentifierInfo>() {
+      @java.lang.Override
+      public IdentifierInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IdentifierInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<IdentifierInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IdentifierInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface ReadOriginInfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required uint32 origin_index = 1;
+
+  public interface ReadOriginInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.ReadOriginInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *Origin index. An integer that links alignment entries to their origin information.
+     * </pre>
+     *
+     * <code>required uint32 origin_index = 1;</code>
+     */
     boolean hasOriginIndex();
+    /**
+     * <pre>
+     *Origin index. An integer that links alignment entries to their origin information.
+     * </pre>
+     *
+     * <code>required uint32 origin_index = 1;</code>
+     */
     int getOriginIndex();
-    
-    // required string origin_id = 2;
+
+    /**
+     * <pre>
+     *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>required string origin_id = 2;</code>
+     */
     boolean hasOriginId();
-    String getOriginId();
-    
-    // optional string sample = 4;
+    /**
+     * <pre>
+     *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>required string origin_id = 2;</code>
+     */
+    java.lang.String getOriginId();
+    /**
+     * <pre>
+     *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>required string origin_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getOriginIdBytes();
+
+    /**
+     * <pre>
+     *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string sample = 4;</code>
+     */
     boolean hasSample();
-    String getSample();
-    
-    // optional string platform = 5;
+    /**
+     * <pre>
+     *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string sample = 4;</code>
+     */
+    java.lang.String getSample();
+    /**
+     * <pre>
+     *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string sample = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getSampleBytes();
+
+    /**
+     * <pre>
+     *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+     *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+     * </pre>
+     *
+     * <code>optional string platform = 5;</code>
+     */
     boolean hasPlatform();
-    String getPlatform();
-    
-    // optional string library = 8;
+    /**
+     * <pre>
+     *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+     *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+     * </pre>
+     *
+     * <code>optional string platform = 5;</code>
+     */
+    java.lang.String getPlatform();
+    /**
+     * <pre>
+     *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+     *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+     * </pre>
+     *
+     * <code>optional string platform = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlatformBytes();
+
+    /**
+     * <pre>
+     *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string library = 8;</code>
+     */
     boolean hasLibrary();
-    String getLibrary();
-    
-    // optional string platform_unit = 12;
+    /**
+     * <pre>
+     *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string library = 8;</code>
+     */
+    java.lang.String getLibrary();
+    /**
+     * <pre>
+     *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string library = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getLibraryBytes();
+
+    /**
+     * <pre>
+     *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+     * </pre>
+     *
+     * <code>optional string platform_unit = 12;</code>
+     */
     boolean hasPlatformUnit();
-    String getPlatformUnit();
-    
-    // optional string run_date = 6;
+    /**
+     * <pre>
+     *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+     * </pre>
+     *
+     * <code>optional string platform_unit = 12;</code>
+     */
+    java.lang.String getPlatformUnit();
+    /**
+     * <pre>
+     *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+     * </pre>
+     *
+     * <code>optional string platform_unit = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlatformUnitBytes();
+
+    /**
+     * <pre>
+     *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+     *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+     * </pre>
+     *
+     * <code>optional string run_date = 6;</code>
+     */
     boolean hasRunDate();
-    String getRunDate();
+    /**
+     * <pre>
+     *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+     *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+     * </pre>
+     *
+     * <code>optional string run_date = 6;</code>
+     */
+    java.lang.String getRunDate();
+    /**
+     * <pre>
+     *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+     *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+     * </pre>
+     *
+     * <code>optional string run_date = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getRunDateBytes();
   }
-  public static final class ReadOriginInfo extends
-      com.google.protobuf.GeneratedMessage
-      implements ReadOriginInfoOrBuilder {
+  /**
+   * <pre>
+   *A description of the origin of sets of reads. Stored in the Goby alignment header and linked
+   *from alignment entries. Goby makes it possible to adapt origin equivalence rules on the fly
+   *efficiently. To do this, it is sufficient to read the header of the alignment, decide which
+   *ReadOriginInfo instances are equivalent (e.g., by looking at sample, platform, library, or
+   *other fields in the message), then construct a function e(a):int. This function takes
+   *one originIndex parameter and returns another integer that maps to an equivalent class. The
+   *equivalence class can be used to estimate error models for entries that belong to each class,
+   *for instance.
+   *(Since Goby 2.0).
+   * </pre>
+   *
+   * Protobuf type {@code goby.ReadOriginInfo}
+   */
+  public  static final class ReadOriginInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.ReadOriginInfo)
+      ReadOriginInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ReadOriginInfo.newBuilder() to construct.
-    private ReadOriginInfo(Builder builder) {
+    private ReadOriginInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ReadOriginInfo(boolean noInit) {}
-    
-    private static final ReadOriginInfo defaultInstance;
-    public static ReadOriginInfo getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public ReadOriginInfo getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required uint32 origin_index = 1;
-    public static final int ORIGIN_INDEX_FIELD_NUMBER = 1;
-    private int originIndex_;
-    public boolean hasOriginIndex() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getOriginIndex() {
-      return originIndex_;
-    }
-    
-    // required string origin_id = 2;
-    public static final int ORIGIN_ID_FIELD_NUMBER = 2;
-    private java.lang.Object originId_;
-    public boolean hasOriginId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public String getOriginId() {
-      java.lang.Object ref = originId_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          originId_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getOriginIdBytes() {
-      java.lang.Object ref = originId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        originId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string sample = 4;
-    public static final int SAMPLE_FIELD_NUMBER = 4;
-    private java.lang.Object sample_;
-    public boolean hasSample() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public String getSample() {
-      java.lang.Object ref = sample_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          sample_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getSampleBytes() {
-      java.lang.Object ref = sample_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        sample_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string platform = 5;
-    public static final int PLATFORM_FIELD_NUMBER = 5;
-    private java.lang.Object platform_;
-    public boolean hasPlatform() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public String getPlatform() {
-      java.lang.Object ref = platform_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          platform_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getPlatformBytes() {
-      java.lang.Object ref = platform_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        platform_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string library = 8;
-    public static final int LIBRARY_FIELD_NUMBER = 8;
-    private java.lang.Object library_;
-    public boolean hasLibrary() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public String getLibrary() {
-      java.lang.Object ref = library_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          library_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getLibraryBytes() {
-      java.lang.Object ref = library_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        library_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string platform_unit = 12;
-    public static final int PLATFORM_UNIT_FIELD_NUMBER = 12;
-    private java.lang.Object platformUnit_;
-    public boolean hasPlatformUnit() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public String getPlatformUnit() {
-      java.lang.Object ref = platformUnit_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          platformUnit_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getPlatformUnitBytes() {
-      java.lang.Object ref = platformUnit_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        platformUnit_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string run_date = 6;
-    public static final int RUN_DATE_FIELD_NUMBER = 6;
-    private java.lang.Object runDate_;
-    public boolean hasRunDate() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    public String getRunDate() {
-      java.lang.Object ref = runDate_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          runDate_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getRunDateBytes() {
-      java.lang.Object ref = runDate_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        runDate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    private void initFields() {
-      originIndex_ = 0;
+    private ReadOriginInfo() {
       originId_ = "";
       sample_ = "";
       platform_ = "";
@@ -8128,11 +15831,481 @@ public final class Alignments {
       platformUnit_ = "";
       runDate_ = "";
     }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReadOriginInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReadOriginInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              originIndex_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              originId_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              sample_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              platform_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000040;
+              runDate_ = bs;
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              library_ = bs;
+              break;
+            }
+            case 98: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000020;
+              platformUnit_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.class, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ORIGIN_INDEX_FIELD_NUMBER = 1;
+    private int originIndex_;
+    /**
+     * <pre>
+     *Origin index. An integer that links alignment entries to their origin information.
+     * </pre>
+     *
+     * <code>required uint32 origin_index = 1;</code>
+     */
+    public boolean hasOriginIndex() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     *Origin index. An integer that links alignment entries to their origin information.
+     * </pre>
+     *
+     * <code>required uint32 origin_index = 1;</code>
+     */
+    public int getOriginIndex() {
+      return originIndex_;
+    }
+
+    public static final int ORIGIN_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object originId_;
+    /**
+     * <pre>
+     *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>required string origin_id = 2;</code>
+     */
+    public boolean hasOriginId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>required string origin_id = 2;</code>
+     */
+    public java.lang.String getOriginId() {
+      java.lang.Object ref = originId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          originId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>required string origin_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOriginIdBytes() {
+      java.lang.Object ref = originId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        originId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SAMPLE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object sample_;
+    /**
+     * <pre>
+     *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string sample = 4;</code>
+     */
+    public boolean hasSample() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string sample = 4;</code>
+     */
+    public java.lang.String getSample() {
+      java.lang.Object ref = sample_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          sample_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string sample = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSampleBytes() {
+      java.lang.Object ref = sample_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sample_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLATFORM_FIELD_NUMBER = 5;
+    private volatile java.lang.Object platform_;
+    /**
+     * <pre>
+     *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+     *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+     * </pre>
+     *
+     * <code>optional string platform = 5;</code>
+     */
+    public boolean hasPlatform() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+     *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+     * </pre>
+     *
+     * <code>optional string platform = 5;</code>
+     */
+    public java.lang.String getPlatform() {
+      java.lang.Object ref = platform_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          platform_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+     *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+     * </pre>
+     *
+     * <code>optional string platform = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlatformBytes() {
+      java.lang.Object ref = platform_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIBRARY_FIELD_NUMBER = 8;
+    private volatile java.lang.Object library_;
+    /**
+     * <pre>
+     *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string library = 8;</code>
+     */
+    public boolean hasLibrary() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string library = 8;</code>
+     */
+    public java.lang.String getLibrary() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          library_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+     *groups. Free text.
+     * </pre>
+     *
+     * <code>optional string library = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLibraryBytes() {
+      java.lang.Object ref = library_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        library_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLATFORM_UNIT_FIELD_NUMBER = 12;
+    private volatile java.lang.Object platformUnit_;
+    /**
+     * <pre>
+     *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+     * </pre>
+     *
+     * <code>optional string platform_unit = 12;</code>
+     */
+    public boolean hasPlatformUnit() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+     * </pre>
+     *
+     * <code>optional string platform_unit = 12;</code>
+     */
+    public java.lang.String getPlatformUnit() {
+      java.lang.Object ref = platformUnit_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          platformUnit_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+     * </pre>
+     *
+     * <code>optional string platform_unit = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlatformUnitBytes() {
+      java.lang.Object ref = platformUnit_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        platformUnit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RUN_DATE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object runDate_;
+    /**
+     * <pre>
+     *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+     *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+     * </pre>
+     *
+     * <code>optional string run_date = 6;</code>
+     */
+    public boolean hasRunDate() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+     *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+     * </pre>
+     *
+     * <code>optional string run_date = 6;</code>
+     */
+    public java.lang.String getRunDate() {
+      java.lang.Object ref = runDate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          runDate_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+     *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+     * </pre>
+     *
+     * <code>optional string run_date = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRunDateBytes() {
+      java.lang.Object ref = runDate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        runDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       if (!hasOriginIndex()) {
         memoizedIsInitialized = 0;
         return false;
@@ -8144,190 +16317,294 @@ public final class Alignments {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt32(1, originIndex_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getOriginIdBytes());
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, originId_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(4, getSampleBytes());
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sample_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(5, getPlatformBytes());
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, platform_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(6, getRunDateBytes());
+      if (((bitField0_ & 0x00000040) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, runDate_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(8, getLibraryBytes());
+      if (((bitField0_ & 0x00000010) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, library_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(12, getPlatformUnitBytes());
+      if (((bitField0_ & 0x00000020) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, platformUnit_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, originIndex_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getOriginIdBytes());
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, originId_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getSampleBytes());
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sample_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getPlatformBytes());
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, platform_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getRunDateBytes());
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, runDate_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, getLibraryBytes());
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, library_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(12, getPlatformUnitBytes());
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, platformUnit_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo other = (edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo) obj;
+
+      if (hasOriginIndex() != other.hasOriginIndex()) return false;
+      if (hasOriginIndex()) {
+        if (getOriginIndex()
+            != other.getOriginIndex()) return false;
+      }
+      if (hasOriginId() != other.hasOriginId()) return false;
+      if (hasOriginId()) {
+        if (!getOriginId()
+            .equals(other.getOriginId())) return false;
+      }
+      if (hasSample() != other.hasSample()) return false;
+      if (hasSample()) {
+        if (!getSample()
+            .equals(other.getSample())) return false;
+      }
+      if (hasPlatform() != other.hasPlatform()) return false;
+      if (hasPlatform()) {
+        if (!getPlatform()
+            .equals(other.getPlatform())) return false;
+      }
+      if (hasLibrary() != other.hasLibrary()) return false;
+      if (hasLibrary()) {
+        if (!getLibrary()
+            .equals(other.getLibrary())) return false;
+      }
+      if (hasPlatformUnit() != other.hasPlatformUnit()) return false;
+      if (hasPlatformUnit()) {
+        if (!getPlatformUnit()
+            .equals(other.getPlatformUnit())) return false;
+      }
+      if (hasRunDate() != other.hasRunDate()) return false;
+      if (hasRunDate()) {
+        if (!getRunDate()
+            .equals(other.getRunDate())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOriginIndex()) {
+        hash = (37 * hash) + ORIGIN_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getOriginIndex();
+      }
+      if (hasOriginId()) {
+        hash = (37 * hash) + ORIGIN_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getOriginId().hashCode();
+      }
+      if (hasSample()) {
+        hash = (37 * hash) + SAMPLE_FIELD_NUMBER;
+        hash = (53 * hash) + getSample().hashCode();
+      }
+      if (hasPlatform()) {
+        hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatform().hashCode();
+      }
+      if (hasLibrary()) {
+        hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+        hash = (53 * hash) + getLibrary().hashCode();
+      }
+      if (hasPlatformUnit()) {
+        hash = (37 * hash) + PLATFORM_UNIT_FIELD_NUMBER;
+        hash = (53 * hash) + getPlatformUnit().hashCode();
+      }
+      if (hasRunDate()) {
+        hash = (37 * hash) + RUN_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getRunDate().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * <pre>
+     *A description of the origin of sets of reads. Stored in the Goby alignment header and linked
+     *from alignment entries. Goby makes it possible to adapt origin equivalence rules on the fly
+     *efficiently. To do this, it is sufficient to read the header of the alignment, decide which
+     *ReadOriginInfo instances are equivalent (e.g., by looking at sample, platform, library, or
+     *other fields in the message), then construct a function e(a):int. This function takes
+     *one originIndex parameter and returns another integer that maps to an equivalent class. The
+     *equivalence class can be used to estimate error models for entries that belong to each class,
+     *for instance.
+     *(Since Goby 2.0).
+     * </pre>
+     *
+     * Protobuf type {@code goby.ReadOriginInfo}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.ReadOriginInfo)
+        edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.class, edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         originIndex_ = 0;
@@ -8346,20 +16623,19 @@ public final class Alignments {
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_ReadOriginInfo_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo build() {
         edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -8367,46 +16643,37 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo result = new edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.originIndex_ = originIndex_;
           to_bitField0_ |= 0x00000001;
         }
-        result.originIndex_ = originIndex_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.originId_ = originId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.sample_ = sample_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           to_bitField0_ |= 0x00000008;
         }
         result.platform_ = platform_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
         result.library_ = library_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
         result.platformUnit_ = platformUnit_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
         result.runDate_ = runDate_;
@@ -8414,7 +16681,40 @@ public final class Alignments {
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo)other);
@@ -8423,147 +16723,191 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.getDefaultInstance()) return this;
         if (other.hasOriginIndex()) {
           setOriginIndex(other.getOriginIndex());
         }
         if (other.hasOriginId()) {
-          setOriginId(other.getOriginId());
+          bitField0_ |= 0x00000002;
+          originId_ = other.originId_;
+          onChanged();
         }
         if (other.hasSample()) {
-          setSample(other.getSample());
+          bitField0_ |= 0x00000004;
+          sample_ = other.sample_;
+          onChanged();
         }
         if (other.hasPlatform()) {
-          setPlatform(other.getPlatform());
+          bitField0_ |= 0x00000008;
+          platform_ = other.platform_;
+          onChanged();
         }
         if (other.hasLibrary()) {
-          setLibrary(other.getLibrary());
+          bitField0_ |= 0x00000010;
+          library_ = other.library_;
+          onChanged();
         }
         if (other.hasPlatformUnit()) {
-          setPlatformUnit(other.getPlatformUnit());
+          bitField0_ |= 0x00000020;
+          platformUnit_ = other.platformUnit_;
+          onChanged();
         }
         if (other.hasRunDate()) {
-          setRunDate(other.getRunDate());
+          bitField0_ |= 0x00000040;
+          runDate_ = other.runDate_;
+          onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasOriginIndex()) {
-          
           return false;
         }
         if (!hasOriginId()) {
-          
           return false;
         }
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              originIndex_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              originId_ = input.readBytes();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000004;
-              sample_ = input.readBytes();
-              break;
-            }
-            case 42: {
-              bitField0_ |= 0x00000008;
-              platform_ = input.readBytes();
-              break;
-            }
-            case 50: {
-              bitField0_ |= 0x00000040;
-              runDate_ = input.readBytes();
-              break;
-            }
-            case 66: {
-              bitField0_ |= 0x00000010;
-              library_ = input.readBytes();
-              break;
-            }
-            case 98: {
-              bitField0_ |= 0x00000020;
-              platformUnit_ = input.readBytes();
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // required uint32 origin_index = 1;
+
       private int originIndex_ ;
+      /**
+       * <pre>
+       *Origin index. An integer that links alignment entries to their origin information.
+       * </pre>
+       *
+       * <code>required uint32 origin_index = 1;</code>
+       */
       public boolean hasOriginIndex() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       *Origin index. An integer that links alignment entries to their origin information.
+       * </pre>
+       *
+       * <code>required uint32 origin_index = 1;</code>
+       */
       public int getOriginIndex() {
         return originIndex_;
       }
+      /**
+       * <pre>
+       *Origin index. An integer that links alignment entries to their origin information.
+       * </pre>
+       *
+       * <code>required uint32 origin_index = 1;</code>
+       */
       public Builder setOriginIndex(int value) {
         bitField0_ |= 0x00000001;
         originIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Origin index. An integer that links alignment entries to their origin information.
+       * </pre>
+       *
+       * <code>required uint32 origin_index = 1;</code>
+       */
       public Builder clearOriginIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         originIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // required string origin_id = 2;
+
       private java.lang.Object originId_ = "";
+      /**
+       * <pre>
+       *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>required string origin_id = 2;</code>
+       */
       public boolean hasOriginId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
-      public String getOriginId() {
+      /**
+       * <pre>
+       *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>required string origin_id = 2;</code>
+       */
+      public java.lang.String getOriginId() {
         java.lang.Object ref = originId_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          originId_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            originId_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setOriginId(String value) {
+      /**
+       * <pre>
+       *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>required string origin_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOriginIdBytes() {
+        java.lang.Object ref = originId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          originId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>required string origin_id = 2;</code>
+       */
+      public Builder setOriginId(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8572,34 +16916,104 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>required string origin_id = 2;</code>
+       */
       public Builder clearOriginId() {
         bitField0_ = (bitField0_ & ~0x00000002);
         originId_ = getDefaultInstance().getOriginId();
         onChanged();
         return this;
       }
-      void setOriginId(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000002;
+      /**
+       * <pre>
+       *Identifier that describes the origin of the reads. This field is compatible with the ID/platform field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>required string origin_id = 2;</code>
+       */
+      public Builder setOriginIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         originId_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string sample = 4;
+
       private java.lang.Object sample_ = "";
+      /**
+       * <pre>
+       *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string sample = 4;</code>
+       */
       public boolean hasSample() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
-      public String getSample() {
+      /**
+       * <pre>
+       *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string sample = 4;</code>
+       */
+      public java.lang.String getSample() {
         java.lang.Object ref = sample_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          sample_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            sample_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setSample(String value) {
+      /**
+       * <pre>
+       *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string sample = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSampleBytes() {
+        java.lang.Object ref = sample_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sample_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string sample = 4;</code>
+       */
+      public Builder setSample(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8608,34 +17022,104 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string sample = 4;</code>
+       */
       public Builder clearSample() {
         bitField0_ = (bitField0_ & ~0x00000004);
         sample_ = getDefaultInstance().getSample();
         onChanged();
         return this;
       }
-      void setSample(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000004;
+      /**
+       * <pre>
+       *The sample from which the reads were sequenced. This field is compatible with the SM/sample field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string sample = 4;</code>
+       */
+      public Builder setSampleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
         sample_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string platform = 5;
+
       private java.lang.Object platform_ = "";
+      /**
+       * <pre>
+       *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+       *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+       * </pre>
+       *
+       * <code>optional string platform = 5;</code>
+       */
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000008) != 0);
       }
-      public String getPlatform() {
+      /**
+       * <pre>
+       *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+       *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+       * </pre>
+       *
+       * <code>optional string platform = 5;</code>
+       */
+      public java.lang.String getPlatform() {
         java.lang.Object ref = platform_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          platform_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            platform_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setPlatform(String value) {
+      /**
+       * <pre>
+       *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+       *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+       * </pre>
+       *
+       * <code>optional string platform = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlatformBytes() {
+        java.lang.Object ref = platform_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          platform_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+       *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+       * </pre>
+       *
+       * <code>optional string platform = 5;</code>
+       */
+      public Builder setPlatform(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8644,34 +17128,104 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+       *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+       * </pre>
+       *
+       * <code>optional string platform = 5;</code>
+       */
       public Builder clearPlatform() {
         bitField0_ = (bitField0_ & ~0x00000008);
         platform_ = getDefaultInstance().getPlatform();
         onChanged();
         return this;
       }
-      void setPlatform(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
+      /**
+       * <pre>
+       *The platform on which the reads were sequenced. This field is compatible with the PL/platform field of BAM read
+       *groups. Valid values: ILLUMINA, SOLID, LS454, HELICOS and PACBIO.
+       * </pre>
+       *
+       * <code>optional string platform = 5;</code>
+       */
+      public Builder setPlatformBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
         platform_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string library = 8;
+
       private java.lang.Object library_ = "";
+      /**
+       * <pre>
+       *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string library = 8;</code>
+       */
       public boolean hasLibrary() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000010) != 0);
       }
-      public String getLibrary() {
+      /**
+       * <pre>
+       *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string library = 8;</code>
+       */
+      public java.lang.String getLibrary() {
         java.lang.Object ref = library_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          library_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            library_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setLibrary(String value) {
+      /**
+       * <pre>
+       *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string library = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLibraryBytes() {
+        java.lang.Object ref = library_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          library_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string library = 8;</code>
+       */
+      public Builder setLibrary(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8680,34 +17234,100 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string library = 8;</code>
+       */
       public Builder clearLibrary() {
         bitField0_ = (bitField0_ & ~0x00000010);
         library_ = getDefaultInstance().getLibrary();
         onChanged();
         return this;
       }
-      void setLibrary(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000010;
+      /**
+       * <pre>
+       *The library from which the reads were sequenced. This field is compatible with the LB/library field of BAM read
+       *groups. Free text.
+       * </pre>
+       *
+       * <code>optional string library = 8;</code>
+       */
+      public Builder setLibraryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
         library_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string platform_unit = 12;
+
       private java.lang.Object platformUnit_ = "";
+      /**
+       * <pre>
+       *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+       * </pre>
+       *
+       * <code>optional string platform_unit = 12;</code>
+       */
       public boolean hasPlatformUnit() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000020) != 0);
       }
-      public String getPlatformUnit() {
+      /**
+       * <pre>
+       *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+       * </pre>
+       *
+       * <code>optional string platform_unit = 12;</code>
+       */
+      public java.lang.String getPlatformUnit() {
         java.lang.Object ref = platformUnit_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          platformUnit_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            platformUnit_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setPlatformUnit(String value) {
+      /**
+       * <pre>
+       *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+       * </pre>
+       *
+       * <code>optional string platform_unit = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlatformUnitBytes() {
+        java.lang.Object ref = platformUnit_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          platformUnit_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+       * </pre>
+       *
+       * <code>optional string platform_unit = 12;</code>
+       */
+      public Builder setPlatformUnit(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8716,34 +17336,102 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+       * </pre>
+       *
+       * <code>optional string platform_unit = 12;</code>
+       */
       public Builder clearPlatformUnit() {
         bitField0_ = (bitField0_ & ~0x00000020);
         platformUnit_ = getDefaultInstance().getPlatformUnit();
         onChanged();
         return this;
       }
-      void setPlatformUnit(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000020;
+      /**
+       * <pre>
+       *The platform unit on which the reads were sequenced. This field for compatibility with samtools.
+       * </pre>
+       *
+       * <code>optional string platform_unit = 12;</code>
+       */
+      public Builder setPlatformUnitBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
         platformUnit_ = value;
         onChanged();
+        return this;
       }
-      
-      // optional string run_date = 6;
+
       private java.lang.Object runDate_ = "";
+      /**
+       * <pre>
+       *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+       *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+       * </pre>
+       *
+       * <code>optional string run_date = 6;</code>
+       */
       public boolean hasRunDate() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000040) != 0);
       }
-      public String getRunDate() {
+      /**
+       * <pre>
+       *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+       *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+       * </pre>
+       *
+       * <code>optional string run_date = 6;</code>
+       */
+      public java.lang.String getRunDate() {
         java.lang.Object ref = runDate_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          runDate_ = s;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            runDate_ = s;
+          }
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setRunDate(String value) {
+      /**
+       * <pre>
+       *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+       *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+       * </pre>
+       *
+       * <code>optional string run_date = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRunDateBytes() {
+        java.lang.Object ref = runDate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          runDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+       *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+       * </pre>
+       *
+       * <code>optional string run_date = 6;</code>
+       */
+      public Builder setRunDate(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8752,115 +17440,342 @@ public final class Alignments {
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+       *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+       * </pre>
+       *
+       * <code>optional string run_date = 6;</code>
+       */
       public Builder clearRunDate() {
         bitField0_ = (bitField0_ & ~0x00000040);
         runDate_ = getDefaultInstance().getRunDate();
         onChanged();
         return this;
       }
-      void setRunDate(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000040;
+      /**
+       * <pre>
+       *The date the reads were sequenced. Useful to identify batch effects, in the format dd:MMM:yyyy.
+       *The month is Jan, Feb, etc. to avoid all confusion with days when day&lt;=12.
+       * </pre>
+       *
+       * <code>optional string run_date = 6;</code>
+       */
+      public Builder setRunDateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
         runDate_ = value;
         onChanged();
+        return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.ReadOriginInfo)
     }
-    
-    static {
-      defaultInstance = new ReadOriginInfo(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.ReadOriginInfo)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<ReadOriginInfo>
+        PARSER = new com.google.protobuf.AbstractParser<ReadOriginInfo>() {
+      @java.lang.Override
+      public ReadOriginInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReadOriginInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReadOriginInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReadOriginInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface AlignmentTooManyHitsOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required uint32 aligner_threshold = 2;
+
+  public interface AlignmentTooManyHitsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.AlignmentTooManyHits)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+     *Referred to as parameter k below.
+     * </pre>
+     *
+     * <code>required uint32 aligner_threshold = 2;</code>
+     */
     boolean hasAlignerThreshold();
+    /**
+     * <pre>
+     *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+     *Referred to as parameter k below.
+     * </pre>
+     *
+     * <code>required uint32 aligner_threshold = 2;</code>
+     */
     int getAlignerThreshold();
-    
-    // repeated .goby.AmbiguousLocation hits = 1;
+
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation> 
         getHitsList();
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getHits(int index);
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     int getHitsCount();
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder> 
         getHitsOrBuilderList();
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder getHitsOrBuilder(
         int index);
   }
-  public static final class AlignmentTooManyHits extends
-      com.google.protobuf.GeneratedMessage
-      implements AlignmentTooManyHitsOrBuilder {
+  /**
+   * Protobuf type {@code goby.AlignmentTooManyHits}
+   */
+  public  static final class AlignmentTooManyHits extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.AlignmentTooManyHits)
+      AlignmentTooManyHitsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AlignmentTooManyHits.newBuilder() to construct.
-    private AlignmentTooManyHits(Builder builder) {
+    private AlignmentTooManyHits(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AlignmentTooManyHits(boolean noInit) {}
-    
-    private static final AlignmentTooManyHits defaultInstance;
-    public static AlignmentTooManyHits getDefaultInstance() {
-      return defaultInstance;
+    private AlignmentTooManyHits() {
+      hits_ = java.util.Collections.emptyList();
     }
-    
-    public AlignmentTooManyHits getDefaultInstanceForType() {
-      return defaultInstance;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AlignmentTooManyHits();
     }
-    
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlignmentTooManyHits(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                hits_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              hits_.add(
+                  input.readMessage(edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.PARSER, extensionRegistry));
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000001;
+              alignerThreshold_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          hits_ = java.util.Collections.unmodifiableList(hits_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_fieldAccessorTable;
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.Builder.class);
     }
-    
+
     private int bitField0_;
-    // required uint32 aligner_threshold = 2;
     public static final int ALIGNER_THRESHOLD_FIELD_NUMBER = 2;
     private int alignerThreshold_;
+    /**
+     * <pre>
+     *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+     *Referred to as parameter k below.
+     * </pre>
+     *
+     * <code>required uint32 aligner_threshold = 2;</code>
+     */
     public boolean hasAlignerThreshold() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
+    /**
+     * <pre>
+     *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+     *Referred to as parameter k below.
+     * </pre>
+     *
+     * <code>required uint32 aligner_threshold = 2;</code>
+     */
     public int getAlignerThreshold() {
       return alignerThreshold_;
     }
-    
-    // repeated .goby.AmbiguousLocation hits = 1;
+
     public static final int HITS_FIELD_NUMBER = 1;
     private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation> hits_;
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation> getHitsList() {
       return hits_;
     }
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder> 
         getHitsOrBuilderList() {
       return hits_;
     }
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     public int getHitsCount() {
       return hits_.size();
     }
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getHits(int index) {
       return hits_.get(index);
     }
+    /**
+     * <pre>
+     *The hits that are assigned to several (&gt;k) reference location.
+     * </pre>
+     *
+     * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+     */
     public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder getHitsOrBuilder(
         int index) {
       return hits_.get(index);
     }
-    
-    private void initFields() {
-      alignerThreshold_ = 0;
-      hits_ = java.util.Collections.emptyList();
-    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       if (!hasAlignerThreshold()) {
         memoizedIsInitialized = 0;
         return false;
@@ -8874,156 +17789,206 @@ public final class Alignments {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       for (int i = 0; i < hits_.size(); i++) {
         output.writeMessage(1, hits_.get(i));
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt32(2, alignerThreshold_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       for (int i = 0; i < hits_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, hits_.get(i));
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, alignerThreshold_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits other = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits) obj;
+
+      if (hasAlignerThreshold() != other.hasAlignerThreshold()) return false;
+      if (hasAlignerThreshold()) {
+        if (getAlignerThreshold()
+            != other.getAlignerThreshold()) return false;
+      }
+      if (!getHitsList()
+          .equals(other.getHitsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAlignerThreshold()) {
+        hash = (37 * hash) + ALIGNER_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getAlignerThreshold();
+      }
+      if (getHitsCount() > 0) {
+        hash = (37 * hash) + HITS_FIELD_NUMBER;
+        hash = (53 * hash) + getHitsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code goby.AlignmentTooManyHits}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHitsOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.AlignmentTooManyHits)
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHitsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getHitsFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         alignerThreshold_ = 0;
@@ -9036,20 +18001,19 @@ public final class Alignments {
         }
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentTooManyHits_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits build() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits result = buildPartial();
         if (!result.isInitialized()) {
@@ -9057,27 +18021,18 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits result = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.alignerThreshold_ = alignerThreshold_;
           to_bitField0_ |= 0x00000001;
         }
-        result.alignerThreshold_ = alignerThreshold_;
         if (hitsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             hits_ = java.util.Collections.unmodifiableList(hits_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -9089,7 +18044,40 @@ public final class Alignments {
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits)other);
@@ -9098,7 +18086,7 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.getDefaultInstance()) return this;
         if (other.hasAlignerThreshold()) {
@@ -9123,105 +18111,122 @@ public final class Alignments {
               hits_ = other.hits_;
               bitField0_ = (bitField0_ & ~0x00000002);
               hitsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getHitsFieldBuilder() : null;
             } else {
               hitsBuilder_.addAllMessages(other.hits_);
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasAlignerThreshold()) {
-          
           return false;
         }
         for (int i = 0; i < getHitsCount(); i++) {
           if (!getHits(i).isInitialized()) {
-            
             return false;
           }
         }
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder subBuilder = edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addHits(subBuilder.buildPartial());
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000001;
-              alignerThreshold_ = input.readUInt32();
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // required uint32 aligner_threshold = 2;
+
       private int alignerThreshold_ ;
+      /**
+       * <pre>
+       *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+       *Referred to as parameter k below.
+       * </pre>
+       *
+       * <code>required uint32 aligner_threshold = 2;</code>
+       */
       public boolean hasAlignerThreshold() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+       *Referred to as parameter k below.
+       * </pre>
+       *
+       * <code>required uint32 aligner_threshold = 2;</code>
+       */
       public int getAlignerThreshold() {
         return alignerThreshold_;
       }
+      /**
+       * <pre>
+       *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+       *Referred to as parameter k below.
+       * </pre>
+       *
+       * <code>required uint32 aligner_threshold = 2;</code>
+       */
       public Builder setAlignerThreshold(int value) {
         bitField0_ |= 0x00000001;
         alignerThreshold_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The threshold used by the aligner to determine that a query is ambiguous and should be dropped.
+       *Referred to as parameter k below.
+       * </pre>
+       *
+       * <code>required uint32 aligner_threshold = 2;</code>
+       */
       public Builder clearAlignerThreshold() {
         bitField0_ = (bitField0_ & ~0x00000001);
         alignerThreshold_ = 0;
         onChanged();
         return this;
       }
-      
-      // repeated .goby.AmbiguousLocation hits = 1;
+
       private java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation> hits_ =
         java.util.Collections.emptyList();
       private void ensureHitsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           hits_ = new java.util.ArrayList<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation>(hits_);
           bitField0_ |= 0x00000002;
          }
       }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder> hitsBuilder_;
-      
+
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation> getHitsList() {
         if (hitsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(hits_);
@@ -9229,6 +18234,13 @@ public final class Alignments {
           return hitsBuilder_.getMessageList();
         }
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public int getHitsCount() {
         if (hitsBuilder_ == null) {
           return hits_.size();
@@ -9236,6 +18248,13 @@ public final class Alignments {
           return hitsBuilder_.getCount();
         }
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getHits(int index) {
         if (hitsBuilder_ == null) {
           return hits_.get(index);
@@ -9243,6 +18262,13 @@ public final class Alignments {
           return hitsBuilder_.getMessage(index);
         }
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder setHits(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation value) {
         if (hitsBuilder_ == null) {
@@ -9257,6 +18283,13 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder setHits(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder builderForValue) {
         if (hitsBuilder_ == null) {
@@ -9268,6 +18301,13 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder addHits(edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation value) {
         if (hitsBuilder_ == null) {
           if (value == null) {
@@ -9281,6 +18321,13 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder addHits(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation value) {
         if (hitsBuilder_ == null) {
@@ -9295,6 +18342,13 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder addHits(
           edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder builderForValue) {
         if (hitsBuilder_ == null) {
@@ -9306,6 +18360,13 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder addHits(
           int index, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder builderForValue) {
         if (hitsBuilder_ == null) {
@@ -9317,17 +18378,32 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder addAllHits(
           java.lang.Iterable<? extends edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation> values) {
         if (hitsBuilder_ == null) {
           ensureHitsIsMutable();
-          super.addAll(values, hits_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, hits_);
           onChanged();
         } else {
           hitsBuilder_.addAllMessages(values);
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder clearHits() {
         if (hitsBuilder_ == null) {
           hits_ = java.util.Collections.emptyList();
@@ -9338,6 +18414,13 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public Builder removeHits(int index) {
         if (hitsBuilder_ == null) {
           ensureHitsIsMutable();
@@ -9348,10 +18431,24 @@ public final class Alignments {
         }
         return this;
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder getHitsBuilder(
           int index) {
         return getHitsFieldBuilder().getBuilder(index);
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder getHitsOrBuilder(
           int index) {
         if (hitsBuilder_ == null) {
@@ -9359,6 +18456,13 @@ public final class Alignments {
           return hitsBuilder_.getMessageOrBuilder(index);
         }
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public java.util.List<? extends edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder> 
            getHitsOrBuilderList() {
         if (hitsBuilder_ != null) {
@@ -9367,418 +18471,220 @@ public final class Alignments {
           return java.util.Collections.unmodifiableList(hits_);
         }
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder addHitsBuilder() {
         return getHitsFieldBuilder().addBuilder(
             edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDefaultInstance());
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder addHitsBuilder(
           int index) {
         return getHitsFieldBuilder().addBuilder(
             index, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDefaultInstance());
       }
+      /**
+       * <pre>
+       *The hits that are assigned to several (&gt;k) reference location.
+       * </pre>
+       *
+       * <code>repeated .goby.AmbiguousLocation hits = 1;</code>
+       */
       public java.util.List<edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder> 
            getHitsBuilderList() {
         return getHitsFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder> 
           getHitsFieldBuilder() {
         if (hitsBuilder_ == null) {
-          hitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          hitsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder>(
                   hits_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           hits_ = null;
         }
         return hitsBuilder_;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.AlignmentTooManyHits)
     }
-    
-    static {
-      defaultInstance = new AlignmentTooManyHits(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.AlignmentTooManyHits)
-  }
-  
-  public interface AmbiguousLocationOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required uint32 query_index = 1;
-    boolean hasQueryIndex();
-    int getQueryIndex();
-    
-    // required uint32 at_least_number_of_hits = 2;
-    boolean hasAtLeastNumberOfHits();
-    int getAtLeastNumberOfHits();
-    
-    // optional uint32 length_of_match = 3;
-    boolean hasLengthOfMatch();
-    int getLengthOfMatch();
-  }
-  public static final class AmbiguousLocation extends
-      com.google.protobuf.GeneratedMessage
-      implements AmbiguousLocationOrBuilder {
-    // Use AmbiguousLocation.newBuilder() to construct.
-    private AmbiguousLocation(Builder builder) {
-      super(builder);
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits();
     }
-    private AmbiguousLocation(boolean noInit) {}
-    
-    private static final AmbiguousLocation defaultInstance;
-    public static AmbiguousLocation getDefaultInstance() {
-      return defaultInstance;
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits getDefaultInstance() {
+      return DEFAULT_INSTANCE;
     }
-    
-    public AmbiguousLocation getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required uint32 query_index = 1;
-    public static final int QUERY_INDEX_FIELD_NUMBER = 1;
-    private int queryIndex_;
-    public boolean hasQueryIndex() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getQueryIndex() {
-      return queryIndex_;
-    }
-    
-    // required uint32 at_least_number_of_hits = 2;
-    public static final int AT_LEAST_NUMBER_OF_HITS_FIELD_NUMBER = 2;
-    private int atLeastNumberOfHits_;
-    public boolean hasAtLeastNumberOfHits() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public int getAtLeastNumberOfHits() {
-      return atLeastNumberOfHits_;
-    }
-    
-    // optional uint32 length_of_match = 3;
-    public static final int LENGTH_OF_MATCH_FIELD_NUMBER = 3;
-    private int lengthOfMatch_;
-    public boolean hasLengthOfMatch() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public int getLengthOfMatch() {
-      return lengthOfMatch_;
-    }
-    
-    private void initFields() {
-      queryIndex_ = 0;
-      atLeastNumberOfHits_ = 0;
-      lengthOfMatch_ = 0;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasQueryIndex()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAtLeastNumberOfHits()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, queryIndex_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeUInt32(2, atLeastNumberOfHits_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeUInt32(3, lengthOfMatch_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, queryIndex_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, atLeastNumberOfHits_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, lengthOfMatch_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_fieldAccessorTable;
-      }
-      
-      // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        queryIndex_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        atLeastNumberOfHits_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        lengthOfMatch_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDescriptor();
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getDefaultInstanceForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDefaultInstance();
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation build() {
-        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation buildPartial() {
-        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation result = new edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.queryIndex_ = queryIndex_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.atLeastNumberOfHits_ = atLeastNumberOfHits_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.lengthOfMatch_ = lengthOfMatch_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation) {
-          return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation other) {
-        if (other == edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDefaultInstance()) return this;
-        if (other.hasQueryIndex()) {
-          setQueryIndex(other.getQueryIndex());
-        }
-        if (other.hasAtLeastNumberOfHits()) {
-          setAtLeastNumberOfHits(other.getAtLeastNumberOfHits());
-        }
-        if (other.hasLengthOfMatch()) {
-          setLengthOfMatch(other.getLengthOfMatch());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasQueryIndex()) {
-          
-          return false;
-        }
-        if (!hasAtLeastNumberOfHits()) {
-          
-          return false;
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AlignmentTooManyHits>
+        PARSER = new com.google.protobuf.AbstractParser<AlignmentTooManyHits>() {
+      @java.lang.Override
+      public AlignmentTooManyHits parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlignmentTooManyHits(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlignmentTooManyHits> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlignmentTooManyHits> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AmbiguousLocationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.AmbiguousLocation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *The index of the query that matched too many times.
+     * </pre>
+     *
+     * <code>required uint32 query_index = 1;</code>
+     */
+    boolean hasQueryIndex();
+    /**
+     * <pre>
+     *The index of the query that matched too many times.
+     * </pre>
+     *
+     * <code>required uint32 query_index = 1;</code>
+     */
+    int getQueryIndex();
+
+    /**
+     * <pre>
+     *The number of hits that triggered membership in the too many hits list. The query may hit more
+     *locations than reported here, since some alignment tools will just drop queries that match above
+     *a threshold and stop counting. This number can be &gt;=k.
+     * </pre>
+     *
+     * <code>required uint32 at_least_number_of_hits = 2;</code>
+     */
+    boolean hasAtLeastNumberOfHits();
+    /**
+     * <pre>
+     *The number of hits that triggered membership in the too many hits list. The query may hit more
+     *locations than reported here, since some alignment tools will just drop queries that match above
+     *a threshold and stop counting. This number can be &gt;=k.
+     * </pre>
+     *
+     * <code>required uint32 at_least_number_of_hits = 2;</code>
+     */
+    int getAtLeastNumberOfHits();
+
+    /**
+     * <pre>
+     **
+     *The length of the part of the query sequence that could be matched to the target (also called depth).
+     *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+     *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+     *from alignments that have exactly the longer depth for the query. 
+     * </pre>
+     *
+     * <code>optional uint32 length_of_match = 3;</code>
+     */
+    boolean hasLengthOfMatch();
+    /**
+     * <pre>
+     **
+     *The length of the part of the query sequence that could be matched to the target (also called depth).
+     *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+     *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+     *from alignments that have exactly the longer depth for the query. 
+     * </pre>
+     *
+     * <code>optional uint32 length_of_match = 3;</code>
+     */
+    int getLengthOfMatch();
+  }
+  /**
+   * Protobuf type {@code goby.AmbiguousLocation}
+   */
+  public  static final class AmbiguousLocation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.AmbiguousLocation)
+      AmbiguousLocationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AmbiguousLocation.newBuilder() to construct.
+    private AmbiguousLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AmbiguousLocation() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AmbiguousLocation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AmbiguousLocation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
+              done = true;
               break;
-            }
             case 8: {
               bitField0_ |= 0x00000001;
               queryIndex_ = input.readUInt32();
@@ -9794,229 +18700,1151 @@ public final class Alignments {
               lengthOfMatch_ = input.readUInt32();
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
       }
-      
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.class, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int QUERY_INDEX_FIELD_NUMBER = 1;
+    private int queryIndex_;
+    /**
+     * <pre>
+     *The index of the query that matched too many times.
+     * </pre>
+     *
+     * <code>required uint32 query_index = 1;</code>
+     */
+    public boolean hasQueryIndex() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     *The index of the query that matched too many times.
+     * </pre>
+     *
+     * <code>required uint32 query_index = 1;</code>
+     */
+    public int getQueryIndex() {
+      return queryIndex_;
+    }
+
+    public static final int AT_LEAST_NUMBER_OF_HITS_FIELD_NUMBER = 2;
+    private int atLeastNumberOfHits_;
+    /**
+     * <pre>
+     *The number of hits that triggered membership in the too many hits list. The query may hit more
+     *locations than reported here, since some alignment tools will just drop queries that match above
+     *a threshold and stop counting. This number can be &gt;=k.
+     * </pre>
+     *
+     * <code>required uint32 at_least_number_of_hits = 2;</code>
+     */
+    public boolean hasAtLeastNumberOfHits() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     *The number of hits that triggered membership in the too many hits list. The query may hit more
+     *locations than reported here, since some alignment tools will just drop queries that match above
+     *a threshold and stop counting. This number can be &gt;=k.
+     * </pre>
+     *
+     * <code>required uint32 at_least_number_of_hits = 2;</code>
+     */
+    public int getAtLeastNumberOfHits() {
+      return atLeastNumberOfHits_;
+    }
+
+    public static final int LENGTH_OF_MATCH_FIELD_NUMBER = 3;
+    private int lengthOfMatch_;
+    /**
+     * <pre>
+     **
+     *The length of the part of the query sequence that could be matched to the target (also called depth).
+     *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+     *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+     *from alignments that have exactly the longer depth for the query. 
+     * </pre>
+     *
+     * <code>optional uint32 length_of_match = 3;</code>
+     */
+    public boolean hasLengthOfMatch() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     **
+     *The length of the part of the query sequence that could be matched to the target (also called depth).
+     *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+     *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+     *from alignments that have exactly the longer depth for the query. 
+     * </pre>
+     *
+     * <code>optional uint32 length_of_match = 3;</code>
+     */
+    public int getLengthOfMatch() {
+      return lengthOfMatch_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasQueryIndex()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAtLeastNumberOfHits()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeUInt32(1, queryIndex_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeUInt32(2, atLeastNumberOfHits_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeUInt32(3, lengthOfMatch_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, queryIndex_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, atLeastNumberOfHits_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, lengthOfMatch_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation other = (edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation) obj;
+
+      if (hasQueryIndex() != other.hasQueryIndex()) return false;
+      if (hasQueryIndex()) {
+        if (getQueryIndex()
+            != other.getQueryIndex()) return false;
+      }
+      if (hasAtLeastNumberOfHits() != other.hasAtLeastNumberOfHits()) return false;
+      if (hasAtLeastNumberOfHits()) {
+        if (getAtLeastNumberOfHits()
+            != other.getAtLeastNumberOfHits()) return false;
+      }
+      if (hasLengthOfMatch() != other.hasLengthOfMatch()) return false;
+      if (hasLengthOfMatch()) {
+        if (getLengthOfMatch()
+            != other.getLengthOfMatch()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasQueryIndex()) {
+        hash = (37 * hash) + QUERY_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getQueryIndex();
+      }
+      if (hasAtLeastNumberOfHits()) {
+        hash = (37 * hash) + AT_LEAST_NUMBER_OF_HITS_FIELD_NUMBER;
+        hash = (53 * hash) + getAtLeastNumberOfHits();
+      }
+      if (hasLengthOfMatch()) {
+        hash = (37 * hash) + LENGTH_OF_MATCH_FIELD_NUMBER;
+        hash = (53 * hash) + getLengthOfMatch();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code goby.AmbiguousLocation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.AmbiguousLocation)
+        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.class, edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder.class);
+      }
+
+      // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        queryIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        atLeastNumberOfHits_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lengthOfMatch_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AmbiguousLocation_descriptor;
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getDefaultInstanceForType() {
+        return edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation build() {
+        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation buildPartial() {
+        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation result = new edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.queryIndex_ = queryIndex_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.atLeastNumberOfHits_ = atLeastNumberOfHits_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lengthOfMatch_ = lengthOfMatch_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation) {
+          return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation other) {
+        if (other == edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.getDefaultInstance()) return this;
+        if (other.hasQueryIndex()) {
+          setQueryIndex(other.getQueryIndex());
+        }
+        if (other.hasAtLeastNumberOfHits()) {
+          setAtLeastNumberOfHits(other.getAtLeastNumberOfHits());
+        }
+        if (other.hasLengthOfMatch()) {
+          setLengthOfMatch(other.getLengthOfMatch());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasQueryIndex()) {
+          return false;
+        }
+        if (!hasAtLeastNumberOfHits()) {
+          return false;
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
       private int bitField0_;
-      
-      // required uint32 query_index = 1;
+
       private int queryIndex_ ;
+      /**
+       * <pre>
+       *The index of the query that matched too many times.
+       * </pre>
+       *
+       * <code>required uint32 query_index = 1;</code>
+       */
       public boolean hasQueryIndex() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
+      /**
+       * <pre>
+       *The index of the query that matched too many times.
+       * </pre>
+       *
+       * <code>required uint32 query_index = 1;</code>
+       */
       public int getQueryIndex() {
         return queryIndex_;
       }
+      /**
+       * <pre>
+       *The index of the query that matched too many times.
+       * </pre>
+       *
+       * <code>required uint32 query_index = 1;</code>
+       */
       public Builder setQueryIndex(int value) {
         bitField0_ |= 0x00000001;
         queryIndex_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The index of the query that matched too many times.
+       * </pre>
+       *
+       * <code>required uint32 query_index = 1;</code>
+       */
       public Builder clearQueryIndex() {
         bitField0_ = (bitField0_ & ~0x00000001);
         queryIndex_ = 0;
         onChanged();
         return this;
       }
-      
-      // required uint32 at_least_number_of_hits = 2;
+
       private int atLeastNumberOfHits_ ;
+      /**
+       * <pre>
+       *The number of hits that triggered membership in the too many hits list. The query may hit more
+       *locations than reported here, since some alignment tools will just drop queries that match above
+       *a threshold and stop counting. This number can be &gt;=k.
+       * </pre>
+       *
+       * <code>required uint32 at_least_number_of_hits = 2;</code>
+       */
       public boolean hasAtLeastNumberOfHits() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
+      /**
+       * <pre>
+       *The number of hits that triggered membership in the too many hits list. The query may hit more
+       *locations than reported here, since some alignment tools will just drop queries that match above
+       *a threshold and stop counting. This number can be &gt;=k.
+       * </pre>
+       *
+       * <code>required uint32 at_least_number_of_hits = 2;</code>
+       */
       public int getAtLeastNumberOfHits() {
         return atLeastNumberOfHits_;
       }
+      /**
+       * <pre>
+       *The number of hits that triggered membership in the too many hits list. The query may hit more
+       *locations than reported here, since some alignment tools will just drop queries that match above
+       *a threshold and stop counting. This number can be &gt;=k.
+       * </pre>
+       *
+       * <code>required uint32 at_least_number_of_hits = 2;</code>
+       */
       public Builder setAtLeastNumberOfHits(int value) {
         bitField0_ |= 0x00000002;
         atLeastNumberOfHits_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The number of hits that triggered membership in the too many hits list. The query may hit more
+       *locations than reported here, since some alignment tools will just drop queries that match above
+       *a threshold and stop counting. This number can be &gt;=k.
+       * </pre>
+       *
+       * <code>required uint32 at_least_number_of_hits = 2;</code>
+       */
       public Builder clearAtLeastNumberOfHits() {
         bitField0_ = (bitField0_ & ~0x00000002);
         atLeastNumberOfHits_ = 0;
         onChanged();
         return this;
       }
-      
-      // optional uint32 length_of_match = 3;
+
       private int lengthOfMatch_ ;
+      /**
+       * <pre>
+       **
+       *The length of the part of the query sequence that could be matched to the target (also called depth).
+       *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+       *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+       *from alignments that have exactly the longer depth for the query. 
+       * </pre>
+       *
+       * <code>optional uint32 length_of_match = 3;</code>
+       */
       public boolean hasLengthOfMatch() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
+      /**
+       * <pre>
+       **
+       *The length of the part of the query sequence that could be matched to the target (also called depth).
+       *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+       *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+       *from alignments that have exactly the longer depth for the query. 
+       * </pre>
+       *
+       * <code>optional uint32 length_of_match = 3;</code>
+       */
       public int getLengthOfMatch() {
         return lengthOfMatch_;
       }
+      /**
+       * <pre>
+       **
+       *The length of the part of the query sequence that could be matched to the target (also called depth).
+       *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+       *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+       *from alignments that have exactly the longer depth for the query. 
+       * </pre>
+       *
+       * <code>optional uint32 length_of_match = 3;</code>
+       */
       public Builder setLengthOfMatch(int value) {
         bitField0_ |= 0x00000004;
         lengthOfMatch_ = value;
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       **
+       *The length of the part of the query sequence that could be matched to the target (also called depth).
+       *May be less than the length of the query sequence, in which case the match was not perfect. When merging
+       *alignments produced by searching different reference sequences, consider only at_least_number_of_hits
+       *from alignments that have exactly the longer depth for the query. 
+       * </pre>
+       *
+       * <code>optional uint32 length_of_match = 3;</code>
+       */
       public Builder clearLengthOfMatch() {
         bitField0_ = (bitField0_ & ~0x00000004);
         lengthOfMatch_ = 0;
         onChanged();
         return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.AmbiguousLocation)
     }
-    
-    static {
-      defaultInstance = new AmbiguousLocation(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.AmbiguousLocation)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AmbiguousLocation>
+        PARSER = new com.google.protobuf.AbstractParser<AmbiguousLocation>() {
+      @java.lang.Override
+      public AmbiguousLocation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AmbiguousLocation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AmbiguousLocation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AmbiguousLocation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  public interface AlignmentIndexOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // repeated uint32 target_position_offsets = 1 [packed = true];
+
+  public interface AlignmentIndexOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:goby.AlignmentIndex)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *Stores one element by target sequence. Each element is the cumulative target length for the target
+     *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+     *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+     *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+     *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+     * </pre>
+     *
+     * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+     */
     java.util.List<java.lang.Integer> getTargetPositionOffsetsList();
+    /**
+     * <pre>
+     *Stores one element by target sequence. Each element is the cumulative target length for the target
+     *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+     *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+     *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+     *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+     * </pre>
+     *
+     * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+     */
     int getTargetPositionOffsetsCount();
+    /**
+     * <pre>
+     *Stores one element by target sequence. Each element is the cumulative target length for the target
+     *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+     *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+     *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+     *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+     * </pre>
+     *
+     * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+     */
     int getTargetPositionOffsets(int index);
-    
-    // repeated uint64 offsets = 2 [packed = true];
+
+    /**
+     * <pre>
+     *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+     *by index. There should be as many elements in offsets as there are in absolutePosition
+     *where chunks start which represent entries whose absolute positions are less than
+     * </pre>
+     *
+     * <code>repeated uint64 offsets = 2 [packed = true];</code>
+     */
     java.util.List<java.lang.Long> getOffsetsList();
+    /**
+     * <pre>
+     *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+     *by index. There should be as many elements in offsets as there are in absolutePosition
+     *where chunks start which represent entries whose absolute positions are less than
+     * </pre>
+     *
+     * <code>repeated uint64 offsets = 2 [packed = true];</code>
+     */
     int getOffsetsCount();
+    /**
+     * <pre>
+     *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+     *by index. There should be as many elements in offsets as there are in absolutePosition
+     *where chunks start which represent entries whose absolute positions are less than
+     * </pre>
+     *
+     * <code>repeated uint64 offsets = 2 [packed = true];</code>
+     */
     long getOffsets(int index);
-    
-    // repeated uint64 absolute_positions = 3 [packed = true];
+
+    /**
+     * <pre>
+     *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+     *per chunk in the 'basename'.entries file.
+     * </pre>
+     *
+     * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+     */
     java.util.List<java.lang.Long> getAbsolutePositionsList();
+    /**
+     * <pre>
+     *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+     *per chunk in the 'basename'.entries file.
+     * </pre>
+     *
+     * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+     */
     int getAbsolutePositionsCount();
+    /**
+     * <pre>
+     *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+     *per chunk in the 'basename'.entries file.
+     * </pre>
+     *
+     * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+     */
     long getAbsolutePositions(int index);
   }
-  public static final class AlignmentIndex extends
-      com.google.protobuf.GeneratedMessage
-      implements AlignmentIndexOrBuilder {
+  /**
+   * <pre>
+   *This message is written to 'basename'.index
+   * </pre>
+   *
+   * Protobuf type {@code goby.AlignmentIndex}
+   */
+  public  static final class AlignmentIndex extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:goby.AlignmentIndex)
+      AlignmentIndexOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AlignmentIndex.newBuilder() to construct.
-    private AlignmentIndex(Builder builder) {
+    private AlignmentIndex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AlignmentIndex(boolean noInit) {}
-    
-    private static final AlignmentIndex defaultInstance;
-    public static AlignmentIndex getDefaultInstance() {
-      return defaultInstance;
+    private AlignmentIndex() {
+      targetPositionOffsets_ = emptyIntList();
+      offsets_ = emptyLongList();
+      absolutePositions_ = emptyLongList();
     }
-    
-    public AlignmentIndex getDefaultInstanceForType() {
-      return defaultInstance;
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AlignmentIndex();
     }
-    
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlignmentIndex(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                targetPositionOffsets_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              targetPositionOffsets_.addInt(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                targetPositionOffsets_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                targetPositionOffsets_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                offsets_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              offsets_.addLong(input.readUInt64());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                offsets_ = newLongList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                offsets_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                absolutePositions_ = newLongList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              absolutePositions_.addLong(input.readUInt64());
+              break;
+            }
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                absolutePositions_ = newLongList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                absolutePositions_.addLong(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          targetPositionOffsets_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          offsets_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          absolutePositions_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_descriptor;
     }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_fieldAccessorTable;
+      return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.Builder.class);
     }
-    
-    // repeated uint32 target_position_offsets = 1 [packed = true];
+
     public static final int TARGET_POSITION_OFFSETS_FIELD_NUMBER = 1;
-    private java.util.List<java.lang.Integer> targetPositionOffsets_;
+    private com.google.protobuf.Internal.IntList targetPositionOffsets_;
+    /**
+     * <pre>
+     *Stores one element by target sequence. Each element is the cumulative target length for the target
+     *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+     *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+     *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+     *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+     * </pre>
+     *
+     * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+     */
     public java.util.List<java.lang.Integer>
         getTargetPositionOffsetsList() {
       return targetPositionOffsets_;
     }
+    /**
+     * <pre>
+     *Stores one element by target sequence. Each element is the cumulative target length for the target
+     *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+     *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+     *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+     *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+     * </pre>
+     *
+     * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+     */
     public int getTargetPositionOffsetsCount() {
       return targetPositionOffsets_.size();
     }
+    /**
+     * <pre>
+     *Stores one element by target sequence. Each element is the cumulative target length for the target
+     *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+     *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+     *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+     *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+     * </pre>
+     *
+     * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+     */
     public int getTargetPositionOffsets(int index) {
-      return targetPositionOffsets_.get(index);
+      return targetPositionOffsets_.getInt(index);
     }
     private int targetPositionOffsetsMemoizedSerializedSize = -1;
-    
-    // repeated uint64 offsets = 2 [packed = true];
+
     public static final int OFFSETS_FIELD_NUMBER = 2;
-    private java.util.List<java.lang.Long> offsets_;
+    private com.google.protobuf.Internal.LongList offsets_;
+    /**
+     * <pre>
+     *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+     *by index. There should be as many elements in offsets as there are in absolutePosition
+     *where chunks start which represent entries whose absolute positions are less than
+     * </pre>
+     *
+     * <code>repeated uint64 offsets = 2 [packed = true];</code>
+     */
     public java.util.List<java.lang.Long>
         getOffsetsList() {
       return offsets_;
     }
+    /**
+     * <pre>
+     *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+     *by index. There should be as many elements in offsets as there are in absolutePosition
+     *where chunks start which represent entries whose absolute positions are less than
+     * </pre>
+     *
+     * <code>repeated uint64 offsets = 2 [packed = true];</code>
+     */
     public int getOffsetsCount() {
       return offsets_.size();
     }
+    /**
+     * <pre>
+     *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+     *by index. There should be as many elements in offsets as there are in absolutePosition
+     *where chunks start which represent entries whose absolute positions are less than
+     * </pre>
+     *
+     * <code>repeated uint64 offsets = 2 [packed = true];</code>
+     */
     public long getOffsets(int index) {
-      return offsets_.get(index);
+      return offsets_.getLong(index);
     }
     private int offsetsMemoizedSerializedSize = -1;
-    
-    // repeated uint64 absolute_positions = 3 [packed = true];
+
     public static final int ABSOLUTE_POSITIONS_FIELD_NUMBER = 3;
-    private java.util.List<java.lang.Long> absolutePositions_;
+    private com.google.protobuf.Internal.LongList absolutePositions_;
+    /**
+     * <pre>
+     *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+     *per chunk in the 'basename'.entries file.
+     * </pre>
+     *
+     * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+     */
     public java.util.List<java.lang.Long>
         getAbsolutePositionsList() {
       return absolutePositions_;
     }
+    /**
+     * <pre>
+     *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+     *per chunk in the 'basename'.entries file.
+     * </pre>
+     *
+     * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+     */
     public int getAbsolutePositionsCount() {
       return absolutePositions_.size();
     }
+    /**
+     * <pre>
+     *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+     *per chunk in the 'basename'.entries file.
+     * </pre>
+     *
+     * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+     */
     public long getAbsolutePositions(int index) {
-      return absolutePositions_.get(index);
+      return absolutePositions_.getLong(index);
     }
     private int absolutePositionsMemoizedSerializedSize = -1;
-    
-    private void initFields() {
-      targetPositionOffsets_ = java.util.Collections.emptyList();;
-      offsets_ = java.util.Collections.emptyList();;
-      absolutePositions_ = java.util.Collections.emptyList();;
-    }
+
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
       if (getTargetPositionOffsetsList().size() > 0) {
-        output.writeRawVarint32(10);
-        output.writeRawVarint32(targetPositionOffsetsMemoizedSerializedSize);
+        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(targetPositionOffsetsMemoizedSerializedSize);
       }
       for (int i = 0; i < targetPositionOffsets_.size(); i++) {
-        output.writeUInt32NoTag(targetPositionOffsets_.get(i));
+        output.writeUInt32NoTag(targetPositionOffsets_.getInt(i));
       }
       if (getOffsetsList().size() > 0) {
-        output.writeRawVarint32(18);
-        output.writeRawVarint32(offsetsMemoizedSerializedSize);
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(offsetsMemoizedSerializedSize);
       }
       for (int i = 0; i < offsets_.size(); i++) {
-        output.writeUInt64NoTag(offsets_.get(i));
+        output.writeUInt64NoTag(offsets_.getLong(i));
       }
       if (getAbsolutePositionsList().size() > 0) {
-        output.writeRawVarint32(26);
-        output.writeRawVarint32(absolutePositionsMemoizedSerializedSize);
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(absolutePositionsMemoizedSerializedSize);
       }
       for (int i = 0; i < absolutePositions_.size(); i++) {
-        output.writeUInt64NoTag(absolutePositions_.get(i));
+        output.writeUInt64NoTag(absolutePositions_.getLong(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
-    
-    private int memoizedSerializedSize = -1;
+
+    @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       {
         int dataSize = 0;
         for (int i = 0; i < targetPositionOffsets_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(targetPositionOffsets_.get(i));
+            .computeUInt32SizeNoTag(targetPositionOffsets_.getInt(i));
         }
         size += dataSize;
         if (!getTargetPositionOffsetsList().isEmpty()) {
@@ -10030,7 +19858,7 @@ public final class Alignments {
         int dataSize = 0;
         for (int i = 0; i < offsets_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(offsets_.get(i));
+            .computeUInt64SizeNoTag(offsets_.getLong(i));
         }
         size += dataSize;
         if (!getOffsetsList().isEmpty()) {
@@ -10044,7 +19872,7 @@ public final class Alignments {
         int dataSize = 0;
         for (int i = 0; i < absolutePositions_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt64SizeNoTag(absolutePositions_.get(i));
+            .computeUInt64SizeNoTag(absolutePositions_.getLong(i));
         }
         size += dataSize;
         if (!getAbsolutePositionsList().isEmpty()) {
@@ -10054,152 +19882,208 @@ public final class Alignments {
         }
         absolutePositionsMemoizedSerializedSize = dataSize;
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
-    
-    private static final long serialVersionUID = 0L;
+
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex)) {
+        return super.equals(obj);
+      }
+      edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex other = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex) obj;
+
+      if (!getTargetPositionOffsetsList()
+          .equals(other.getTargetPositionOffsetsList())) return false;
+      if (!getOffsetsList()
+          .equals(other.getOffsetsList())) return false;
+      if (!getAbsolutePositionsList()
+          .equals(other.getAbsolutePositionsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
-    
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTargetPositionOffsetsCount() > 0) {
+        hash = (37 * hash) + TARGET_POSITION_OFFSETS_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetPositionOffsetsList().hashCode();
+      }
+      if (getOffsetsCount() > 0) {
+        hash = (37 * hash) + OFFSETS_FIELD_NUMBER;
+        hash = (53 * hash) + getOffsetsList().hashCode();
+      }
+      if (getAbsolutePositionsCount() > 0) {
+        hash = (37 * hash) + ABSOLUTE_POSITIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAbsolutePositionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    
-    public static Builder newBuilder() { return Builder.create(); }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
-    
+    public static Builder newBuilder(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * <pre>
+     *This message is written to 'basename'.index
+     * </pre>
+     *
+     * Protobuf type {@code goby.AlignmentIndex}
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndexOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:goby.AlignmentIndex)
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndexOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_descriptor;
       }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_fieldAccessorTable;
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.class, edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.Builder.class);
       }
-      
+
       // Construct using edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-      
+      @java.lang.Override
       public Builder clear() {
         super.clear();
-        targetPositionOffsets_ = java.util.Collections.emptyList();;
+        targetPositionOffsets_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        offsets_ = java.util.Collections.emptyList();;
+        offsets_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        absolutePositions_ = java.util.Collections.emptyList();;
+        absolutePositions_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
+
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.getDescriptor();
+        return edu.cornell.med.icb.goby.alignments.Alignments.internal_static_goby_AlignmentIndex_descriptor;
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex getDefaultInstanceForType() {
         return edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.getDefaultInstance();
       }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex build() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex result = buildPartial();
         if (!result.isInitialized()) {
@@ -10207,39 +20091,63 @@ public final class Alignments {
         }
         return result;
       }
-      
-      private edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
+      @java.lang.Override
       public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex buildPartial() {
         edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex result = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          targetPositionOffsets_ = java.util.Collections.unmodifiableList(targetPositionOffsets_);
+        if (((bitField0_ & 0x00000001) != 0)) {
+          targetPositionOffsets_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.targetPositionOffsets_ = targetPositionOffsets_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          offsets_ = java.util.Collections.unmodifiableList(offsets_);
+        if (((bitField0_ & 0x00000002) != 0)) {
+          offsets_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.offsets_ = offsets_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          absolutePositions_ = java.util.Collections.unmodifiableList(absolutePositions_);
+        if (((bitField0_ & 0x00000004) != 0)) {
+          absolutePositions_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.absolutePositions_ = absolutePositions_;
         onBuilt();
         return result;
       }
-      
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex) {
           return mergeFrom((edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex)other);
@@ -10248,7 +20156,7 @@ public final class Alignments {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex other) {
         if (other == edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.getDefaultInstance()) return this;
         if (!other.targetPositionOffsets_.isEmpty()) {
@@ -10281,292 +20189,483 @@ public final class Alignments {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
-      
+
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
-      
+
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              ensureTargetPositionOffsetsIsMutable();
-              targetPositionOffsets_.add(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addTargetPositionOffsets(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 16: {
-              ensureOffsetsIsMutable();
-              offsets_.add(input.readUInt64());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addOffsets(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 24: {
-              ensureAbsolutePositionsIsMutable();
-              absolutePositions_.add(input.readUInt64());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addAbsolutePositions(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
+        edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
-      // repeated uint32 target_position_offsets = 1 [packed = true];
-      private java.util.List<java.lang.Integer> targetPositionOffsets_ = java.util.Collections.emptyList();;
+
+      private com.google.protobuf.Internal.IntList targetPositionOffsets_ = emptyIntList();
       private void ensureTargetPositionOffsetsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          targetPositionOffsets_ = new java.util.ArrayList<java.lang.Integer>(targetPositionOffsets_);
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          targetPositionOffsets_ = mutableCopy(targetPositionOffsets_);
           bitField0_ |= 0x00000001;
          }
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public java.util.List<java.lang.Integer>
           getTargetPositionOffsetsList() {
-        return java.util.Collections.unmodifiableList(targetPositionOffsets_);
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(targetPositionOffsets_) : targetPositionOffsets_;
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public int getTargetPositionOffsetsCount() {
         return targetPositionOffsets_.size();
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public int getTargetPositionOffsets(int index) {
-        return targetPositionOffsets_.get(index);
+        return targetPositionOffsets_.getInt(index);
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public Builder setTargetPositionOffsets(
           int index, int value) {
         ensureTargetPositionOffsetsIsMutable();
-        targetPositionOffsets_.set(index, value);
+        targetPositionOffsets_.setInt(index, value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public Builder addTargetPositionOffsets(int value) {
         ensureTargetPositionOffsetsIsMutable();
-        targetPositionOffsets_.add(value);
+        targetPositionOffsets_.addInt(value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public Builder addAllTargetPositionOffsets(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureTargetPositionOffsetsIsMutable();
-        super.addAll(values, targetPositionOffsets_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, targetPositionOffsets_);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *Stores one element by target sequence. Each element is the cumulative target length for the target
+       *stored at index i. Assume there are four target sequences, with lengths {10, 12, 15, 34}. The field
+       *targetPositionOffsets will contain: {0,10,22,37}. Such offsets can be used to calculate the absolute
+       *position of a genomic location. Given targetIndex and positionOnReference, the absolute location
+       *is defined as  targetPositionOffsets[targetIndex]+positionOnReference.
+       * </pre>
+       *
+       * <code>repeated uint32 target_position_offsets = 1 [packed = true];</code>
+       */
       public Builder clearTargetPositionOffsets() {
-        targetPositionOffsets_ = java.util.Collections.emptyList();;
+        targetPositionOffsets_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
-      
-      // repeated uint64 offsets = 2 [packed = true];
-      private java.util.List<java.lang.Long> offsets_ = java.util.Collections.emptyList();;
+
+      private com.google.protobuf.Internal.LongList offsets_ = emptyLongList();
       private void ensureOffsetsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          offsets_ = new java.util.ArrayList<java.lang.Long>(offsets_);
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          offsets_ = mutableCopy(offsets_);
           bitField0_ |= 0x00000002;
          }
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public java.util.List<java.lang.Long>
           getOffsetsList() {
-        return java.util.Collections.unmodifiableList(offsets_);
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(offsets_) : offsets_;
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public int getOffsetsCount() {
         return offsets_.size();
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public long getOffsets(int index) {
-        return offsets_.get(index);
+        return offsets_.getLong(index);
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public Builder setOffsets(
           int index, long value) {
         ensureOffsetsIsMutable();
-        offsets_.set(index, value);
+        offsets_.setLong(index, value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public Builder addOffsets(long value) {
         ensureOffsetsIsMutable();
-        offsets_.add(value);
+        offsets_.addLong(value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public Builder addAllOffsets(
           java.lang.Iterable<? extends java.lang.Long> values) {
         ensureOffsetsIsMutable();
-        super.addAll(values, offsets_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, offsets_);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The byte offsets into the compressed entries file. Byte offsets are matched with absolute position
+       *by index. There should be as many elements in offsets as there are in absolutePosition
+       *where chunks start which represent entries whose absolute positions are less than
+       * </pre>
+       *
+       * <code>repeated uint64 offsets = 2 [packed = true];</code>
+       */
       public Builder clearOffsets() {
-        offsets_ = java.util.Collections.emptyList();;
+        offsets_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
-      
-      // repeated uint64 absolute_positions = 3 [packed = true];
-      private java.util.List<java.lang.Long> absolutePositions_ = java.util.Collections.emptyList();;
+
+      private com.google.protobuf.Internal.LongList absolutePositions_ = emptyLongList();
       private void ensureAbsolutePositionsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          absolutePositions_ = new java.util.ArrayList<java.lang.Long>(absolutePositions_);
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          absolutePositions_ = mutableCopy(absolutePositions_);
           bitField0_ |= 0x00000004;
          }
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public java.util.List<java.lang.Long>
           getAbsolutePositionsList() {
-        return java.util.Collections.unmodifiableList(absolutePositions_);
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(absolutePositions_) : absolutePositions_;
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public int getAbsolutePositionsCount() {
         return absolutePositions_.size();
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public long getAbsolutePositions(int index) {
-        return absolutePositions_.get(index);
+        return absolutePositions_.getLong(index);
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public Builder setAbsolutePositions(
           int index, long value) {
         ensureAbsolutePositionsIsMutable();
-        absolutePositions_.set(index, value);
+        absolutePositions_.setLong(index, value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public Builder addAbsolutePositions(long value) {
         ensureAbsolutePositionsIsMutable();
-        absolutePositions_.add(value);
+        absolutePositions_.addLong(value);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public Builder addAllAbsolutePositions(
           java.lang.Iterable<? extends java.lang.Long> values) {
         ensureAbsolutePositionsIsMutable();
-        super.addAll(values, absolutePositions_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, absolutePositions_);
         onChanged();
         return this;
       }
+      /**
+       * <pre>
+       *The absolute positions of the first entry in the chunk that immediately start at offset. One element
+       *per chunk in the 'basename'.entries file.
+       * </pre>
+       *
+       * <code>repeated uint64 absolute_positions = 3 [packed = true];</code>
+       */
       public Builder clearAbsolutePositions() {
-        absolutePositions_ = java.util.Collections.emptyList();;
+        absolutePositions_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
-      
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
       // @@protoc_insertion_point(builder_scope:goby.AlignmentIndex)
     }
-    
-    static {
-      defaultInstance = new AlignmentIndex(true);
-      defaultInstance.initFields();
-    }
-    
+
     // @@protoc_insertion_point(class_scope:goby.AlignmentIndex)
+    private static final edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex();
+    }
+
+    public static edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AlignmentIndex>
+        PARSER = new com.google.protobuf.AbstractParser<AlignmentIndex>() {
+      @java.lang.Override
+      public AlignmentIndex parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlignmentIndex(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlignmentIndex> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlignmentIndex> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
-  
-  private static com.google.protobuf.Descriptors.Descriptor
+
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_AlignmentCollection_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_AlignmentCollection_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_AlignmentEntry_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_AlignmentEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_RelatedAlignmentEntry_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_SequenceVariation_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_SequenceVariation_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_AlignmentHeader_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_AlignmentHeader_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_IdentifierMapping_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_IdentifierMapping_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_IdentifierInfo_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_IdentifierInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_ReadOriginInfo_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_ReadOriginInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_AlignmentTooManyHits_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_AlignmentTooManyHits_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_AmbiguousLocation_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_AmbiguousLocation_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_goby_AlignmentIndex_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_goby_AlignmentIndex_fieldAccessorTable;
-  
+
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -10579,7 +20678,7 @@ public final class Alignments {
       "_position\030\005 \001(\r\022\r\n\005score\030\004 \001(\002\022\034\n\024number" +
       "_of_mismatches\030\010 \001(\r\022\030\n\020number_of_indels" +
       "\030\t \001(\r\022\034\n\024query_aligned_length\030\013 \001(\r\022\035\n\025" +
-      "target_aligned_length\030\014 \001(\r\0224\n\023sequence_",
+      "target_aligned_length\030\014 \001(\r\0224\n\023sequence_" +
       "variations\030\r \003(\0132\027.goby.SequenceVariatio" +
       "n\022\024\n\014query_length\030\n \001(\r\022\027\n\017mapping_quali" +
       "ty\030\016 \001(\005\022\022\n\npair_flags\030\017 \001(\r\0228\n\023pair_ali" +
@@ -10589,7 +20688,7 @@ public final class Alignments {
       "latedAlignmentEntry\022D\n\037spliced_backward_" +
       "alignment_link\030\026 \001(\0132\033.goby.RelatedAlign" +
       "mentEntry\022\025\n\rspliced_flags\030\023 \001(\r\022\023\n\013inse" +
-      "rt_size\030\024 \001(\021\022\024\n\014sample_index\030\025 \001(\r\022\037\n\027q",
+      "rt_size\030\024 \001(\021\022\024\n\014sample_index\030\025 \001(\r\022\037\n\027q" +
       "uery_index_occurrences\030\031 \001(\r\022\021\n\tambiguit" +
       "y\030\033 \001(\r\022\026\n\016bam_attributes\0302 \003(\t\022\033\n\023read_" +
       "quality_scores\0307 \001(\014\022\031\n\021read_origin_inde" +
@@ -10599,7 +20698,7 @@ public final class Alignments {
       "tyRight\030! \001(\014\022\036\n\026placedUnmappedSequence\030" +
       "( \001(\t\022\035\n\025placedUnmappedQuality\030) \001(\014\022\020\n\010" +
       "readName\030* \001(\t\"p\n\025RelatedAlignmentEntry\022" +
-      "\024\n\014target_index\030\001 \001(\r\022\020\n\010position\030\002 \001(\r\022",
+      "\024\n\014target_index\030\001 \001(\r\022\020\n\010position\030\002 \001(\r\022" +
       "\026\n\016fragment_index\030\003 \001(\r\022\027\n\017optimized_ind" +
       "ex\0302 \001(\r\"g\n\021SequenceVariation\022\014\n\004from\030\002 " +
       "\001(\t\022\n\n\002to\030\001 \001(\t\022\020\n\010position\030\003 \001(\r\022\022\n\nrea" +
@@ -10609,7 +20708,7 @@ public final class Alignments {
       " \001(\r\0223\n\022query_name_mapping\030\001 \001(\0132\027.goby." +
       "IdentifierMapping\0224\n\023target_name_mapping" +
       "\030\002 \001(\0132\027.goby.IdentifierMapping\022\031\n\021numbe" +
-      "r_of_queries\030\005 \001(\r\022\031\n\021number_of_targets\030",
+      "r_of_queries\030\005 \001(\r\022\031\n\021number_of_targets\030" +
       "\006 \001(\r\022\037\n\027number_of_aligned_reads\030\007 \001(\r\022\030" +
       "\n\014query_length\030\003 \003(\rB\002\030\001\022\035\n\025constant_que" +
       "ry_length\030\n \001(\r\022\025\n\rtarget_length\030\010 \003(\r\022\016" +
@@ -10619,7 +20718,7 @@ public final class Alignments {
       "\017\n\007version\030\031 \001(\t\022\027\n\017sample_basename\030\036 \003(" +
       "\t\022#\n\033query_indices_were_permuted\030\032 \001(\010\022\037" +
       "\n\027query_index_occurrences\030# \001(\010\022#\n\033ambig" +
-      "uity_stored_in_entries\030$ \001(\010\022\037\n\027all_read",
+      "uity_stored_in_entries\030$ \001(\010\022\037\n\027all_read" +
       "_quality_scores\030( \001(\010\022)\n\013read_origin\030\033 \003" +
       "(\0132\024.goby.ReadOriginInfo\";\n\021IdentifierMa" +
       "pping\022&\n\010mappings\030\001 \003(\0132\024.goby.Identifie" +
@@ -10629,7 +20728,7 @@ public final class Alignments {
       "le\030\004 \001(\t\022\020\n\010platform\030\005 \001(\t\022\017\n\007library\030\010 " +
       "\001(\t\022\025\n\rplatform_unit\030\014 \001(\t\022\020\n\010run_date\030\006" +
       " \001(\t\"X\n\024AlignmentTooManyHits\022\031\n\021aligner_" +
-      "threshold\030\002 \002(\r\022%\n\004hits\030\001 \003(\0132\027.goby.Amb",
+      "threshold\030\002 \002(\r\022%\n\004hits\030\001 \003(\0132\027.goby.Amb" +
       "iguousLocation\"b\n\021AmbiguousLocation\022\023\n\013q" +
       "uery_index\030\001 \002(\r\022\037\n\027at_least_number_of_h" +
       "its\030\002 \002(\r\022\027\n\017length_of_match\030\003 \001(\r\"j\n\016Al" +
@@ -10638,107 +20737,77 @@ public final class Alignments {
       "te_positions\030\003 \003(\004B\002\020\001B\'\n#edu.cornell.me" +
       "d.icb.goby.alignmentsH\001"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_goby_AlignmentCollection_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_goby_AlignmentCollection_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_AlignmentCollection_descriptor,
-              new java.lang.String[] { "AlignmentEntries", },
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentCollection.Builder.class);
-          internal_static_goby_AlignmentEntry_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_goby_AlignmentEntry_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_AlignmentEntry_descriptor,
-              new java.lang.String[] { "Multiplicity", "QueryIndex", "TargetIndex", "Position", "MatchingReverseStrand", "QueryPosition", "Score", "NumberOfMismatches", "NumberOfIndels", "QueryAlignedLength", "TargetAlignedLength", "SequenceVariations", "QueryLength", "MappingQuality", "PairFlags", "PairAlignmentLink", "FragmentIndex", "SplicedForwardAlignmentLink", "SplicedBackwardAlignmentLink", "SplicedFlags", "InsertSize", "SampleIndex", "QueryIndexOccurrences", "Ambiguity", "BamAttributes", "ReadQualityScores", "ReadOriginIndex", "SoftClippedBasesLeft", "SoftClippedBasesRight", "SoftClippedQualityLeft", "SoftClippedQualityRight", "PlacedUnmappedSequence", "PlacedUnmappedQuality", "ReadName", },
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentEntry.Builder.class);
-          internal_static_goby_RelatedAlignmentEntry_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_RelatedAlignmentEntry_descriptor,
-              new java.lang.String[] { "TargetIndex", "Position", "FragmentIndex", "OptimizedIndex", },
-              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.RelatedAlignmentEntry.Builder.class);
-          internal_static_goby_SequenceVariation_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_goby_SequenceVariation_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_SequenceVariation_descriptor,
-              new java.lang.String[] { "From", "To", "Position", "ReadIndex", "ToQuality", },
-              edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.SequenceVariation.Builder.class);
-          internal_static_goby_AlignmentHeader_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_goby_AlignmentHeader_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_AlignmentHeader_descriptor,
-              new java.lang.String[] { "SmallestSplitQueryIndex", "LargestSplitQueryIndex", "QueryNameMapping", "TargetNameMapping", "NumberOfQueries", "NumberOfTargets", "NumberOfAlignedReads", "QueryLength", "ConstantQueryLength", "TargetLength", "Sorted", "Indexed", "QueryLengthsStoredInEntries", "AlignerName", "AlignerVersion", "Version", "SampleBasename", "QueryIndicesWerePermuted", "QueryIndexOccurrences", "AmbiguityStoredInEntries", "AllReadQualityScores", "ReadOrigin", },
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentHeader.Builder.class);
-          internal_static_goby_IdentifierMapping_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_goby_IdentifierMapping_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_IdentifierMapping_descriptor,
-              new java.lang.String[] { "Mappings", },
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierMapping.Builder.class);
-          internal_static_goby_IdentifierInfo_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_goby_IdentifierInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_IdentifierInfo_descriptor,
-              new java.lang.String[] { "Name", "Index", },
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.IdentifierInfo.Builder.class);
-          internal_static_goby_ReadOriginInfo_descriptor =
-            getDescriptor().getMessageTypes().get(7);
-          internal_static_goby_ReadOriginInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_ReadOriginInfo_descriptor,
-              new java.lang.String[] { "OriginIndex", "OriginId", "Sample", "Platform", "Library", "PlatformUnit", "RunDate", },
-              edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.ReadOriginInfo.Builder.class);
-          internal_static_goby_AlignmentTooManyHits_descriptor =
-            getDescriptor().getMessageTypes().get(8);
-          internal_static_goby_AlignmentTooManyHits_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_AlignmentTooManyHits_descriptor,
-              new java.lang.String[] { "AlignerThreshold", "Hits", },
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentTooManyHits.Builder.class);
-          internal_static_goby_AmbiguousLocation_descriptor =
-            getDescriptor().getMessageTypes().get(9);
-          internal_static_goby_AmbiguousLocation_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_AmbiguousLocation_descriptor,
-              new java.lang.String[] { "QueryIndex", "AtLeastNumberOfHits", "LengthOfMatch", },
-              edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.AmbiguousLocation.Builder.class);
-          internal_static_goby_AlignmentIndex_descriptor =
-            getDescriptor().getMessageTypes().get(10);
-          internal_static_goby_AlignmentIndex_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_goby_AlignmentIndex_descriptor,
-              new java.lang.String[] { "TargetPositionOffsets", "Offsets", "AbsolutePositions", },
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.class,
-              edu.cornell.med.icb.goby.alignments.Alignments.AlignmentIndex.Builder.class);
-          return null;
-        }
-      };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
+    internal_static_goby_AlignmentCollection_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_goby_AlignmentCollection_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_AlignmentCollection_descriptor,
+        new java.lang.String[] { "AlignmentEntries", });
+    internal_static_goby_AlignmentEntry_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_goby_AlignmentEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_AlignmentEntry_descriptor,
+        new java.lang.String[] { "Multiplicity", "QueryIndex", "TargetIndex", "Position", "MatchingReverseStrand", "QueryPosition", "Score", "NumberOfMismatches", "NumberOfIndels", "QueryAlignedLength", "TargetAlignedLength", "SequenceVariations", "QueryLength", "MappingQuality", "PairFlags", "PairAlignmentLink", "FragmentIndex", "SplicedForwardAlignmentLink", "SplicedBackwardAlignmentLink", "SplicedFlags", "InsertSize", "SampleIndex", "QueryIndexOccurrences", "Ambiguity", "BamAttributes", "ReadQualityScores", "ReadOriginIndex", "SoftClippedBasesLeft", "SoftClippedBasesRight", "SoftClippedQualityLeft", "SoftClippedQualityRight", "PlacedUnmappedSequence", "PlacedUnmappedQuality", "ReadName", });
+    internal_static_goby_RelatedAlignmentEntry_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_goby_RelatedAlignmentEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_RelatedAlignmentEntry_descriptor,
+        new java.lang.String[] { "TargetIndex", "Position", "FragmentIndex", "OptimizedIndex", });
+    internal_static_goby_SequenceVariation_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_goby_SequenceVariation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_SequenceVariation_descriptor,
+        new java.lang.String[] { "From", "To", "Position", "ReadIndex", "ToQuality", });
+    internal_static_goby_AlignmentHeader_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_goby_AlignmentHeader_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_AlignmentHeader_descriptor,
+        new java.lang.String[] { "SmallestSplitQueryIndex", "LargestSplitQueryIndex", "QueryNameMapping", "TargetNameMapping", "NumberOfQueries", "NumberOfTargets", "NumberOfAlignedReads", "QueryLength", "ConstantQueryLength", "TargetLength", "Sorted", "Indexed", "QueryLengthsStoredInEntries", "AlignerName", "AlignerVersion", "Version", "SampleBasename", "QueryIndicesWerePermuted", "QueryIndexOccurrences", "AmbiguityStoredInEntries", "AllReadQualityScores", "ReadOrigin", });
+    internal_static_goby_IdentifierMapping_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_goby_IdentifierMapping_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_IdentifierMapping_descriptor,
+        new java.lang.String[] { "Mappings", });
+    internal_static_goby_IdentifierInfo_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_goby_IdentifierInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_IdentifierInfo_descriptor,
+        new java.lang.String[] { "Name", "Index", });
+    internal_static_goby_ReadOriginInfo_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_goby_ReadOriginInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_ReadOriginInfo_descriptor,
+        new java.lang.String[] { "OriginIndex", "OriginId", "Sample", "Platform", "Library", "PlatformUnit", "RunDate", });
+    internal_static_goby_AlignmentTooManyHits_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_goby_AlignmentTooManyHits_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_AlignmentTooManyHits_descriptor,
+        new java.lang.String[] { "AlignerThreshold", "Hits", });
+    internal_static_goby_AmbiguousLocation_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_goby_AmbiguousLocation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_AmbiguousLocation_descriptor,
+        new java.lang.String[] { "QueryIndex", "AtLeastNumberOfHits", "LengthOfMatch", });
+    internal_static_goby_AlignmentIndex_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_goby_AlignmentIndex_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_goby_AlignmentIndex_descriptor,
+        new java.lang.String[] { "TargetPositionOffsets", "Offsets", "AbsolutePositions", });
   }
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }

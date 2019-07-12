@@ -62,7 +62,9 @@ AC_FUNC_LSTAT_FOLLOWS_SLASHED_SYMLINK
 
 # use pkg-config to make sure that protobuf is available
 # see http://code.google.com/p/protobuf/
-PKG_CHECK_MODULES([PROTOBUF], [protobuf >= 2.4.1]) 
+#PKG_CHECK_MODULES([PROTOBUF], [protobuf >= 2.4.1]) 
+PROTOBUF_CFLAGS=''
+PROTOBUF_LIBS='-lprotobuf -lpthread '
 # use pkg-config to make sure that PCRE is available
 # see http://www.pcre.org/
 PKG_CHECK_MODULES([LIBPCRECPP], [libpcrecpp >= 8.10]) 

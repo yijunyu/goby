@@ -22,10 +22,10 @@ lib_LTLIBRARIES = libgoby.la
 
 BUILT_SOURCES = goby.timestamp
 
-AM_CXXFLAGS = @PROTOBUF_CFLAGS@ @LIBPCRECPP_CFLAGS@ ${BOOST_CPPFLAGS}
-AM_CFLAGS = @PROTOBUF_CFLAGS@ @LIBPCRECPP_CFLAGS@ ${BOOST_CPPFLAGS}
+AM_CXXFLAGS = @LIBPCRECPP_CFLAGS@ ${BOOST_CPPFLAGS}
+AM_CFLAGS = @LIBPCRECPP_CFLAGS@ ${BOOST_CPPFLAGS}
 
-libgoby_la_LIBADD = @PROTOBUF_LIBS@ @LIBPCRECPP_LIBS@
+libgoby_la_LIBADD = -lprotobuf -lpthread @LIBPCRECPP_LIBS@
 libgoby_la_LDFLAGS = -version-info @version_info@ -export-dynamic # -no-undefined
 libgoby_la_SOURCES = \
 	goby/ICBFileInputStream.cc \
